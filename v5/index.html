@@ -1,0 +1,692 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VERLYN TECH — Direction 05 / Classical Remix</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,400;0,600;0,700;1,400;1,600&family=JetBrains+Mono:wght@400;500;600&family=Space+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-white: #ffffff;
+      --bg-cream: #fbfbfa;
+      --bg-card: #f6f5f2;
+      --ink-black: #111111;
+      --ink-charcoal: #2a2a2a;
+      --ink-muted: #666666;
+      --line-subtle: rgba(17, 17, 17, 0.08);
+      --line-orbit: rgba(17, 17, 17, 0.12);
+      --accent-blue: #1d4ed8;
+      --accent-blue-hover: #1e40af;
+      --font-serif: 'Cormorant Garamond', Georgia, serif;
+      --font-display: 'Space Grotesk', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-white);
+      color: var(--ink-black);
+      font-family: var(--font-display);
+      font-size: 15px;
+      line-height: 1.65;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Subtle background celestial orbit lines sweeping across page */
+    .celestial-orbit-bg {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 900px;
+      pointer-events: none;
+      z-index: 1;
+      overflow: hidden;
+    }
+
+    .orbit-svg {
+      width: 100%;
+      height: 100%;
+    }
+
+    /* Container */
+    .wrapper {
+      max-width: 1320px;
+      margin: 0 auto;
+      padding: 0 40px;
+      position: relative;
+      z-index: 2;
+    }
+
+    /* Classical Editorial Header */
+    header {
+      padding: 32px 0;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      border-bottom: 1px solid var(--line-subtle);
+      position: relative;
+      z-index: 10;
+    }
+
+    .brand-mark {
+      display: flex;
+      align-items: baseline;
+      gap: 12px;
+    }
+
+    .brand-logo-text {
+      font-family: var(--font-serif);
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: 0.04em;
+    }
+
+    .brand-subtext {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--ink-muted);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+    }
+
+    .header-center {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      color: var(--ink-muted);
+      text-transform: uppercase;
+    }
+
+    /* Blue Pill CTA */
+    .blue-pill-cta {
+      background-color: var(--accent-blue);
+      color: #ffffff;
+      padding: 12px 28px;
+      border-radius: 999px;
+      font-family: var(--font-display);
+      font-size: 13px;
+      font-weight: 500;
+      letter-spacing: 0.02em;
+      text-decoration: none;
+      transition: all 0.2s ease;
+      box-shadow: 0 4px 14px rgba(29, 78, 216, 0.25);
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .blue-pill-cta:hover {
+      background-color: var(--accent-blue-hover);
+      transform: translateY(-1px);
+      box-shadow: 0 6px 20px rgba(29, 78, 216, 0.35);
+    }
+
+    .secondary-link {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      color: var(--ink-charcoal);
+      text-decoration: none;
+      padding: 10px 20px;
+      transition: color 0.15s ease;
+    }
+
+    .secondary-link:hover {
+      color: var(--accent-blue);
+    }
+
+    /* HERO SECTION */
+    /* Placement: right-half figure on white; faint orbit lines continue behind the left text column; logo row runs below */
+    .hero-classical {
+      padding: 80px 0 60px;
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 60px;
+      align-items: center;
+      position: relative;
+    }
+
+    .hero-text-column {
+      position: relative;
+      z-index: 5;
+    }
+
+    .folio-stamp {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .folio-stamp::before {
+      content: "";
+      width: 24px;
+      height: 1px;
+      background-color: var(--ink-black);
+    }
+
+    .classical-headline {
+      font-family: var(--font-serif);
+      font-size: clamp(48px, 5.8vw, 76px);
+      line-height: 1.05;
+      font-weight: 400;
+      color: var(--ink-black);
+      margin-bottom: 32px;
+      letter-spacing: -0.02em;
+    }
+
+    /* Serif italic emphasis word */
+    .classical-headline em {
+      font-style: italic;
+      font-weight: 600;
+      color: var(--ink-black);
+      border-bottom: 1px solid var(--line-orbit);
+    }
+
+    .classical-prose {
+      font-size: 17px;
+      line-height: 1.7;
+      color: var(--ink-charcoal);
+      max-width: 500px;
+      margin-bottom: 40px;
+    }
+
+    .cta-cluster {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+      margin-bottom: 48px;
+    }
+
+    /* RIGHT HALF: HERO RESERVED STAND-IN (Grainy vintage illustration of a classical robed scholar studying charts, isolated on white) */
+    .figure-slot {
+      position: relative;
+      width: 100%;
+      height: 560px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      background-color: var(--bg-white);
+    }
+
+    .scholar-standin {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .scholar-plate {
+      width: 100%;
+      height: 100%;
+      border: 1px solid var(--line-subtle);
+      background-color: #ffffff;
+      padding: 24px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: space-between;
+      position: relative;
+    }
+
+    .scholar-svg {
+      width: 100%;
+      height: 80%;
+      display: block;
+    }
+
+    .plate-caption {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      border-top: 1px solid var(--line-subtle);
+      width: 100%;
+      padding-top: 12px;
+      text-align: center;
+    }
+
+    /* TRUST LOGO ROW (Runs below the hero) */
+    .trust-logo-row {
+      padding: 40px 0 60px;
+      border-top: 1px solid var(--line-subtle);
+      border-bottom: 1px solid var(--line-subtle);
+      margin-bottom: 90px;
+    }
+
+    .logo-row-heading {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      text-align: center;
+      margin-bottom: 28px;
+    }
+
+    .logo-cluster {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      gap: 32px;
+      flex-wrap: wrap;
+    }
+
+    .trust-mark {
+      font-family: var(--font-serif);
+      font-size: 18px;
+      letter-spacing: 0.05em;
+      color: var(--ink-charcoal);
+      opacity: 0.85;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+    }
+
+    .trust-mark .badge {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      border: 1px solid var(--line-orbit);
+      padding: 2px 6px;
+      border-radius: 4px;
+      color: var(--ink-muted);
+    }
+
+    /* SECTION 2: THE REAL-WORLD SECTORS (Cafes & Garages) */
+    .sectors-section {
+      padding-bottom: 100px;
+    }
+
+    .section-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent-blue);
+      margin-bottom: 16px;
+    }
+
+    .section-title {
+      font-family: var(--font-serif);
+      font-size: clamp(36px, 4vw, 52px);
+      line-height: 1.15;
+      font-weight: 400;
+      margin-bottom: 50px;
+      max-width: 720px;
+    }
+
+    .sectors-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 40px;
+    }
+
+    .sector-card {
+      border: 1px solid var(--line-subtle);
+      background-color: var(--bg-cream);
+      padding: 44px;
+      position: relative;
+    }
+
+    .sector-tag {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      color: var(--ink-muted);
+      margin-bottom: 16px;
+      text-transform: uppercase;
+    }
+
+    .sector-headline {
+      font-family: var(--font-serif);
+      font-size: 26px;
+      font-weight: 600;
+      margin-bottom: 18px;
+      color: var(--ink-black);
+    }
+
+    .sector-prose {
+      font-size: 15px;
+      line-height: 1.7;
+      color: var(--ink-charcoal);
+      margin-bottom: 28px;
+    }
+
+    .spec-row {
+      display: flex;
+      justify-content: space-between;
+      border-top: 1px dashed var(--line-subtle);
+      padding-top: 14px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+    }
+
+    .spec-row span.val {
+      color: var(--accent-blue);
+      font-weight: 600;
+    }
+
+    /* SECTION 3: APPOINTMENT / DISPATCH */
+    .dispatch-classical {
+      padding: 100px 0;
+      border-top: 1px solid var(--line-subtle);
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .dispatch-form-card {
+      background-color: var(--bg-cream);
+      border: 1px solid var(--line-subtle);
+      padding: 44px;
+    }
+
+    .field-group {
+      margin-bottom: 22px;
+    }
+
+    .field-label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      color: var(--ink-muted);
+      margin-bottom: 8px;
+    }
+
+    .field-input, .field-select, .field-textarea {
+      width: 100%;
+      background-color: #ffffff;
+      border: 1px solid rgba(17, 17, 17, 0.15);
+      padding: 12px 16px;
+      font-family: var(--font-display);
+      font-size: 14px;
+      color: var(--ink-black);
+      outline: none;
+      transition: border-color 0.2s ease;
+    }
+
+    .field-input:focus, .field-select:focus, .field-textarea:focus {
+      border-color: var(--accent-blue);
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--line-subtle);
+      padding: 60px 0;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--ink-muted);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    @media (max-width: 900px) {
+      .hero-classical, .sectors-grid, .dispatch-classical {
+        grid-template-columns: 1fr;
+      }
+      .figure-slot {
+        height: 380px;
+      }
+      .logo-cluster {
+        justify-content: center;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Subtle Celestial Orbit Lines Sweeping Across Page Behind Text Column -->
+  <div class="celestial-orbit-bg">
+    <svg class="orbit-svg" viewBox="0 0 1440 900" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <circle cx="850" cy="450" r="320" stroke="rgba(17, 17, 17, 0.06)" stroke-width="1"/>
+      <circle cx="850" cy="450" r="480" stroke="rgba(17, 17, 17, 0.05)" stroke-dasharray="3 6" stroke-width="1"/>
+      <circle cx="850" cy="450" r="640" stroke="rgba(17, 17, 17, 0.04)" stroke-width="1"/>
+      <ellipse cx="600" cy="400" rx="720" ry="280" stroke="rgba(29, 78, 216, 0.05)" stroke-width="1" transform="rotate(-15 600 400)"/>
+    </svg>
+  </div>
+
+  <div class="wrapper">
+    <!-- Classical Editorial Header -->
+    <header>
+      <div class="brand-mark">
+        <span class="brand-logo-text">Verlyn Tech</span>
+        <span class="brand-subtext">Est. 2026 // Operational Systems</span>
+      </div>
+
+      <div class="header-center">
+        <span>Treatise on Local Business Dispatch</span>
+      </div>
+
+      <a href="#consultation" class="blue-pill-cta">Request Private Consultation</a>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-classical">
+      <div class="hero-text-column">
+        <div class="folio-stamp">
+          OPUS IV // LOCAL TRADE INFRASTRUCTURE
+        </div>
+
+        <h1 class="classical-headline">
+          The small team's unfair advantage in an era of <em>indifference</em>.
+        </h1>
+
+        <p class="classical-prose">
+          We install permanent, sub-second web presence and automated WhatsApp dispatch for independent cafes and automotive workshops. Serious, crafted intelligence that turns fleeting inquiries into confirmed patrons.
+        </p>
+
+        <div class="cta-cluster">
+          <a href="#consultation" class="blue-pill-cta">Commence 14-Day Pilot</a>
+          <a href="#sectors" class="secondary-link">Read Field Studies &rarr;</a>
+        </div>
+
+        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--ink-muted); display: flex; gap: 24px;">
+          <span>DISPATCH: &lt; 90 SECONDS</span>
+          <span>&bull;</span>
+          <span>OWNERSHIP: 100% CLIENT</span>
+          <span>&bull;</span>
+          <span>TERM: 30-DAY PROOF</span>
+        </div>
+      </div>
+
+      <!-- RIGHT HALF: HERO RESERVED STAND-IN (Grainy vintage illustration of a classical robed scholar studying charts, isolated on white) -->
+      <div class="figure-slot">
+        <div class="scholar-standin">
+          <div class="scholar-plate">
+            <!-- Vintage Etched Illustration Stand-in (Isolated on White with Stipple Grain & Geometry) -->
+            <svg class="scholar-svg" viewBox="0 0 500 420" fill="none" xmlns="http://www.w3.org/2000/svg">
+              <rect width="500" height="420" fill="#ffffff"/>
+              
+              <!-- Subtle Etching Frame & Coordinate Ticks -->
+              <rect x="20" y="20" width="460" height="380" stroke="#111111" stroke-width="0.75" stroke-dasharray="2 4"/>
+              
+              <!-- Architectural Geometry Lines & Compass Arcs -->
+              <circle cx="250" cy="210" r="140" stroke="#111111" stroke-width="0.8" opacity="0.25"/>
+              <circle cx="250" cy="210" r="90" stroke="#111111" stroke-width="0.6" stroke-dasharray="4 4" opacity="0.35"/>
+              <line x1="250" y1="40" x2="250" y2="380" stroke="#111111" stroke-width="0.6" opacity="0.2"/>
+              <line x1="50" y1="210" x2="450" y2="210" stroke="#111111" stroke-width="0.6" opacity="0.2"/>
+
+              <!-- Classical Robed Scholar Figure Silhouette with Engraving Hatching -->
+              <g opacity="0.85">
+                <!-- Robe and Shoulders -->
+                <path d="M190,320 C180,270 210,230 230,210 C240,195 245,180 245,160 C245,140 255,130 265,130 C275,130 285,140 285,160 C285,180 290,195 300,210 C320,230 350,270 340,320 Z" fill="#f6f5f2" stroke="#111111" stroke-width="1.2"/>
+                
+                <!-- Scholar Head & Laurel Profile -->
+                <circle cx="265" cy="140" r="22" fill="#ffffff" stroke="#111111" stroke-width="1.2"/>
+                <path d="M250,135 Q265,120 280,135" stroke="#1d4ed8" stroke-width="1.5" fill="none"/>
+                
+                <!-- Extended Arm Holding Compass/Calliper toward Chart -->
+                <path d="M290,210 L340,180 L360,200" stroke="#111111" stroke-width="1.5" stroke-linecap="round" fill="none"/>
+                
+                <!-- Parchment Chart on Easel -->
+                <rect x="330" y="160" width="80" height="110" fill="#ffffff" stroke="#111111" stroke-width="1.2" transform="rotate(-8 330 160)"/>
+                <line x1="340" y1="180" x2="395" y2="175" stroke="#111111" stroke-width="0.8"/>
+                <line x1="338" y1="195" x2="393" y2="190" stroke="#111111" stroke-width="0.8"/>
+                <line x1="336" y1="210" x2="390" y2="205" stroke="#111111" stroke-width="0.8"/>
+                
+                <!-- Classical Etched Hatching Lines on Robe -->
+                <line x1="210" y1="280" x2="320" y2="280" stroke="#111111" stroke-width="0.5" opacity="0.4"/>
+                <line x1="205" y1="290" x2="325" y2="290" stroke="#111111" stroke-width="0.5" opacity="0.4"/>
+                <line x1="200" y1="300" x2="330" y2="300" stroke="#111111" stroke-width="0.5" opacity="0.4"/>
+                <line x1="195" y1="310" x2="335" y2="310" stroke="#111111" stroke-width="0.5" opacity="0.4"/>
+              </g>
+
+              <!-- Lithographic Annotation -->
+              <text x="50" y="370" font-family="JetBrains Mono" font-size="8" fill="#666666" letter-spacing="1">FIG. I &mdash; THE MEASUREMENT OF DISPATCH VELOCITY</text>
+              <text x="350" y="370" font-family="JetBrains Mono" font-size="8" fill="#1d4ed8" letter-spacing="1">VERLYN TECH &copy; 2026</text>
+            </svg>
+
+            <div class="plate-caption">
+              [RESERVED HERO: GRAINY VINTAGE ILLUSTRATION OF A CLASSICAL ROBED SCHOLAR]
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- TRUST LOGO ROW (Below Hero) -->
+    <div class="trust-logo-row">
+      <div class="logo-row-heading">CALIBRATED ACROSS INDEPENDENT UAE ESTABLISHMENTS</div>
+      <div class="logo-cluster">
+        <div class="trust-mark">
+          <span>AL MANSOOR MOTORS</span>
+          <span class="badge">GARAGE</span>
+        </div>
+        <div class="trust-mark">
+          <span>CASA BEAN ROASTERS</span>
+          <span class="badge">ESPRESSO</span>
+        </div>
+        <div class="trust-mark">
+          <span>APEX AUTOMOTIVE BAY</span>
+          <span class="badge">DIAGNOSTICS</span>
+        </div>
+        <div class="trust-mark">
+          <span>DUNE SPECIALTY CAFE</span>
+          <span class="badge">BAKERY</span>
+        </div>
+        <div class="trust-mark">
+          <span>AL QUOZ PERFORMANCE</span>
+          <span class="badge">TUNING</span>
+        </div>
+      </div>
+    </div>
+
+    <!-- SECTION 2: SECTORS (Cafes & Garages) -->
+    <section id="sectors" class="sectors-section">
+      <div class="section-eyebrow">// FIELD DISPATCH</div>
+      <h2 class="section-title">Engineered specifically for where physical craftsmanship meets the public.</h2>
+
+      <div class="sectors-grid">
+        <!-- Cafe Card -->
+        <div class="sector-card">
+          <div class="sector-tag">DISCIPLINE I: SPECIALTY COFFEE &amp; BISTROS</div>
+          <h3 class="sector-headline">The Independent Cafe &amp; Roastery</h3>
+          <p class="sector-prose">
+            A barista's focus belongs on dialling espresso and welcoming the guest at the counter. When patrons message Instagram or WhatsApp asking for wholesale beans, catering, or event bookings, our automated router answers in 30 seconds with complete catalogs and payment confirmation.
+          </p>
+          <div class="spec-row">
+            <span>UNATTENDED CATERING INQUIRIES</span>
+            <span class="val">ELIMINATED ENTIRELY</span>
+          </div>
+        </div>
+
+        <!-- Garage Card -->
+        <div class="sector-card">
+          <div class="sector-tag">DISCIPLINE II: AUTOMOTIVE &amp; MECHANICAL TRADES</div>
+          <h3 class="sector-headline">The 3-Bay Independent Garage</h3>
+          <p class="sector-prose">
+            Technicians lose hours stopping work to take calls about repair ETAs and inspection quotes. We wire photo-verified inspection updates directly to the customer's WhatsApp with one-tap digital quote approval.
+          </p>
+          <div class="spec-row">
+            <span>BILLABLE SHOP LABOR RECOVERED</span>
+            <span class="val">+12.5 HOURS PER WEEK</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: APPOINTMENT / DISPATCH FORM -->
+    <section id="consultation" class="dispatch-classical">
+      <div>
+        <div class="section-eyebrow">// COMMENCE INSTALLATION</div>
+        <h2 style="font-family: var(--font-serif); font-size: 38px; line-height: 1.2; margin-bottom: 24px;">
+          Deploy Verlyn to your establishment.
+        </h2>
+        <p style="color: var(--ink-charcoal); line-height: 1.8; margin-bottom: 32px;">
+          We admit three local businesses into each bi-weekly installation cohort. We audit your lead leak, deploy custom featherweight code, configure your WhatsApp API, and train your floor staff.
+        </p>
+
+        <div style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-blue); line-height: 1.6;">
+          <strong>THE VERLYN COVENANT:</strong> If customer response velocity does not demonstrably improve during the 30-day pilot, the installation fee is returned in full.
+        </div>
+      </div>
+
+      <div class="dispatch-form-card">
+        <form onsubmit="event.preventDefault(); alert('Consultation request recorded. The Verlyn team will reach out via WhatsApp within 4 hours.');">
+          <div class="field-group">
+            <label class="field-label">Name of Founder / Managing Operator</label>
+            <input type="text" class="field-input" placeholder="e.g. Tariq Al Mansoori" required>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label">Establishment Sector</label>
+            <select class="field-select">
+              <option>Specialty Cafe / Artisan Roastery</option>
+              <option>Automotive Workshop / Repair Garage</option>
+              <option>Boutique Bakery / Food Service</option>
+              <option>Custom Motorcycle / Detailing Bay</option>
+              <option>Other Independent Trade</option>
+            </select>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label">WhatsApp Number for Consultation</label>
+            <input type="tel" class="field-input" placeholder="+971 50 ... / +44 7..." required>
+          </div>
+
+          <div class="field-group">
+            <label class="field-label">Primary Operational Bottleneck</label>
+            <textarea rows="3" class="field-textarea" placeholder="Describe where customer inquiries currently get delayed..."></textarea>
+          </div>
+
+          <button type="submit" class="blue-pill-cta" style="width: 100%; justify-content: center; padding: 16px; border: none; cursor: pointer;">
+            Confirm Dispatch Briefing
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div>VERLYN TECH &copy; 2026 // DIRECTION 05 (CLASSICAL REMIX)</div>
+      <div>SERIOUS CRAFTED INTELLIGENCE &bull; DUBAI, UAE</div>
+      <div>100% REPOSITORY CONVEYANCE</div>
+    </footer>
+  </div>
+
+</body>
+</html>

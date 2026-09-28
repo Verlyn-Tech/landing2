@@ -1,0 +1,584 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VERLYN TECH — Direction 03 / Vast Quiet Cinematic</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400;500&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --fog-white: #f5f6f7;
+      --fog-muted: #e6e8ea;
+      --ridge-slate: #2c3237;
+      --ridge-dark: #121517;
+      --ridge-deep: #0a0c0d;
+      --text-primary: #121517;
+      --text-secondary: #586168;
+      --text-light: #8e98a0;
+      --accent-warm: #a67c52;
+      --font-sans: 'Space Grotesk', -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--fog-white);
+      color: var(--text-primary);
+      font-family: var(--font-sans);
+      font-size: 14px;
+      line-height: 1.8;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+
+    /* FULL BLEED HERO CONTAINER */
+    /* Placement: full-bleed; fog-white upper half is the headline zone with tiny centered type; ridge fills the lower half */
+    .vast-hero-viewport {
+      min-height: 100vh;
+      position: relative;
+      background-color: var(--fog-white);
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      overflow: hidden;
+    }
+
+    /* Minimal Overhead Nav */
+    .quiet-nav {
+      padding: 32px 48px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      position: relative;
+      z-index: 20;
+    }
+
+    .brand-mark {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    .nav-coords {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-light);
+      letter-spacing: 0.2em;
+    }
+
+    .quiet-cta-pill {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.18em;
+      text-transform: uppercase;
+      color: var(--text-primary);
+      text-decoration: none;
+      padding: 8px 18px;
+      border: 1px solid rgba(18, 21, 23, 0.25);
+      border-radius: 999px;
+      transition: all 0.2s ease;
+      background: rgba(255, 255, 255, 0.4);
+      backdrop-filter: blur(8px);
+    }
+
+    .quiet-cta-pill:hover {
+      background-color: var(--text-primary);
+      color: var(--fog-white);
+    }
+
+    /* UPPER HALF: HEADLINE ZONE (Tiny Centered Sans & Extreme Whitespace) */
+    .headline-zone {
+      position: relative;
+      z-index: 15;
+      text-align: center;
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 60px 24px 0;
+    }
+
+    .quiet-tag {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.3em;
+      text-transform: uppercase;
+      color: var(--accent-warm);
+      margin-bottom: 28px;
+      display: inline-block;
+    }
+
+    .monumental-quiet-title {
+      font-size: clamp(28px, 4vw, 44px);
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      line-height: 1.25;
+      color: var(--text-primary);
+      text-transform: uppercase;
+      margin-bottom: 24px;
+    }
+
+    .monumental-quiet-title strong {
+      font-weight: 600;
+    }
+
+    .quiet-prose {
+      font-size: 15px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      max-width: 520px;
+      margin: 0 auto 36px;
+      font-weight: 400;
+    }
+
+    .quiet-cta-row {
+      display: flex;
+      justify-content: center;
+      gap: 16px;
+      align-items: center;
+    }
+
+    .primary-quiet-btn {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      letter-spacing: 0.16em;
+      text-transform: uppercase;
+      background-color: var(--text-primary);
+      color: var(--fog-white);
+      border: 1px solid var(--text-primary);
+      padding: 12px 28px;
+      text-decoration: none;
+      transition: all 0.2s ease;
+    }
+
+    .primary-quiet-btn:hover {
+      background-color: var(--accent-warm);
+      border-color: var(--accent-warm);
+    }
+
+    /* LOWER HALF: HERO RESERVED STAND-IN (Vast Desaturated Aerial Mountain Ridge in Mist) */
+    .ridge-hero-slot {
+      position: relative;
+      width: 100%;
+      height: 480px;
+      margin-top: -40px;
+      display: flex;
+      align-items: flex-end;
+    }
+
+    .mountain-standin {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      overflow: hidden;
+    }
+
+    .mountain-svg {
+      width: 100%;
+      height: 100%;
+      display: block;
+    }
+
+    .ridge-metadata-overlay {
+      position: absolute;
+      bottom: 32px;
+      left: 48px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      color: rgba(255, 255, 255, 0.7);
+      z-index: 10;
+    }
+
+    .ridge-metadata-overlay-right {
+      position: absolute;
+      bottom: 32px;
+      right: 48px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      color: rgba(255, 255, 255, 0.7);
+      z-index: 10;
+      text-align: right;
+    }
+
+    /* SECTION 2: EDITORIAL CONTENT (Cafes & Garages) */
+    .calm-section {
+      background-color: #ffffff;
+      padding: 120px 48px;
+      border-bottom: 1px solid var(--fog-muted);
+    }
+
+    .inner-bound {
+      max-width: 1080px;
+      margin: 0 auto;
+    }
+
+    .section-quiet-header {
+      display: grid;
+      grid-template-columns: 200px 1fr;
+      gap: 40px;
+      margin-bottom: 80px;
+      align-items: baseline;
+    }
+
+    .editorial-label {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.25em;
+      text-transform: uppercase;
+      color: var(--accent-warm);
+    }
+
+    .editorial-heading {
+      font-size: 28px;
+      font-weight: 300;
+      letter-spacing: -0.01em;
+      line-height: 1.4;
+      color: var(--text-primary);
+    }
+
+    .editorial-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+    }
+
+    .case-block {
+      border-top: 1px solid var(--text-primary);
+      padding-top: 32px;
+    }
+
+    .case-number {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-light);
+      margin-bottom: 16px;
+      letter-spacing: 0.1em;
+    }
+
+    .case-title {
+      font-size: 20px;
+      font-weight: 500;
+      margin-bottom: 16px;
+      letter-spacing: -0.01em;
+    }
+
+    .case-body {
+      font-size: 14px;
+      line-height: 1.8;
+      color: var(--text-secondary);
+      margin-bottom: 24px;
+    }
+
+    .case-metric {
+      font-family: var(--font-mono);
+      font-size: 12px;
+      padding-top: 16px;
+      border-top: 1px dashed var(--fog-muted);
+      color: var(--text-primary);
+      display: flex;
+      justify-content: space-between;
+    }
+
+    /* SECTION 3: QUIET PROTOCOL */
+    .spec-table-section {
+      background-color: var(--fog-white);
+      padding: 120px 48px;
+      border-bottom: 1px solid var(--fog-muted);
+    }
+
+    .spec-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      margin-top: 40px;
+    }
+
+    .spec-table th {
+      text-align: left;
+      font-size: 10px;
+      letter-spacing: 0.2em;
+      color: var(--text-light);
+      padding: 16px 0;
+      border-bottom: 1px solid var(--text-primary);
+      text-transform: uppercase;
+    }
+
+    .spec-table td {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--fog-muted);
+      vertical-align: top;
+      color: var(--text-secondary);
+    }
+
+    .spec-table td.strong {
+      color: var(--text-primary);
+      font-weight: 500;
+    }
+
+    /* SECTION 4: CONTACT */
+    .contact-quiet {
+      background-color: #ffffff;
+      padding: 120px 48px;
+    }
+
+    .quiet-form-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 60px;
+      align-items: start;
+    }
+
+    .quiet-input {
+      width: 100%;
+      background: transparent;
+      border: none;
+      border-bottom: 1px solid rgba(18, 21, 23, 0.2);
+      padding: 14px 0;
+      font-family: var(--font-mono);
+      font-size: 13px;
+      color: var(--text-primary);
+      outline: none;
+      margin-bottom: 28px;
+      transition: border-color 0.2s ease;
+    }
+
+    .quiet-input:focus {
+      border-bottom-color: var(--text-primary);
+    }
+
+    /* FOOTER */
+    footer {
+      background-color: var(--ridge-deep);
+      color: rgba(255, 255, 255, 0.6);
+      padding: 60px 48px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      letter-spacing: 0.15em;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+    }
+
+    @media (max-width: 840px) {
+      .section-quiet-header, .editorial-grid, .quiet-form-grid {
+        grid-template-columns: 1fr;
+      }
+      .quiet-nav, footer {
+        padding: 24px;
+      }
+      .headline-zone {
+        padding-top: 40px;
+      }
+      .ridge-hero-slot {
+        height: 320px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- FULL BLEED VAST VIEWPORT -->
+  <div class="vast-hero-viewport">
+    
+    <!-- Quiet Header -->
+    <header class="quiet-nav">
+      <div class="brand-mark">VERLYN TECH</div>
+      <div class="nav-coords">ALT: 1,840m // LAT: 25.2048° N</div>
+      <a href="#dialogue" class="quiet-cta-pill">ENGAGE TEAM</a>
+    </header>
+
+    <!-- UPPER HALF: HEADLINE ZONE (Tiny Centered Sans & Whitespace) -->
+    <div class="headline-zone">
+      <span class="quiet-tag">SYSTEMS FOR PHYSICAL ENTERPRISE</span>
+      
+      <h1 class="monumental-quiet-title">
+        QUIET DISPATCH. <br>
+        <strong>ABSOLUTE LOCAL PROOF.</strong>
+      </h1>
+
+      <p class="quiet-prose">
+        We build permanent, sub-second web infrastructure and automated WhatsApp dispatch for independent cafes and automotive workshops. Calm intelligence that handles customer flow while you focus on the craft.
+      </p>
+
+      <div class="quiet-cta-row">
+        <a href="#dialogue" class="primary-quiet-btn">INITIATE 14-DAY COHORT</a>
+      </div>
+    </div>
+
+    <!-- LOWER HALF: HERO RESERVED STAND-IN (Vast Desaturated Aerial Mountain Ridge in Mist) -->
+    <div class="ridge-hero-slot">
+      <div class="mountain-standin">
+        
+        <!-- Stand-in Aerial Mountain Ridge Vector Graphic -->
+        <svg class="mountain-svg" viewBox="0 0 1440 480" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
+          <!-- Sky Gradient Transition into Fog -->
+          <rect width="1440" height="480" fill="url(#fogGradient)"/>
+
+          <!-- Distant Misty Ridge -->
+          <path d="M0,260 Q180,220 380,240 T840,210 T1220,230 T1440,200 L1440,480 L0,480 Z" fill="#717c83" opacity="0.45"/>
+          
+          <!-- Midground Ridge Layer -->
+          <path d="M0,310 Q240,260 520,300 T980,270 T1340,310 T1440,280 L1440,480 L0,480 Z" fill="#3c454c" opacity="0.75"/>
+          
+          <!-- Foreground Dark Basalt Ridge -->
+          <path d="M0,370 Q160,320 420,350 T880,310 T1260,360 T1440,330 L1440,480 L0,480 Z" fill="#121517"/>
+
+          <!-- Topographic Sharp Ridge Lines -->
+          <path d="M420,350 L560,480 M880,310 L940,480 M160,320 L240,480" stroke="#252c30" stroke-width="1.5" opacity="0.6"/>
+
+          <defs>
+            <linearGradient id="fogGradient" x1="720" y1="0" x2="720" y2="480" gradientUnits="userSpaceOnUse">
+              <stop offset="0%" stop-color="#f5f6f7" stop-opacity="1"/>
+              <stop offset="45%" stop-color="#f5f6f7" stop-opacity="0.95"/>
+              <stop offset="70%" stop-color="#e2e5e8" stop-opacity="0.5"/>
+              <stop offset="100%" stop-color="#2c3237" stop-opacity="0"/>
+            </linearGradient>
+          </defs>
+        </svg>
+
+        <div class="ridge-metadata-overlay">
+          <div>[RESERVED HERO: VAST DESATURATED AERIAL MOUNTAIN RIDGE]</div>
+          <div style="opacity: 0.6; font-size: 9px; margin-top: 2px;">FOG-WHITE UPPER HALF // BASALT RIDGE LOWER HALF</div>
+        </div>
+
+        <div class="ridge-metadata-overlay-right">
+          <div>SCALE: 1:25,000</div>
+          <div style="opacity: 0.6; font-size: 9px; margin-top: 2px;">STATUS: ZERO MARKETING HYPE</div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECTION 2: EDITORIAL CONTENT (Cafes & Garages) -->
+  <section class="calm-section">
+    <div class="inner-bound">
+      <div class="section-quiet-header">
+        <div class="editorial-label">// 01 THE FIELD OBSERVATION</div>
+        <div class="editorial-heading">
+          High-reputation physical businesses suffer from communication friction, not a lack of craftsmanship.
+        </div>
+      </div>
+
+      <div class="editorial-grid">
+        <!-- Cafe -->
+        <div class="case-block">
+          <div class="case-number">CASE / 01</div>
+          <h3 class="case-title">The Specialty Cafe & Micro-Roastery</h3>
+          <p class="case-body">
+            A customer attempts to order 5kg of whole beans or inquire about catering. The barista is pulling shots. The message sits unanswered for 3 hours. The customer orders elsewhere. We resolve this by placing a lightning-fast catalog with instant WhatsApp confirmation.
+          </p>
+          <div class="case-metric">
+            <span>UNANSWERED INQUIRIES</span>
+            <span>REDUCED TO ZERO</span>
+          </div>
+        </div>
+
+        <!-- Garage -->
+        <div class="case-block">
+          <div class="case-number">CASE / 02</div>
+          <h3 class="case-title">The Independent Garage & Diagnostic Bay</h3>
+          <p class="case-body">
+            A vehicle owner is anxious about repair progress. Technicians waste 15 minutes of billable labor wiping grease to answer the workshop telephone. We install an automated status relay: one click sends photo proof and estimated collection time directly to the customer's WhatsApp.
+          </p>
+          <div class="case-metric">
+            <span>WEEKLY PHONE INTERRUPTION</span>
+            <span>- 14.5 BILLABLE HOURS</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECTION 3: SPECIFICATION TABLE -->
+  <section class="spec-table-section">
+    <div class="inner-bound">
+      <div class="editorial-label">// 02 DELIVERABLE ARCHITECTURE</div>
+      
+      <table class="spec-table">
+        <thead>
+          <tr>
+            <th>Module</th>
+            <th>Mechanism</th>
+            <th>Latency</th>
+            <th>Client Ownership</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr>
+            <td class="strong">Static Presence</td>
+            <td>Handcrafted, unbloated HTML/CSS with local SEO structured markup</td>
+            <td>&lt; 350ms global edge</td>
+            <td>100% repository transfer</td>
+          </tr>
+          <tr>
+            <td class="strong">WhatsApp Gateway</td>
+            <td>Official Meta Business API integration with automated conversational routing</td>
+            <td>Instant triage</td>
+            <td>Client phone credentials</td>
+          </tr>
+          <tr>
+            <td class="strong">Reputation Harvester</td>
+            <td>Post-service review trigger sending direct 5-star Google Review links</td>
+            <td>20m post completion</td>
+            <td>Client Google profile</td>
+          </tr>
+        </tbody>
+      </table>
+    </div>
+  </section>
+
+  <!-- SECTION 4: CONTACT DIALOGUE -->
+  <section id="dialogue" class="contact-quiet">
+    <div class="inner-bound">
+      <div class="quiet-form-grid">
+        <div>
+          <div class="editorial-label">// 03 COMMENCE INSTALLATION</div>
+          <h2 style="font-size: 32px; font-weight: 300; margin: 16px 0 24px; text-transform: uppercase;">
+            BEGIN 14-DAY PILOT
+          </h2>
+          <p style="color: var(--text-secondary); line-height: 1.8; max-width: 420px;">
+            We onboard a maximum of three workshops or cafes per cycle. We personally map your customer flow, configure your systems, and ensure your staff never deals with messy software.
+          </p>
+          <div style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-warm); margin-top: 32px;">
+            GUARANTEE: 100% REFUND IF LEAD RESPONSE VELOCITY DOES NOT DOUBLE.
+          </div>
+        </div>
+
+        <div>
+          <form onsubmit="event.preventDefault(); alert('Request received. Verlyn team will initiate quiet review within 4 hours.');">
+            <input type="text" placeholder="NAME OF OPERATOR / OWNER" class="quiet-input" required>
+            <input type="text" placeholder="BUSINESS NAME & LOCATION" class="quiet-input" required>
+            <input type="tel" placeholder="WHATSAPP NUMBER" class="quiet-input" required>
+            <input type="text" placeholder="CURRENT BIGGEST REVENUE LEAK (OPTIONAL)" class="quiet-input">
+            
+            <button type="submit" class="primary-quiet-btn" style="width: 100%; padding: 16px; margin-top: 12px; cursor: pointer;">
+              SUBMIT DISPATCH BRIEF →
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <div>VERLYN TECH // DIRECTION 03 (VAST QUIET CINEMATIC)</div>
+    <div>DESIGNED WITH RESTRAINT // SERIOUS INTELLIGENCE</div>
+    <div>© 2026 VERLYN</div>
+  </footer>
+
+</body>
+</html>

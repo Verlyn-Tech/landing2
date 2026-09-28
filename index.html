@@ -1,0 +1,261 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VERLYN TECH — 5 Landing Page Directions</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@400;500;700&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg: #090b0c;
+      --card-bg: #121517;
+      --card-border: #1e2327;
+      --text-main: #f0f2f4;
+      --text-muted: #838e96;
+      --accent: #d48b28;
+      --font-sans: 'Space Grotesk', sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg);
+      color: var(--text-main);
+      font-family: var(--font-sans);
+      padding: 32px 24px;
+      line-height: 1.6;
+    }
+
+    .container {
+      max-width: 1400px;
+      margin: 0 auto;
+    }
+
+    header {
+      border-bottom: 1px solid var(--card-border);
+      padding-bottom: 24px;
+      margin-bottom: 32px;
+      display: flex;
+      justify-content: space-between;
+      align-items: flex-end;
+    }
+
+    .brand-title {
+      font-size: 24px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+    }
+
+    .brand-sub {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--text-muted);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .meta-badge {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      padding: 4px 10px;
+      border: 1px solid var(--card-border);
+      color: var(--accent);
+      background: rgba(212, 139, 40, 0.08);
+    }
+
+    /* Switcher Nav Tabs */
+    .switcher-bar {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 12px;
+      margin-bottom: 24px;
+    }
+
+    .direction-tab {
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      padding: 16px;
+      cursor: pointer;
+      text-decoration: none;
+      color: inherit;
+      transition: all 0.15s ease;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      height: 110px;
+    }
+
+    .direction-tab:hover, .direction-tab.active {
+      border-color: var(--accent);
+      background: #171b1e;
+      transform: translateY(-2px);
+    }
+
+    .tab-idx {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--accent);
+      font-weight: 700;
+      letter-spacing: 0.12em;
+    }
+
+    .tab-name {
+      font-size: 14px;
+      font-weight: 600;
+      margin: 4px 0;
+    }
+
+    .tab-aesthetic {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--text-muted);
+      line-height: 1.3;
+    }
+
+    /* Action bar */
+    .preview-header {
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      background: var(--card-bg);
+      border: 1px solid var(--card-border);
+      border-bottom: none;
+      padding: 12px 20px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+    }
+
+    .open-btn {
+      color: var(--accent);
+      text-decoration: none;
+      font-weight: 600;
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+
+    .open-btn:hover {
+      text-decoration: underline;
+    }
+
+    /* Preview Iframe Frame */
+    .preview-frame-container {
+      width: 100%;
+      height: 820px;
+      border: 1px solid var(--card-border);
+      background: #000;
+      box-shadow: 0 12px 48px rgba(0, 0, 0, 0.6);
+    }
+
+    iframe {
+      width: 100%;
+      height: 100%;
+      border: none;
+    }
+
+    @media (max-width: 1000px) {
+      .switcher-bar {
+        grid-template-columns: 1fr 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <div class="container">
+    <header>
+      <div>
+        <h1 class="brand-title">VERLYN TECH &mdash; 5 DESIGN DIRECTIONS</h1>
+        <div class="brand-sub">Crafted Operational Systems for Independent Cafes &amp; Garages</div>
+      </div>
+      <div class="meta-badge">
+        5 ISOLATED WORLDS // ZERO BLENDING
+      </div>
+    </header>
+
+    <!-- Navigation Tabs for the 5 Directions -->
+    <div class="switcher-bar">
+      <a href="javascript:void(0)" onclick="loadDirection('v1', this)" class="direction-tab active">
+        <div>
+          <span class="tab-idx">DIR 01</span>
+          <div class="tab-name">Print-Tech Paper</div>
+        </div>
+        <div class="tab-aesthetic">Pale sage, topographic contour lines, mono chips, filmstrip ticks.</div>
+      </a>
+
+      <a href="javascript:void(0)" onclick="loadDirection('v2', this)" class="direction-tab">
+        <div>
+          <span class="tab-idx">DIR 02</span>
+          <div class="tab-name">Data-as-Texture</div>
+        </div>
+        <div class="tab-aesthetic">Amber binary clouds, dark teal sky, golden accent CTAs, data stream.</div>
+      </a>
+
+      <a href="javascript:void(0)" onclick="loadDirection('v3', this)" class="direction-tab">
+        <div>
+          <span class="tab-idx">DIR 03</span>
+          <div class="tab-name">Vast Quiet Cinematic</div>
+        </div>
+        <div class="tab-aesthetic">Editorial minimalism, vast aerial mountain ridge in mist, tiny centered type.</div>
+      </a>
+
+      <a href="javascript:void(0)" onclick="loadDirection('v4', this)" class="direction-tab">
+        <div>
+          <span class="tab-idx">DIR 04</span>
+          <div class="tab-name">Dither Mono</div>
+        </div>
+        <div class="tab-aesthetic">Stark studio dark, 1-bit Bayer dither, giant cropped VERLYN wordmark.</div>
+      </a>
+
+      <a href="javascript:void(0)" onclick="loadDirection('v5', this)" class="direction-tab">
+        <div>
+          <span class="tab-idx">DIR 05</span>
+          <div class="tab-name">Classical Remix</div>
+        </div>
+        <div class="tab-aesthetic">White ground, faint orbit lines, classical scholar plate, blue pill CTA.</div>
+      </a>
+    </div>
+
+    <!-- Live Preview Stage -->
+    <div class="preview-header">
+      <div id="directionTitle">PREVIEW: DIRECTION 01 / Print-Tech Paper (v1/index.html)</div>
+      <a id="openTabLink" href="v1/index.html" target="_blank" class="open-btn">
+        OPEN FULL SCREEN IN NEW TAB &nearr;
+      </a>
+    </div>
+
+    <div class="preview-frame-container">
+      <iframe id="previewFrame" src="v1/index.html"></iframe>
+    </div>
+  </div>
+
+  <script>
+    const dirInfo = {
+      v1: { title: "PREVIEW: DIRECTION 01 / Print-Tech Paper (v1/index.html)", path: "v1/index.html" },
+      v2: { title: "PREVIEW: DIRECTION 02 / Data-as-Texture (v2/index.html)", path: "v2/index.html" },
+      v3: { title: "PREVIEW: DIRECTION 03 / Vast Quiet Cinematic (v3/index.html)", path: "v3/index.html" },
+      v4: { title: "PREVIEW: DIRECTION 04 / Dither Mono (v4/index.html)", path: "v4/index.html" },
+      v5: { title: "PREVIEW: DIRECTION 05 / Classical Remix (v5/index.html)", path: "v5/index.html" }
+    };
+
+    function loadDirection(versionKey, element) {
+      document.querySelectorAll('.direction-tab').forEach(tab => tab.classList.remove('active'));
+      element.classList.add('active');
+      
+      const info = dirInfo[versionKey];
+      document.getElementById('previewFrame').src = info.path;
+      document.getElementById('directionTitle').innerText = info.title;
+      document.getElementById('openTabLink').href = info.path;
+    }
+  </script>
+
+</body>
+</html>

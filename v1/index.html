@@ -1,0 +1,890 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>VERLYN TECH — Direction 01 / Print-Tech Paper</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Space+Grotesk:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  <style>
+    :root {
+      --bg-sage: #e1e7dc;
+      --bg-sage-card: #d7ded2;
+      --bg-sage-darker: #c9d2c3;
+      --ink-dark: #122118;
+      --ink-secondary: #2c4436;
+      --ink-muted: #526b5c;
+      --accent-rust: #c84c24;
+      --accent-ochre: #d48b28;
+      --line-subtle: rgba(18, 33, 24, 0.15);
+      --line-strong: rgba(18, 33, 24, 0.4);
+      --font-display: 'Space Grotesk', -apple-system, sans-serif;
+      --font-mono: 'JetBrains Mono', monospace;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+    }
+
+    body {
+      background-color: var(--bg-sage);
+      color: var(--ink-dark);
+      font-family: var(--font-display);
+      font-size: 15px;
+      line-height: 1.6;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+      position: relative;
+    }
+
+    /* Film-strip and technical edge markings */
+    .edge-filmstrip-top {
+      display: flex;
+      justify-content: space-between;
+      border-bottom: 1px solid var(--line-subtle);
+      padding: 4px 16px;
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.14em;
+      color: var(--ink-muted);
+      background-color: rgba(18, 33, 24, 0.03);
+    }
+
+    .ticks-row {
+      display: flex;
+      gap: 12px;
+      user-select: none;
+    }
+
+    /* Outer Container */
+    .wrapper {
+      max-width: 1280px;
+      margin: 0 auto;
+      padding: 0 32px;
+      position: relative;
+    }
+
+    /* Technical Header */
+    header {
+      padding: 24px 0;
+      border-bottom: 1px solid var(--line-strong);
+      display: grid;
+      grid-template-columns: auto 1fr auto;
+      gap: 32px;
+      align-items: center;
+    }
+
+    .brand-mark {
+      font-family: var(--font-mono);
+      font-weight: 700;
+      font-size: 16px;
+      letter-spacing: -0.02em;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .brand-mark .stamp {
+      background-color: var(--ink-dark);
+      color: var(--bg-sage);
+      padding: 2px 6px;
+      font-size: 10px;
+      border-radius: 2px;
+    }
+
+    .header-metadata {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--ink-muted);
+      letter-spacing: 0.08em;
+      display: flex;
+      gap: 24px;
+      border-left: 1px dashed var(--line-subtle);
+      padding-left: 24px;
+    }
+
+    .header-nav {
+      display: flex;
+      align-items: center;
+      gap: 16px;
+    }
+
+    .chip-btn {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      padding: 8px 16px;
+      background-color: transparent;
+      color: var(--ink-dark);
+      border: 1px solid var(--ink-dark);
+      text-decoration: none;
+      font-weight: 500;
+      cursor: pointer;
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      transition: all 0.15s ease;
+    }
+
+    .chip-btn:hover {
+      background-color: var(--ink-dark);
+      color: var(--bg-sage);
+    }
+
+    .chip-btn.accent {
+      background-color: var(--ink-dark);
+      color: var(--bg-sage);
+      border-color: var(--ink-dark);
+    }
+
+    .chip-btn.accent:hover {
+      background-color: var(--accent-rust);
+      border-color: var(--accent-rust);
+    }
+
+    /* HERO SECTION */
+    .hero-section {
+      min-height: calc(100vh - 120px);
+      padding: 60px 0 80px;
+      position: relative;
+      display: grid;
+      grid-template-columns: 1.15fr 1fr;
+      gap: 40px;
+      align-items: center;
+      border-bottom: 1px solid var(--line-strong);
+    }
+
+    .hero-content {
+      position: relative;
+      z-index: 2;
+    }
+
+    .spec-tracker {
+      font-family: var(--font-mono);
+      font-size: 10px;
+      color: var(--accent-rust);
+      letter-spacing: 0.15em;
+      text-transform: uppercase;
+      margin-bottom: 24px;
+      display: flex;
+      align-items: center;
+      gap: 10px;
+    }
+
+    .spec-tracker::before {
+      content: "";
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      background-color: var(--accent-rust);
+    }
+
+    .monumental-headline {
+      font-size: clamp(48px, 6vw, 76px);
+      line-height: 0.98;
+      font-weight: 700;
+      letter-spacing: -0.04em;
+      margin-bottom: 32px;
+      color: var(--ink-dark);
+      text-transform: uppercase;
+    }
+
+    .monumental-headline span.accent-ink {
+      color: var(--ink-secondary);
+      font-style: italic;
+      font-weight: 400;
+    }
+
+    .hero-statement {
+      font-size: 17px;
+      line-height: 1.55;
+      color: var(--ink-secondary);
+      max-width: 500px;
+      margin-bottom: 40px;
+      font-weight: 400;
+    }
+
+    .hero-meta-row {
+      display: flex;
+      gap: 32px;
+      align-items: center;
+      margin-top: 40px;
+      padding-top: 24px;
+      border-top: 1px solid var(--line-subtle);
+    }
+
+    .meta-stat {
+      font-family: var(--font-mono);
+    }
+
+    .meta-stat .val {
+      font-size: 22px;
+      font-weight: 700;
+      color: var(--ink-dark);
+      line-height: 1;
+    }
+
+    .meta-stat .lbl {
+      font-size: 10px;
+      letter-spacing: 0.08em;
+      color: var(--ink-muted);
+      margin-top: 6px;
+      text-transform: uppercase;
+    }
+
+    /* HERO RESERVED STAND-IN SLOT */
+    /* Placement: isolated illustration center-right on a pale sage page, surrounded by mono data-callout chips */
+    .hero-figure-slot {
+      position: relative;
+      width: 100%;
+      height: 580px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    /* Flat CSS Stand-in for topographic contour-line illustration in dark-green ink on sage paper */
+    .topographic-standin {
+      width: 100%;
+      height: 100%;
+      position: relative;
+      background-color: var(--bg-sage);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+    }
+
+    .topo-canvas {
+      width: 100%;
+      height: 100%;
+      position: absolute;
+      inset: 0;
+      opacity: 0.9;
+    }
+
+    /* Pinned Data Callout Chips */
+    .data-callout-chip {
+      position: absolute;
+      background-color: var(--bg-sage-card);
+      border: 1px solid var(--line-strong);
+      padding: 8px 12px;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      line-height: 1.35;
+      color: var(--ink-dark);
+      box-shadow: 2px 2px 0px rgba(18, 33, 24, 0.15);
+      z-index: 3;
+      backdrop-filter: blur(2px);
+    }
+
+    .chip-top-left {
+      top: 30px;
+      left: 10px;
+    }
+
+    .chip-top-right {
+      top: 60px;
+      right: 15px;
+    }
+
+    .chip-bottom-left {
+      bottom: 50px;
+      left: 20px;
+    }
+
+    .chip-bottom-right {
+      bottom: 25px;
+      right: 30px;
+    }
+
+    .data-callout-chip .chip-label {
+      color: var(--ink-muted);
+      font-size: 8px;
+      letter-spacing: 0.1em;
+      text-transform: uppercase;
+      display: block;
+      margin-bottom: 2px;
+    }
+
+    .data-callout-chip .chip-val {
+      font-weight: 700;
+      color: var(--ink-dark);
+    }
+
+    .data-callout-chip .chip-status {
+      display: inline-block;
+      width: 5px;
+      height: 5px;
+      background-color: var(--accent-rust);
+      border-radius: 50%;
+      margin-right: 4px;
+    }
+
+    /* SECTION 2: THE REALITY (Cafes & Garages) */
+    .reality-section {
+      padding: 90px 0;
+      border-bottom: 1px solid var(--line-strong);
+    }
+
+    .section-eyebrow {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--ink-muted);
+      margin-bottom: 16px;
+      display: flex;
+      align-items: center;
+      gap: 12px;
+    }
+
+    .section-eyebrow::after {
+      content: "";
+      height: 1px;
+      width: 48px;
+      background-color: var(--line-strong);
+    }
+
+    .section-title {
+      font-size: clamp(28px, 4vw, 42px);
+      font-weight: 700;
+      letter-spacing: -0.03em;
+      line-height: 1.1;
+      margin-bottom: 48px;
+      max-width: 720px;
+      text-transform: uppercase;
+    }
+
+    .reality-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 32px;
+    }
+
+    .reality-card {
+      border: 1px solid var(--line-strong);
+      padding: 36px;
+      background-color: var(--bg-sage-card);
+      position: relative;
+    }
+
+    .reality-card .badge {
+      position: absolute;
+      top: -10px;
+      left: 24px;
+      background-color: var(--ink-dark);
+      color: var(--bg-sage);
+      font-family: var(--font-mono);
+      font-size: 9px;
+      letter-spacing: 0.12em;
+      padding: 2px 8px;
+      text-transform: uppercase;
+    }
+
+    .card-headline {
+      font-size: 22px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 16px;
+      line-height: 1.25;
+    }
+
+    .card-prose {
+      font-size: 14px;
+      color: var(--ink-secondary);
+      margin-bottom: 24px;
+      line-height: 1.6;
+    }
+
+    .reality-table {
+      width: 100%;
+      border-collapse: collapse;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      margin-top: 16px;
+      border-top: 1px solid var(--line-subtle);
+    }
+
+    .reality-table td {
+      padding: 10px 0;
+      border-bottom: 1px dashed var(--line-subtle);
+    }
+
+    .reality-table td:last-child {
+      text-align: right;
+      font-weight: 600;
+    }
+
+    /* SECTION 3: THE DELIVERABLES */
+    .deliverables-section {
+      padding: 90px 0;
+      border-bottom: 1px solid var(--line-strong);
+    }
+
+    .deliverables-ledger {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      gap: 24px;
+    }
+
+    .ledger-entry {
+      border-top: 2px solid var(--ink-dark);
+      padding-top: 20px;
+    }
+
+    .ledger-idx {
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--accent-rust);
+      margin-bottom: 12px;
+      display: block;
+    }
+
+    .ledger-title {
+      font-size: 18px;
+      font-weight: 700;
+      letter-spacing: -0.02em;
+      margin-bottom: 12px;
+      text-transform: uppercase;
+    }
+
+    .ledger-body {
+      font-size: 13px;
+      color: var(--ink-secondary);
+      line-height: 1.6;
+      margin-bottom: 16px;
+    }
+
+    .ledger-tags {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 6px;
+    }
+
+    .tag-chip {
+      font-family: var(--font-mono);
+      font-size: 9px;
+      background: rgba(18, 33, 24, 0.08);
+      padding: 3px 6px;
+      border: 1px solid var(--line-subtle);
+      color: var(--ink-dark);
+    }
+
+    /* SECTION 4: PROTOCOL / DISPATCH ACTION */
+    .dispatch-section {
+      padding: 90px 0 100px;
+      background-color: var(--bg-sage);
+      display: grid;
+      grid-template-columns: 1.2fr 1fr;
+      gap: 48px;
+      align-items: start;
+    }
+
+    .dispatch-form {
+      border: 1px solid var(--ink-dark);
+      padding: 36px;
+      background-color: var(--bg-sage-card);
+    }
+
+    .form-group {
+      margin-bottom: 20px;
+    }
+
+    .form-label {
+      display: block;
+      font-family: var(--font-mono);
+      font-size: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.12em;
+      color: var(--ink-dark);
+      margin-bottom: 6px;
+      font-weight: 700;
+    }
+
+    .form-input, .form-select, .form-textarea {
+      width: 100%;
+      background-color: var(--bg-sage);
+      border: 1px solid var(--line-strong);
+      padding: 12px 14px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      color: var(--ink-dark);
+      outline: none;
+      transition: border-color 0.15s ease;
+    }
+
+    .form-input:focus, .form-select:focus, .form-textarea:focus {
+      border-color: var(--ink-dark);
+      background-color: #fff;
+    }
+
+    .submit-btn {
+      width: 100%;
+      background-color: var(--ink-dark);
+      color: var(--bg-sage);
+      border: none;
+      padding: 16px;
+      font-family: var(--font-mono);
+      font-size: 12px;
+      letter-spacing: 0.14em;
+      font-weight: 700;
+      text-transform: uppercase;
+      cursor: pointer;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      transition: background-color 0.15s ease;
+    }
+
+    .submit-btn:hover {
+      background-color: var(--accent-rust);
+    }
+
+    /* FOOTER */
+    footer {
+      border-top: 1px solid var(--line-strong);
+      padding: 40px 0 60px;
+      font-family: var(--font-mono);
+      font-size: 11px;
+      color: var(--ink-muted);
+    }
+
+    .footer-grid {
+      display: grid;
+      grid-template-columns: 2fr 1fr 1fr;
+      gap: 32px;
+      margin-bottom: 40px;
+    }
+
+    .footer-stamp {
+      font-size: 13px;
+      color: var(--ink-dark);
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .ruler-border {
+      border-top: 1px dashed var(--line-strong);
+      padding-top: 16px;
+      display: flex;
+      justify-content: space-between;
+      font-size: 9px;
+      letter-spacing: 0.2em;
+    }
+
+    @media (max-width: 900px) {
+      .hero-section {
+        grid-template-columns: 1fr;
+      }
+      .reality-grid, .deliverables-ledger, .dispatch-section, .footer-grid {
+        grid-template-columns: 1fr;
+      }
+      .hero-figure-slot {
+        height: 400px;
+      }
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Top film-strip graduation ticks -->
+  <div class="edge-filmstrip-top">
+    <div class="ticks-row">+ - - - - [VT-SPEC-2026] - - - - + - - - - [DIR-01:PRINT-TECH] - - - - +</div>
+    <div>25°12'19.4"N 55°16'28.8"E // UAE LOCAL DISPATCH</div>
+    <div class="ticks-row">+ - - - - LATENCY: 0.28ms - - - - +</div>
+  </div>
+
+  <div class="wrapper">
+    <!-- Header -->
+    <header>
+      <div class="brand-mark">
+        <span class="stamp">VT/26</span>
+        <span>VERLYN TECH</span>
+      </div>
+
+      <div class="header-metadata">
+        <span>SECTOR: INDEPENDENT RETAIL & TRADES</span>
+        <span>SYSTEM: DIRECT-TO-LOCAL</span>
+        <span>STATUS: ACTIVE DISPATCH</span>
+      </div>
+
+      <div class="header-nav">
+        <a href="#dispatch" class="chip-btn accent">DISPATCH TEAM →</a>
+      </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section">
+      <div class="hero-content">
+        <div class="spec-tracker">
+          ENGINEERED LOCAL SYSTEMS // CALIBRATION 04
+        </div>
+
+        <h1 class="monumental-headline">
+          The Small Team’s <br>
+          <span class="accent-ink">Unfair Advantage.</span>
+        </h1>
+
+        <p class="hero-statement">
+          We install lean, permanent digital presence for independent cafes and automotive workshops. Fast bespoke sites. Automated WhatsApp lead triage. Zero bloated agency retainers.
+        </p>
+
+        <div style="display: flex; gap: 12px; align-items: center;">
+          <a href="#dispatch" class="chip-btn accent">COMMENCE 14-DAY ROLLOUT</a>
+          <a href="#reality" class="chip-btn">READ THE FIELD NOTES ↓</a>
+        </div>
+
+        <div class="hero-meta-row">
+          <div class="meta-stat">
+            <div class="val">&lt; 90s</div>
+            <div class="lbl">WhatsApp Response Time</div>
+          </div>
+          <div class="meta-stat">
+            <div class="val">100%</div>
+            <div class="lbl">Client Code Ownership</div>
+          </div>
+          <div class="meta-stat">
+            <div class="val">14 Days</div>
+            <div class="lbl">From Survey to Live System</div>
+          </div>
+        </div>
+      </div>
+
+      <!-- HERO RESERVED STAND-IN SLOT (isolated illustration center-right on a pale sage page) -->
+      <div class="hero-figure-slot">
+        <div class="topographic-standin">
+          <!-- Topographic Contour Line Illustration Stand-in (Ink on Sage) -->
+          <svg class="topo-canvas" viewBox="0 0 600 580" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <rect width="600" height="580" fill="#e1e7dc"/>
+            
+            <!-- Contour Lines -->
+            <path d="M-20,120 C120,80 180,220 320,160 C440,110 520,190 620,140" stroke="#1f382b" stroke-width="1.2" opacity="0.35"/>
+            <path d="M-20,170 C100,140 210,260 340,210 C480,160 540,240 620,190" stroke="#1f382b" stroke-width="1.2" opacity="0.45"/>
+            <path d="M-20,220 C90,190 230,310 360,250 C490,200 550,290 620,240" stroke="#1f382b" stroke-width="1.4" opacity="0.6"/>
+            <path d="M-20,270 C80,240 240,360 380,300 C500,240 560,340 620,290" stroke="#1f382b" stroke-width="1.6" opacity="0.75"/>
+            
+            <!-- Core Concentric Contour Heights -->
+            <path d="M80,310 C160,260 280,240 380,280 C460,310 470,390 410,430 C340,480 200,470 120,410 C70,370 60,330 80,310 Z" stroke="#1f382b" stroke-width="2" opacity="0.9"/>
+            <path d="M120,330 C180,290 270,275 350,305 C420,330 430,385 385,415 C330,450 220,440 155,395 C115,365 110,340 120,330 Z" stroke="#1f382b" stroke-width="1.8" opacity="0.9"/>
+            <path d="M170,345 C210,315 270,305 325,325 C375,345 380,380 345,400 C305,425 230,420 190,385 C165,365 160,350 170,345 Z" stroke="#1f382b" stroke-width="1.5" opacity="0.85"/>
+            
+            <!-- Elevation Ticks & Index Notations -->
+            <text x="210" y="300" font-family="JetBrains Mono" font-size="8" fill="#1f382b" opacity="0.6" letter-spacing="1">INDEX ELEV: +340m</text>
+            <text x="350" y="440" font-family="JetBrains Mono" font-size="8" fill="#1f382b" opacity="0.6" letter-spacing="1">RADIAL POINT: 08-B</text>
+            <text x="40" y="520" font-family="JetBrains Mono" font-size="9" fill="#1f382b" opacity="0.5" letter-spacing="2">[RESERVED HERO: TOPOGRAPHIC CONTOUR LINECUT]</text>
+
+            <!-- Coordinate Grid Crosshairs -->
+            <path d="M300,40 L300,540 M40,290 L560,290" stroke="#1f382b" stroke-dasharray="2 6" stroke-width="0.75" opacity="0.25"/>
+            <circle cx="300" cy="290" r="4" fill="none" stroke="#c84c24" stroke-width="1.5"/>
+            <circle cx="300" cy="290" r="1.5" fill="#c84c24"/>
+          </svg>
+
+          <!-- Pinned Data Callout Chips -->
+          <div class="data-callout-chip chip-top-left">
+            <span class="chip-label">NODE 01 // TELEMETRY</span>
+            <span class="chip-status"></span>
+            <span class="chip-val">WHATSAPP ROUTE: ACTIVE</span>
+          </div>
+
+          <div class="data-callout-chip chip-top-right">
+            <span class="chip-label">SPEC: WORKSHOP AUTO</span>
+            <span class="chip-val">BAY 03: STATUS PUSHED [12m]</span>
+          </div>
+
+          <div class="data-callout-chip chip-bottom-left">
+            <span class="chip-label">SPEC: CAFE DISPATCH</span>
+            <span class="chip-val">MENU SYNC: ZERO FRICTION</span>
+          </div>
+
+          <div class="data-callout-chip chip-bottom-right">
+            <span class="chip-label">HASH</span>
+            <span class="chip-val">0x889F_LOCAL_VERLYN</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 2: THE REALITY (Cafes & Garages) -->
+    <section id="reality" class="reality-section">
+      <div class="section-eyebrow">THE OPERATIONAL LEAK</div>
+      <h2 class="section-title">Small businesses don't need "AI platforms." They need their phones answered.</h2>
+
+      <div class="reality-grid">
+        <!-- Cafe Card -->
+        <div class="reality-card">
+          <div class="badge">SPEC // INDEPENDENT CAFE</div>
+          <h3 class="card-headline">The Specialty Espresso Bar & Bakery</h3>
+          <p class="card-prose">
+            Your baristas have steam wands hissing and line queues out the door. Meanwhile, five customers are messaging Instagram DMs asking for today's pastry menu, catering platters, or beans grinding.
+          </p>
+          <table class="reality-table">
+            <tr>
+              <td>Current Failure:</td>
+              <td style="color: var(--accent-rust);">2.5 hour reply lag; buyer leaves</td>
+            </tr>
+            <tr>
+              <td>Verlyn Installation:</td>
+              <td style="color: var(--ink-dark);">Clean 1-page menu + instant WhatsApp order desk</td>
+            </tr>
+            <tr>
+              <td>Measured Net Impact:</td>
+              <td>+32 Catering & bean orders recovered / mo</td>
+            </tr>
+          </table>
+        </div>
+
+        <!-- Garage Card -->
+        <div class="reality-card">
+          <div class="badge">SPEC // INDEPENDENT GARAGE</div>
+          <h3 class="card-headline">The 3-Bay Mechanical Workshop</h3>
+          <p class="card-prose">
+            You're under a lift with oil on your wrench. The office phone is ringing, parts suppliers are pinging WhatsApp, and a customer wants to know if their transmission flush is ready for pickup.
+          </p>
+          <table class="reality-table">
+            <tr>
+              <td>Current Failure:</td>
+              <td style="color: var(--accent-rust);">Lost calls; constant phone tag while wrenching</td>
+            </tr>
+            <tr>
+              <td>Verlyn Installation:</td>
+              <td style="color: var(--ink-dark);">Direct booking link + 1-tap customer repair updates</td>
+            </tr>
+            <tr>
+              <td>Measured Net Impact:</td>
+              <td>11 hours staff phone time saved / week</td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 3: THE DELIVERABLES -->
+    <section class="deliverables-section">
+      <div class="section-eyebrow">FIELD SPECIFICATIONS</div>
+      <h2 class="section-title">What we build and permanently install</h2>
+
+      <div class="deliverables-ledger">
+        <div class="ledger-entry">
+          <span class="ledger-idx">[SYS-01] FAST BESPOKE WEB PRESENCE</span>
+          <h3 class="ledger-title">Engineered For Local Footfall</h3>
+          <p class="ledger-body">
+            No WordPress sludge, no 40-second loading times. We write clean, featherweight code built for mobile 5G. Clear opening hours, verified Google Maps hooks, and instant click-to-WhatsApp buttons.
+          </p>
+          <div class="ledger-tags">
+            <span class="tag-chip">SUB-SECOND LOAD</span>
+            <span class="tag-chip">CLIENT OWNS REPO</span>
+            <span class="tag-chip">ZERO BLOAT</span>
+          </div>
+        </div>
+
+        <div class="ledger-entry">
+          <span class="ledger-idx">[SYS-02] WHATSAPP OPERATING DESK</span>
+          <h3 class="ledger-title">24/7 Automated Triage</h3>
+          <p class="ledger-body">
+            A polite, sharp assistant connected directly to your official business number. Handles location inquiries, prices, bookings, and vehicle status updates without your staff touching their phone.
+          </p>
+          <div class="ledger-tags">
+            <span class="tag-chip">WA BUSINESS API</span>
+            <span class="tag-chip">CALENDAR SYNC</span>
+            <span class="tag-chip">HUMAN HANDOFF</span>
+          </div>
+        </div>
+
+        <div class="ledger-entry">
+          <span class="ledger-idx">[SYS-03] REPUTATION & REVIEW HARVESTER</span>
+          <h3 class="ledger-title">Dominating Local Map Packs</h3>
+          <p class="ledger-body">
+            Automatically messages satisfied patrons 20 minutes after pickup or dining with a 1-tap Google Review link. Turns quiet regular customers into an unbeatable barrier against new chains.
+          </p>
+          <div class="ledger-tags">
+            <span class="tag-chip">GOOGLE MAPS OPT</span>
+            <span class="tag-chip">AUTOMATIC REVIEW FLOW</span>
+            <span class="tag-chip">FILTER NEGATIVES</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- SECTION 4: DISPATCH / FORM -->
+    <section id="dispatch" class="dispatch-section">
+      <div>
+        <div class="section-eyebrow">INSTALLATION PROTOCOL</div>
+        <h2 class="section-title">Deploy Verlyn Systems to your operation</h2>
+        <p class="hero-statement">
+          We work with three businesses per cohort. In 14 days, your digital presence is live, your WhatsApp is connected, and your staff is trained with zero paperwork friction.
+        </p>
+
+        <div style="font-family: var(--font-mono); font-size: 12px; margin-top: 24px; color: var(--ink-secondary);">
+          <p><strong>GUARANTEE:</strong> If response velocity does not improve during the 30-day trial period, the installation cost is completely refunded. No ambiguity.</p>
+        </div>
+      </div>
+
+      <div class="dispatch-form">
+        <form onsubmit="event.preventDefault(); alert('Deployment request logged into Verlyn Dispatch Ledger. We will review your premises within 4 hours.');">
+          <div class="form-group">
+            <label class="form-label">OPERATOR OR FOUNDER NAME</label>
+            <input type="text" required placeholder="e.g. Marcus Vance" class="form-input">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">BUSINESS OPERATION & LOCATION</label>
+            <select class="form-select">
+              <option>Independent Specialty Cafe / Roastery</option>
+              <option>Automotive Workshop / Garage</option>
+              <option>Craft Bakery / Food Service</option>
+              <option>Custom Motorcycle / Detailing Bay</option>
+              <option>Other Trade / Physical Operation</option>
+            </select>
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">WHATSAPP CONTACT FOR BRIEFING</label>
+            <input type="tel" required placeholder="+971 50 ... / +44 7..." class="form-input">
+          </div>
+
+          <div class="form-group">
+            <label class="form-label">PRIMARY BOTTLENECK YOU WANT REMOVED</label>
+            <textarea rows="3" class="form-textarea" placeholder="e.g. Too many messages asking for menu/opening hours while we work; no Google reviews being collected..."></textarea>
+          </div>
+
+          <button type="submit" class="submit-btn">
+            <span>REQUEST LOCAL SURVEY</span>
+            <span>[ENTER] →</span>
+          </button>
+        </form>
+      </div>
+    </section>
+
+    <!-- FOOTER -->
+    <footer>
+      <div class="footer-grid">
+        <div>
+          <div class="footer-stamp">VERLYN TECH // OPERATIONS DIVISION</div>
+          <p>Crafted digital systems for physical trades and independent establishments. Not a marketing agency. Not an enterprise SaaS vendor.</p>
+        </div>
+        <div>
+          <div>SPEC REGISTRY: #VT-DIR-01</div>
+          <div>PAPER: PALE SAGE // RAW FIBER</div>
+          <div>INK: FOREST DEEP // 100% K</div>
+        </div>
+        <div>
+          <div>DISPATCH: DUBAI / UAE</div>
+          <div>STATUS: CAPACITY AVAILABLE</div>
+          <div>ENCRYPTION: VERIFIED</div>
+        </div>
+      </div>
+
+      <div class="ruler-border">
+        <span>+ 00.00</span>
+        <span>| · · · · | · · · · | · · · · | · · · · |</span>
+        <span>+ 50.00</span>
+        <span>| · · · · | · · · · | · · · · | · · · · |</span>
+        <span>+ 100.00</span>
+      </div>
+    </footer>
+  </div>
+
+</body>
+</html>
