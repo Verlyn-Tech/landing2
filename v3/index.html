@@ -212,199 +212,97 @@
       text-align: right;
     }
 
-    /* SECTION: CORE CAPABILITIES (DARK SLATE BEDROCK) */
-    .capabilities-dark-section {
-      background-color: #07090a;
-      color: #ffffff;
-      padding: 100px 48px 120px;
-      position: relative;
-      border-top: 1px solid rgba(255, 255, 255, 0.06);
-      border-bottom: 1px solid rgba(255, 255, 255, 0.06);
+    /* SECTION 01: CORE CAPABILITIES LEDGER (V3 EDITORIAL DESIGN) */
+    .capabilities-section {
+      background-color: var(--fog-white);
+      padding: 120px 48px;
+      border-bottom: 1px solid var(--fog-muted);
     }
 
-    .capabilities-container {
-      max-width: 1320px;
-      margin: 0 auto;
-    }
-
-    .capabilities-topbar {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      padding-bottom: 28px;
-      margin-bottom: 56px;
-      border-bottom: 1px solid rgba(255, 255, 255, 0.1);
-    }
-
-    .capabilities-brand-tag {
-      font-family: var(--font-sans);
-      font-size: 13px;
-      font-weight: 700;
-      letter-spacing: 0.28em;
-      text-transform: uppercase;
-      color: #ffffff;
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .audit-pill-btn {
-      background-color: #ffffff;
-      color: #07090a;
-      font-family: var(--font-mono);
-      font-size: 11px;
-      font-weight: 700;
-      letter-spacing: 0.12em;
-      text-transform: uppercase;
-      padding: 9px 24px;
-      border-radius: 999px;
-      text-decoration: none;
-      transition: all 0.2s ease;
-      display: inline-flex;
-      align-items: center;
-      box-shadow: 0 4px 16px rgba(255, 255, 255, 0.12);
-    }
-
-    .audit-pill-btn:hover {
-      background-color: #e5e7eb;
-      transform: translateY(-1px);
-      box-shadow: 0 6px 20px rgba(255, 255, 255, 0.22);
-    }
-
-    .capabilities-header-block {
-      margin-bottom: 48px;
-    }
-
-    .capabilities-label {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--accent-warm);
-      margin-bottom: 16px;
-    }
-
-    .capabilities-title {
-      font-family: var(--font-sans);
-      font-size: clamp(24px, 3.5vw, 36px);
-      font-weight: 300;
-      letter-spacing: 0.04em;
-      line-height: 1.3;
-      color: #ffffff;
-      text-transform: uppercase;
-      max-width: 860px;
-    }
-
-    .capabilities-title strong {
-      font-weight: 600;
-    }
-
-    .capabilities-grid {
+    .capabilities-editorial-ledger {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
-      gap: 24px;
+      gap: 56px 40px;
     }
 
-    .capability-card {
-      background: #0f1214;
-      border: 1px solid rgba(255, 255, 255, 0.08);
-      border-radius: 20px;
-      padding: 38px 32px;
+    .cap-ledger-item {
+      border-top: 1px solid var(--text-primary);
+      padding-top: 28px;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      min-height: 380px;
-      transition: all 0.25s cubic-bezier(0.16, 1, 0.3, 1);
-      position: relative;
-      overflow: hidden;
     }
 
-    .capability-card::before {
-      content: '';
-      position: absolute;
-      top: 0;
-      left: 0;
-      right: 0;
-      height: 1px;
-      background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.16), transparent);
-    }
-
-    .capability-card:hover {
-      border-color: rgba(255, 255, 255, 0.24);
-      background: #13171a;
-      transform: translateY(-3px);
-      box-shadow: 0 16px 40px rgba(0, 0, 0, 0.45);
-    }
-
-    .card-top-row {
+    .cap-ledger-header {
       display: flex;
       justify-content: space-between;
       align-items: center;
-      margin-bottom: 24px;
+      margin-bottom: 14px;
     }
 
-    .card-num {
+    .cap-ledger-num {
       font-family: var(--font-mono);
-      font-size: 12px;
-      color: #8e98a0;
-      letter-spacing: 0.12em;
+      font-size: 10px;
+      letter-spacing: 0.22em;
+      text-transform: uppercase;
+      color: var(--accent-warm);
       font-weight: 600;
     }
 
-    .card-arrow {
-      color: #8e98a0;
-      font-size: 18px;
+    .cap-ledger-arrow {
+      color: var(--text-light);
+      font-size: 14px;
       line-height: 1;
       transition: transform 0.2s ease, color 0.2s ease;
     }
 
-    .capability-card:hover .card-arrow {
+    .cap-ledger-item:hover .cap-ledger-arrow {
       transform: translate(2px, -2px);
-      color: #ffffff;
+      color: var(--text-primary);
     }
 
-    .card-title {
+    .cap-ledger-title {
       font-family: var(--font-sans);
-      font-size: 22px;
-      font-weight: 700;
-      color: #ffffff;
-      line-height: 1.25;
+      font-size: 20px;
+      font-weight: 500;
       letter-spacing: -0.01em;
-      margin-bottom: 32px;
+      line-height: 1.35;
+      color: var(--text-primary);
+      margin-bottom: 20px;
     }
 
-    .card-body-section {
+    .cap-ledger-body {
       margin-top: auto;
     }
 
-    .card-sub-block {
-      margin-bottom: 22px;
-    }
-
-    .card-sub-block:last-child {
-      margin-bottom: 0;
-    }
-
-    .card-subhead {
+    .cap-subhead {
       font-family: var(--font-mono);
-      font-size: 10px;
-      letter-spacing: 0.15em;
+      font-size: 9.5px;
+      letter-spacing: 0.18em;
       text-transform: uppercase;
-      color: #717c83;
-      font-weight: 700;
+      color: var(--text-light);
+      font-weight: 600;
       margin-bottom: 8px;
     }
 
-    .card-desc {
+    .cap-prose {
       font-family: var(--font-sans);
       font-size: 13.5px;
-      line-height: 1.6;
-      color: #d2d7db;
-      font-weight: 400;
+      line-height: 1.75;
+      color: var(--text-secondary);
+      margin-bottom: 22px;
     }
 
-    .card-desc.emphasis {
-      color: #f0f2f4;
+    .cap-diff-block {
+      border-top: 1px dashed var(--fog-muted);
+      padding-top: 16px;
+    }
+
+    .cap-diff-text {
+      font-family: var(--font-sans);
+      font-size: 13px;
+      line-height: 1.65;
+      color: var(--text-primary);
       font-weight: 500;
     }
 
@@ -568,9 +466,10 @@
       align-items: center;
     }
 
-    @media (max-width: 1100px) {
-      .capabilities-grid {
+    @media (max-width: 1050px) {
+      .capabilities-editorial-ledger {
         grid-template-columns: repeat(2, 1fr);
+        gap: 48px 32px;
       }
     }
 
@@ -587,21 +486,15 @@
       .ridge-hero-slot {
         height: 320px;
       }
-      .capabilities-dark-section {
-        padding: 70px 24px 90px;
-      }
-      .capabilities-topbar {
-        margin-bottom: 40px;
+      .capabilities-section {
+        padding: 80px 24px 100px;
       }
     }
 
-    @media (max-width: 680px) {
-      .capabilities-grid {
+    @media (max-width: 640px) {
+      .capabilities-editorial-ledger {
         grid-template-columns: 1fr;
-      }
-      .capability-card {
-        padding: 30px 24px;
-        min-height: auto;
+        gap: 40px;
       }
     }
   </style>
@@ -667,149 +560,140 @@
     </div>
   </div>
 
-  <!-- SECTION 01: CORE CAPABILITIES (VERLYN TECH INFRASTRUCTURE SUITE) -->
-  <section id="capabilities" class="capabilities-dark-section">
-    <div class="capabilities-container">
-      <!-- Topbar with brand mark and Audit CTA -->
-      <div class="capabilities-topbar">
-        <div class="capabilities-brand-tag">
-          <img src="../assets/logos/v3_user_logo_horizontal_light.svg" alt="Verlyn Tech" style="height: 24px; width: auto; display: block;" />
+  <!-- SECTION 01: CORE CAPABILITIES (V3 EDITORIAL ARCHITECTURE) -->
+  <section id="capabilities" class="capabilities-section">
+    <div class="inner-bound" style="max-width: 1180px;">
+      <div class="section-quiet-header">
+        <div class="editorial-label">01 CORE CAPABILITIES</div>
+        <div class="editorial-heading" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 32px; flex-wrap: wrap;">
+          <span>Engineered infrastructure systems built for physical enterprise.</span>
+          <a href="#dialogue" class="quiet-cta-pill">REQUEST PRIVATE AUDIT</a>
         </div>
-        <a href="#dialogue" class="audit-pill-btn">Audit</a>
       </div>
 
-      <!-- Section Title & Restrained Context -->
-      <div class="capabilities-header-block">
-        <div class="capabilities-label">01 CORE CAPABILITIES</div>
-        <h2 class="capabilities-title">
-          HIGH-CONVERTING ASSETS &amp; <strong>AUTOMATED PIPELINES.</strong>
-        </h2>
-      </div>
-
-      <!-- 6-Card Responsive Grid -->
-      <div class="capabilities-grid">
+      <div class="capabilities-editorial-ledger">
         <!-- 01 CRM Setup & Lead Management -->
-        <div class="capability-card">
+        <div class="cap-ledger-item">
           <div>
-            <div class="card-top-row">
-              <span class="card-num">01</span>
-              <span class="card-arrow">&#8599;</span>
+            <div class="cap-ledger-header">
+              <span class="cap-ledger-num">MODULE 01 · PIPELINE</span>
+              <span class="cap-ledger-arrow">&#8599;</span>
             </div>
-            <h3 class="card-title">CRM Setup &amp; Lead Management</h3>
+            <h3 class="cap-ledger-title">CRM Setup &amp; Lead Management</h3>
           </div>
-          <div class="card-body-section">
-            <div class="card-sub-block">
-              <div class="card-subhead">HOW IT HELPS</div>
-              <p class="card-desc">Leads stop living in WhatsApp chats — one pipeline, one owner, automated follow-up.</p>
+          <div class="cap-ledger-body">
+            <div>
+              <div class="cap-subhead">HOW IT HELPS</div>
+              <p class="cap-prose">Leads stop living in WhatsApp chats — one pipeline, one owner, automated follow-up.</p>
             </div>
-            <div class="card-sub-block">
-              <div class="card-subhead">WHY WE'RE BETTER</div>
-              <p class="card-desc emphasis">Built around your actual sales process in days, not an off-the-shelf template.</p>
+            <div class="cap-diff-block">
+              <div class="cap-subhead">WHY WE'RE BETTER</div>
+              <p class="cap-diff-text">Built around your actual sales process in days, not an off-the-shelf template.</p>
             </div>
           </div>
         </div>
 
         <!-- 02 Landing Pages & SEO -->
-        <div class="capability-card">
+        <div class="cap-ledger-item">
           <div>
-            <div class="card-top-row">
-              <span class="card-num">02</span>
-              <span class="card-arrow">&#8599;</span>
+            <div class="cap-ledger-header">
+              <span class="cap-ledger-num">MODULE 02 · DEMAND CAPTURE</span>
+              <span class="cap-ledger-arrow">&#8599;</span>
             </div>
-            <h3 class="card-title">Landing Pages &amp; SEO</h3>
+            <h3 class="cap-ledger-title">Landing Pages &amp; SEO</h3>
           </div>
-          <div class="card-body-section">
-            <div class="card-sub-block">
-              <div class="card-subhead">HOW IT HELPS</div>
-              <p class="card-desc">High-converting assets that capture demand and funnel it directly into your sales machine.</p>
+          <div class="cap-ledger-body">
+            <div>
+              <div class="cap-subhead">HOW IT HELPS</div>
+              <p class="cap-prose">High-converting assets that capture demand and funnel it directly into your sales machine.</p>
             </div>
-            <div class="card-sub-block">
-              <div class="card-subhead">WHY WE'RE BETTER</div>
-              <p class="card-desc emphasis">We optimize for booked meetings and revenue, not just vanity traffic.</p>
+            <div class="cap-diff-block">
+              <div class="cap-subhead">WHY WE'RE BETTER</div>
+              <p class="cap-diff-text">We optimize for booked meetings and revenue, not just vanity traffic.</p>
             </div>
           </div>
         </div>
 
         <!-- 03 Marketing & Paid Ads -->
-        <div class="capability-card">
+        <div class="cap-ledger-item">
           <div>
-            <div class="card-top-row">
-              <span class="card-num">03</span>
-              <span class="card-arrow">&#8599;</span>
+            <div class="cap-ledger-header">
+              <span class="cap-ledger-num">MODULE 03 · CONVERSION ACQUISITION</span>
+              <span class="cap-ledger-arrow">&#8599;</span>
             </div>
-            <h3 class="card-title">Marketing &amp; Paid Ads</h3>
+            <h3 class="cap-ledger-title">Marketing &amp; Paid Ads</h3>
           </div>
-          <div class="card-body-section">
-            <div class="card-sub-block">
-              <div class="card-subhead">HOW IT HELPS</div>
-              <p class="card-desc">Targeted campaigns optimized for ROAS, filling your pipeline predictably.</p>
+          <div class="cap-ledger-body">
+            <div>
+              <div class="cap-subhead">HOW IT HELPS</div>
+              <p class="cap-prose">Targeted campaigns optimized for ROAS, filling your pipeline predictably.</p>
             </div>
-            <div class="card-sub-block">
-              <div class="card-subhead">WHY WE'RE BETTER</div>
-              <p class="card-desc emphasis">Constant split-testing and strict tracking. You know exactly what a lead costs.</p>
+            <div class="cap-diff-block">
+              <div class="cap-subhead">WHY WE'RE BETTER</div>
+              <p class="cap-diff-text">Constant split-testing and strict tracking. You know exactly what a lead costs.</p>
             </div>
           </div>
         </div>
 
         <!-- 04 Lead Generation -->
-        <div class="capability-card">
+        <div class="cap-ledger-item">
           <div>
-            <div class="card-top-row">
-              <span class="card-num">04</span>
-              <span class="card-arrow">&#8599;</span>
+            <div class="cap-ledger-header">
+              <span class="cap-ledger-num">MODULE 04 · TARGETED OUTREACH</span>
+              <span class="cap-ledger-arrow">&#8599;</span>
             </div>
-            <h3 class="card-title">Lead Generation</h3>
+            <h3 class="cap-ledger-title">Lead Generation</h3>
           </div>
-          <div class="card-body-section">
-            <div class="card-sub-block">
-              <div class="card-subhead">HOW IT HELPS</div>
-              <p class="card-desc">Predictable, scalable outreach systems to keep your pipeline full of qualified prospects.</p>
+          <div class="cap-ledger-body">
+            <div>
+              <div class="cap-subhead">HOW IT HELPS</div>
+              <p class="cap-prose">Predictable, scalable outreach systems to keep your pipeline full of qualified prospects.</p>
             </div>
-            <div class="card-sub-block">
-              <div class="card-subhead">WHY WE'RE BETTER</div>
-              <p class="card-desc emphasis">Multi-channel targeting that feels personal, bypassing generic spam filters.</p>
+            <div class="cap-diff-block">
+              <div class="cap-subhead">WHY WE'RE BETTER</div>
+              <p class="cap-diff-text">Multi-channel targeting that feels personal, bypassing generic spam filters.</p>
             </div>
           </div>
         </div>
 
         <!-- 05 ERP Setup -->
-        <div class="capability-card">
+        <div class="cap-ledger-item">
           <div>
-            <div class="card-top-row">
-              <span class="card-num">05</span>
-              <span class="card-arrow">&#8599;</span>
+            <div class="cap-ledger-header">
+              <span class="cap-ledger-num">MODULE 05 · UNIFIED OPERATIONS</span>
+              <span class="cap-ledger-arrow">&#8599;</span>
             </div>
-            <h3 class="card-title">ERP Setup</h3>
+            <h3 class="cap-ledger-title">ERP Setup</h3>
           </div>
-          <div class="card-body-section">
-            <div class="card-sub-block">
-              <div class="card-subhead">HOW IT HELPS</div>
-              <p class="card-desc">Centralize your entire business operations—from inventory to finance—into one unified system.</p>
+          <div class="cap-ledger-body">
+            <div>
+              <div class="cap-subhead">HOW IT HELPS</div>
+              <p class="cap-prose">Centralize your entire business operations—from inventory to finance—into one unified system.</p>
             </div>
-            <div class="card-sub-block">
-              <div class="card-subhead">WHY WE'RE BETTER</div>
-              <p class="card-desc emphasis">We tailor the ERP precisely to your unique workflows, avoiding the bloat of standard implementations.</p>
+            <div class="cap-diff-block">
+              <div class="cap-subhead">WHY WE'RE BETTER</div>
+              <p class="cap-diff-text">We tailor the ERP precisely to your unique workflows, avoiding the bloat of standard implementations.</p>
             </div>
           </div>
         </div>
 
         <!-- 06 Premium Web Development -->
-        <div class="capability-card">
+        <div class="cap-ledger-item">
           <div>
-            <div class="card-top-row">
-              <span class="card-num">06</span>
-              <span class="card-arrow">&#8599;</span>
+            <div class="cap-ledger-header">
+              <span class="cap-ledger-num">MODULE 06 · DIGITAL CRAFTSMANSHIP</span>
+              <span class="cap-ledger-arrow">&#8599;</span>
             </div>
-            <h3 class="card-title">Premium Web Development</h3>
+            <h3 class="cap-ledger-title">Premium Web Development</h3>
           </div>
-          <div class="card-body-section">
-            <div class="card-sub-block">
-              <div class="card-subhead">HOW IT HELPS</div>
-              <p class="card-desc">Ultra-fast, meticulously designed digital storefronts built to capture demand.</p>
+          <div class="cap-ledger-body">
+            <div>
+              <div class="cap-subhead">HOW IT HELPS</div>
+              <p class="cap-prose">Ultra-fast, meticulously designed digital storefronts built to capture demand.</p>
             </div>
-            <div class="card-sub-block">
-              <div class="card-subhead">WHY WE'RE BETTER</div>
-              <p class="card-desc emphasis">We build bespoke, high-performance web applications with striking aesthetics—no cookie-cutter themes.</p>
+            <div class="cap-diff-block">
+              <div class="cap-subhead">WHY WE'RE BETTER</div>
+              <p class="cap-diff-text">We build bespoke, high-performance web applications with striking aesthetics—no cookie-cutter themes.</p>
             </div>
           </div>
         </div>
