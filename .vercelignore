@@ -1,0 +1,28 @@
+# Keep the deployment to the public landing page only.
+# Syntax matches .gitignore. Everything not listed here is served publicly.
+
+# Internal documents (pricing, strategy, product and design notes)
+assets/*.pdf
+*.md
+
+# Unused images (the page uses basalt_crest-800 / -1408 only)
+assets/img/
+assets/hero/v3/basalt_crest.jpg
+assets/hero/v3/sample_3.jpg
+
+# Reference material and old snapshots
+# (leading slash = project root only; plain "v3/" would also hide assets/hero/v3/)
+/inspo/
+/v3/
+
+# Local preview server (the site is static; no Python runtime needed)
+/server.py
+/requirements.txt
+
+# Tooling and agent configuration
+.agents/
+.claude/
+.impeccable/
+.playwright/
+.playwright-cli/
+skills-lock.json

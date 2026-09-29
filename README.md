@@ -7,13 +7,13 @@
 
 ## Overview
 
-**Verlyn Tech** installs lean, permanent operational systems for independent businesses. We build featherweight, sub-second web portals, configure official WhatsApp Business automation desks, and set up automated review-harvesting engines — giving local owners an unfair advantage without bloated SaaS retainers or complex software to learn.
+**Verlyn Tech** installs the operational systems growing UAE businesses are missing: fast websites, official WhatsApp Business automation, CRM and automated follow-up, proven with the client's own numbers in a small pilot. Product truth (audience, offer, evidence, voice) lives in [`PRODUCT.md`](PRODUCT.md).
 
-The production landing page is built on the **Vast Quiet Cinematic** architectural aesthetic:
-* **Palette**: Pure fog white (`#f5f6f7`), misty slate midtones (`#717c83`), and basalt charcoal (`#121517`) with a subtle warm stone accent (`#a67c52`).
-* **Hero Architecture**: Desaturated aerial mountain ridge in mist anchoring the lower half of the viewport, with the pure fog-white upper half dedicated to monumental whitespace, the aerodynamic VT wing crest, and quiet typography.
-* **Core Capabilities Ledger**: A 6-module architectural ledger detailing CRM Setup & Lead Management, Landing Pages & SEO, Marketing & Paid Ads, Lead Generation, ERP Setup, and Premium Web Development.
-* **Typography**: Understated Space Grotesk display paired with Plus Jakarta Sans tracked marginalia.
+The landing page follows the **Fog Over Basalt** design system, documented in [`DESIGN.md`](DESIGN.md) (tokens, components, rules) with a machine-readable sidecar in `.impeccable/design.json`:
+* **Palette**: fog white ground, basalt charcoal ink, one rare warm stone accent; a full dark theme (system default plus a manual switch).
+* **Hero**: centred uppercase display headline over the desaturated basalt ridge photograph fading up into the fog.
+* **Sections**: grouped capabilities (bento with one basalt tile), two illustrative business examples, a deliverables table, and the 14-day pilot form.
+* **Typography**: Space Grotesk display and body with Plus Jakarta Sans for supporting text, both self-hosted.
 * **Main Entry**: [`index.html`](index.html)
 
 ---
@@ -29,14 +29,20 @@ The production landing page is built on the **Vast Quiet Cinematic** architectur
 
 ---
 
-## Universal Guardrails Maintained
+## Guardrails
 
-- ✅ **No Double-Slash Separators**: Clean text formatting throughout all markup and styles.
-- ✅ **No Terminal / Monospace Fonts**: Modern geometric sans typography (`Space Grotesk` & `Plus Jakarta Sans`).
-- ✅ **Processed Imagery Only**: Desaturated aerial basalt crest in morning mist (03 Basalt Crest).
-- ✅ **Technical Marginalia**: Real coordinates (`ALT: 1,840m · LAT: 25.2048° N`), catalog IDs, and sub-second latency timers.
-- ✅ **Extreme Typography**: Monumental display headlines paired with quiet 10px–11px notation.
-- 🚫 **Never Used**: No purple gradients, no glossy 3D SaaS blobs, no untextured stock photography, and no generic icon grids.
+The full list is in [`DESIGN.md`](DESIGN.md) (Do's and Don'ts). The essentials:
+
+- **Truth first**: no invented numbers, clients or testimonials; the business examples are labelled as examples (see `PRODUCT.md`, Evidence on Hand).
+- **Square and flat**: 0px corners, 1px hairlines, no shadows, glows or glass.
+- **Rare stone**: the warm accent is for focus, selection and small moments only.
+- **Misty imagery**: every photo desaturated and fading into the fog; no labels or fake metadata overlaid on photos.
+- **No kickers**: no small uppercase label above a heading.
+- **Accessible by default**: WCAG AA contrast in both themes, 44px touch targets, reduced-motion respected.
+
+## Before launch
+
+- **Form endpoint**: set the `action` attribute of `#pilot-form` in `index.html` to your form service (e.g. Formspree or a Make/n8n webhook). Until then the form honestly reports that it could not send. Optionally add your WhatsApp number to `data-whatsapp` for a fallback link.
 
 ---
 
@@ -67,15 +73,20 @@ Double-click [`index.html`](index.html) to open the landing page directly in any
 ## Project Structure
 
 ```text
-├── index.html              # Main Verlyn Tech landing page (Direction 3)
+├── index.html              # Main Verlyn Tech landing page
+├── PRODUCT.md              # Product truth: audience, offer, evidence, voice
+├── DESIGN.md               # Fog Over Basalt design system (tokens + rules)
+├── .impeccable/design.json # Machine-readable design sidecar
 ├── requirements.txt        # Python preview server dependencies
 ├── server.py               # FastAPI + standard library HTTP preview server
-├── README.md               # Documentation & design specifications
-├── v3/                     # Direction 3 source reference
+├── README.md               # This file
+├── v3/                     # Historical snapshot of the pre-redesign page (not maintained)
 │   └── index.html
 └── assets/
+    ├── fonts/              # Self-hosted Space Grotesk + Plus Jakarta Sans (SIL OFL)
     ├── hero/
-    │   └── v3/             # Aerial basalt crest photography (03 Basalt Crest)
+    │   └── v3/             # Basalt crest photography (sized -800 / -1408 versions used)
+    ├── img/                # Cafe and garage photography (not used on the page)
     └── logos/              # Bespoke vector and transparent PNG brand marks
 ```
 

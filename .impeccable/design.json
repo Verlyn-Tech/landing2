@@ -1,0 +1,566 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-29T19:05:11Z",
+  "title": "Design System: Verlyn Tech",
+  "extensions": {
+    "colorMeta": {
+      "fog": {
+        "role": "neutral",
+        "displayName": "Fog",
+        "canonical": "oklch(97.3% 0.002 247.8)",
+        "tonalRamp": [
+          "#0b0b0c",
+          "#242526",
+          "#414243",
+          "#606162",
+          "#818283",
+          "#a4a5a6",
+          "#c8c9ca",
+          "#edeeef"
+        ]
+      },
+      "fog-surface": {
+        "role": "neutral",
+        "displayName": "Fog Surface",
+        "canonical": "oklch(98.8% 0.001 286.4)",
+        "tonalRamp": [
+          "#0b0b0c",
+          "#252526",
+          "#424243",
+          "#616162",
+          "#828283",
+          "#a5a5a6",
+          "#c9c9ca",
+          "#eeeeef"
+        ]
+      },
+      "fog-tint": {
+        "role": "neutral",
+        "displayName": "Fog Tint",
+        "canonical": "oklch(94.8% 0.003 247.9)",
+        "tonalRamp": [
+          "#0a0b0d",
+          "#242527",
+          "#414244",
+          "#606163",
+          "#818284",
+          "#a3a5a7",
+          "#c7c9cb",
+          "#edeff1"
+        ]
+      },
+      "fog-line": {
+        "role": "neutral",
+        "displayName": "Fog Line",
+        "canonical": "oklch(91.4% 0.005 247.9)",
+        "tonalRamp": [
+          "#090b0d",
+          "#232527",
+          "#404245",
+          "#5f6164",
+          "#808385",
+          "#a2a5a8",
+          "#c6c9cc",
+          "#eceff2"
+        ]
+      },
+      "basalt": {
+        "role": "primary",
+        "displayName": "Basalt Charcoal",
+        "canonical": "oklch(19.3% 0.006 236.9)",
+        "tonalRamp": [
+          "#090c0d",
+          "#222628",
+          "#3f4345",
+          "#5e6264",
+          "#7f8386",
+          "#a1a6a8",
+          "#c5cacd",
+          "#ebeff2"
+        ]
+      },
+      "slate": {
+        "role": "neutral",
+        "displayName": "Misty Slate",
+        "canonical": "oklch(48.7% 0.016 241.2)",
+        "tonalRamp": [
+          "#060c11",
+          "#1e262c",
+          "#3b434a",
+          "#5a636a",
+          "#7a848b",
+          "#9da7ae",
+          "#c0cbd3",
+          "#e6f0f8"
+        ]
+      },
+      "slate-quiet": {
+        "role": "neutral",
+        "displayName": "Quiet Slate",
+        "canonical": "oklch(53.6% 0.016 241.2)",
+        "tonalRamp": [
+          "#060c11",
+          "#1e262c",
+          "#3b434a",
+          "#5a6369",
+          "#7a848b",
+          "#9da6ae",
+          "#c1cbd2",
+          "#e6f0f8"
+        ]
+      },
+      "field-line": {
+        "role": "neutral",
+        "displayName": "Field Line",
+        "canonical": "oklch(61.2% 0.015 241.1)",
+        "tonalRamp": [
+          "#060c11",
+          "#1f262c",
+          "#3b4349",
+          "#5a6369",
+          "#7b848b",
+          "#9da6ae",
+          "#c1cbd2",
+          "#e6f0f8"
+        ]
+      },
+      "stone": {
+        "role": "primary",
+        "displayName": "Warm Stone",
+        "canonical": "oklch(61.8% 0.078 65.5)",
+        "tonalRamp": [
+          "#1f0100",
+          "#3d1a00",
+          "#5e380a",
+          "#7f582e",
+          "#a3794f",
+          "#c79b71",
+          "#edbf94",
+          "#ffe5b8"
+        ]
+      },
+      "stone-ink": {
+        "role": "primary",
+        "displayName": "Stone Ink",
+        "canonical": "oklch(53.4% 0.071 63.8)",
+        "tonalRamp": [
+          "#1e0200",
+          "#3c1b00",
+          "#5c3914",
+          "#7e5834",
+          "#a17955",
+          "#c59c76",
+          "#ebc099",
+          "#ffe5be"
+        ]
+      },
+      "stone-deep": {
+        "role": "primary",
+        "displayName": "Deep Stone",
+        "canonical": "oklch(49.7% 0.066 63.6)",
+        "tonalRamp": [
+          "#1d0300",
+          "#3b1c00",
+          "#5a3a18",
+          "#7c5938",
+          "#9f7a58",
+          "#c39d7a",
+          "#e9c19d",
+          "#ffe6c1"
+        ]
+      },
+      "ember-error": {
+        "role": "error",
+        "displayName": "Ember",
+        "canonical": "oklch(49.0% 0.146 29.6)",
+        "tonalRamp": [
+          "#330000",
+          "#580000",
+          "#7e0d06",
+          "#a4372b",
+          "#cb5a4c",
+          "#f37e6d",
+          "#ffa290",
+          "#ffc8b4"
+        ]
+      },
+      "night": {
+        "role": "neutral",
+        "displayName": "Night",
+        "canonical": "oklch(18.0% 0.006 237.0)",
+        "tonalRamp": [
+          "#090c0d",
+          "#222628",
+          "#3f4345",
+          "#5e6264",
+          "#7f8386",
+          "#a1a6a8",
+          "#c5cacd",
+          "#ebeff2"
+        ]
+      },
+      "night-surface": {
+        "role": "neutral",
+        "displayName": "Night Surface",
+        "canonical": "oklch(21.5% 0.008 240.3)",
+        "tonalRamp": [
+          "#080c0e",
+          "#212629",
+          "#3e4346",
+          "#5d6266",
+          "#7e8387",
+          "#a0a6aa",
+          "#c4cace",
+          "#eaeff4"
+        ]
+      },
+      "night-tint": {
+        "role": "neutral",
+        "displayName": "Night Tint",
+        "canonical": "oklch(23.6% 0.011 242.2)",
+        "tonalRamp": [
+          "#070c0f",
+          "#21262a",
+          "#3d4347",
+          "#5c6267",
+          "#7d8388",
+          "#9fa6ab",
+          "#c3cad0",
+          "#e9f0f5"
+        ]
+      },
+      "night-line": {
+        "role": "neutral",
+        "displayName": "Night Line",
+        "canonical": "oklch(28.9% 0.012 243.3)",
+        "tonalRamp": [
+          "#070c10",
+          "#20262b",
+          "#3d4348",
+          "#5b6268",
+          "#7c8389",
+          "#9fa6ac",
+          "#c3cad1",
+          "#e8f0f6"
+        ]
+      },
+      "mist": {
+        "role": "neutral",
+        "displayName": "Mist",
+        "canonical": "oklch(95.4% 0.003 228.8)",
+        "tonalRamp": [
+          "#0a0b0c",
+          "#242526",
+          "#414243",
+          "#606162",
+          "#818383",
+          "#a3a5a6",
+          "#c7c9ca",
+          "#edeff0"
+        ]
+      },
+      "mist-muted": {
+        "role": "neutral",
+        "displayName": "Mist Muted",
+        "canonical": "oklch(74.2% 0.015 238.1)",
+        "tonalRamp": [
+          "#060c11",
+          "#1e262c",
+          "#3b4349",
+          "#5a6369",
+          "#7a848b",
+          "#9da7ae",
+          "#c1cbd2",
+          "#e6f0f8"
+        ]
+      },
+      "mist-quiet": {
+        "role": "neutral",
+        "displayName": "Mist Quiet",
+        "canonical": "oklch(62.7% 0.018 239.3)",
+        "tonalRamp": [
+          "#050c12",
+          "#1d262d",
+          "#3a434b",
+          "#58636a",
+          "#79848c",
+          "#9ba7af",
+          "#bfcbd4",
+          "#e4f0f9"
+        ]
+      },
+      "mist-rule": {
+        "role": "neutral",
+        "displayName": "Mist Rule",
+        "canonical": "oklch(89.5% 0.007 233.7)",
+        "tonalRamp": [
+          "#080c0e",
+          "#222628",
+          "#3f4345",
+          "#5e6264",
+          "#7e8386",
+          "#a1a6a9",
+          "#c5cacd",
+          "#eaeff2"
+        ]
+      },
+      "mist-tile-text": {
+        "role": "neutral",
+        "displayName": "Tile Mist",
+        "canonical": "oklch(84.9% 0.008 241.7)",
+        "tonalRamp": [
+          "#080c0e",
+          "#222629",
+          "#3e4346",
+          "#5d6265",
+          "#7e8387",
+          "#a1a6aa",
+          "#c5cace",
+          "#eaeff3"
+        ]
+      },
+      "stone-night": {
+        "role": "primary",
+        "displayName": "Night Stone",
+        "canonical": "oklch(71.5% 0.077 66.7)",
+        "tonalRamp": [
+          "#1e0100",
+          "#3d1b00",
+          "#5d390b",
+          "#7e582e",
+          "#a2794f",
+          "#c69c71",
+          "#ecc094",
+          "#ffe5b8"
+        ]
+      },
+      "ember-night": {
+        "role": "error",
+        "displayName": "Night Ember",
+        "canonical": "oklch(72.0% 0.108 28.5)",
+        "tonalRamp": [
+          "#2a0000",
+          "#4d0001",
+          "#70251e",
+          "#95463d",
+          "#ba685d",
+          "#e08a7e",
+          "#ffaea1",
+          "#ffd3c6"
+        ]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero headline only; uppercase, wide tracking."
+      },
+      "display-sm": {
+        "displayName": "Display Small",
+        "purpose": "The contact headline; uppercase."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Section headings, balanced wrapping."
+      },
+      "subhead": {
+        "displayName": "Subhead",
+        "purpose": "Panel group headings and the basalt tile heading."
+      },
+      "title": {
+        "displayName": "Title",
+        "purpose": "Example headings."
+      },
+      "title-sm": {
+        "displayName": "Title Small",
+        "purpose": "Item and table-row headings."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Reading copy, 52 to 60ch."
+      },
+      "body-text": {
+        "displayName": "Body Text",
+        "purpose": "Capability descriptions, table cells."
+      },
+      "body-sm": {
+        "displayName": "Body Small",
+        "purpose": "Guarantee line, form alerts, skip link."
+      },
+      "caption": {
+        "displayName": "Caption",
+        "purpose": "Form labels, helper text, errors, footer."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Buttons and table column headings; never a kicker."
+      }
+    },
+    "shadows": [],
+    "motion": [
+      {
+        "name": "ease-out-expo",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "All state transitions and the hero settle-in."
+      },
+      {
+        "name": "hero-rise",
+        "value": "0.9s, staggered 90ms",
+        "purpose": "Hero copy enters once on load; disabled under reduced motion."
+      },
+      {
+        "name": "hero-settle",
+        "value": "2.4s scale 1.04 to 1",
+        "purpose": "Ridge photograph eases into place; disabled under reduced motion."
+      },
+      {
+        "name": "state-change",
+        "value": "0.3s",
+        "purpose": "Hover and theme colour changes."
+      }
+    ],
+    "breakpoints": [
+      {
+        "name": "small-phone",
+        "value": "479px"
+      },
+      {
+        "name": "phone",
+        "value": "767px"
+      },
+      {
+        "name": "tablet",
+        "value": "1024px"
+      },
+      {
+        "name": "container",
+        "value": "1180px"
+      }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Button",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "The single primary action per view, e.g. Start 14-day pilot.",
+      "html": "<button class=\"ds-btn-primary\">Start 14-day pilot</button>",
+      "css": ".ds-btn-primary { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; white-space: nowrap; padding: 15px 30px; background: #121517; color: #f5f6f7; border: 1px solid #121517; border-radius: 0; cursor: pointer; transition: background-color 0.3s cubic-bezier(0.16,1,0.3,1), border-color 0.3s cubic-bezier(0.16,1,0.3,1), transform 0.15s; } .ds-btn-primary:hover { background: #7d5a39; border-color: #7d5a39; } .ds-btn-primary:focus-visible { outline: 2px solid #a67c52; outline-offset: 3px; } .ds-btn-primary:active { transform: translateY(1px); }"
+    },
+    {
+      "name": "Ghost Button",
+      "kind": "button",
+      "refersTo": "button-ghost",
+      "description": "Secondary action on fog, e.g. the nav CTA.",
+      "html": "<button class=\"ds-btn-ghost\">Start 14-day pilot</button>",
+      "css": ".ds-btn-ghost { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 12px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; min-height: 44px; padding: 10px 18px; background: transparent; color: #121517; border: 1px solid rgba(18,21,23,0.35); border-radius: 0; cursor: pointer; transition: background-color 0.3s, color 0.3s, border-color 0.3s; } .ds-btn-ghost:hover { background: #121517; color: #f5f6f7; border-color: #121517; } .ds-btn-ghost:focus-visible { outline: 2px solid #a67c52; outline-offset: 3px; }"
+    },
+    {
+      "name": "Theme Switch",
+      "kind": "button",
+      "refersTo": "icon-button",
+      "description": "Square 44px icon button with an inline Phosphor icon.",
+      "html": "<button class=\"ds-icon-btn\" aria-label=\"Switch to dark mode\"><svg viewBox=\"0 0 256 256\" fill=\"currentColor\" aria-hidden=\"true\"><path d=\"M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z\"/></svg></button>",
+      "css": ".ds-icon-btn { width: 44px; height: 44px; display: inline-grid; place-items: center; background: transparent; color: #121517; border: 1px solid rgba(18,21,23,0.35); border-radius: 0; cursor: pointer; transition: background-color 0.3s, color 0.3s; } .ds-icon-btn svg { width: 20px; height: 20px; } .ds-icon-btn:hover { background: #121517; color: #f5f6f7; } .ds-icon-btn:focus-visible { outline: 2px solid #a67c52; outline-offset: 3px; }"
+    },
+    {
+      "name": "Text Field",
+      "kind": "input",
+      "refersTo": "input",
+      "description": "Underline field with the label above and an error slot below.",
+      "html": "<div class=\"ds-field\"><label class=\"ds-field-label\" for=\"ds-f1\">WhatsApp number</label><p class=\"ds-field-hint\">Include the country code. We reply here.</p><input class=\"ds-input\" id=\"ds-f1\" type=\"tel\" placeholder=\"+971 50 000 0000\"></div>",
+      "css": ".ds-field { display: grid; gap: 8px; max-width: 360px; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; } .ds-field-label { font-size: 13px; font-weight: 600; color: #121517; } .ds-field-hint { margin: 0; font-size: 13px; color: #666f76; } .ds-input { font-family: inherit; font-size: 16px; color: #121517; background: transparent; border: 0; border-bottom: 1px solid #7c858c; border-radius: 0; padding: 12px 0; caret-color: #a67c52; } .ds-input::placeholder { color: #666f76; } .ds-input:focus { outline: none; border-bottom: 2px solid #121517; padding-bottom: 11px; } .ds-input[aria-invalid='true'] { border-bottom-color: #a3362a; }"
+    },
+    {
+      "name": "Navigation",
+      "kind": "nav",
+      "refersTo": null,
+      "description": "Logo left, theme switch and ghost CTA right; no background.",
+      "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-home\" href=\"#\">VERLYN TECH</a><div class=\"ds-nav-actions\"><a class=\"ds-nav-cta\" href=\"#\">Start 14-day pilot</a></div></nav>",
+      "css": ".ds-nav { height: 80px; display: flex; align-items: center; justify-content: space-between; padding: 0 48px; background: #f5f6f7; } .ds-nav-home { min-height: 44px; display: inline-flex; align-items: center; font-family: 'Space Grotesk', system-ui, sans-serif; font-weight: 600; letter-spacing: 0.2em; color: #121517; text-decoration: none; } .ds-nav-cta { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; min-height: 44px; display: inline-flex; align-items: center; padding: 0 18px; color: #121517; border: 1px solid rgba(18,21,23,0.35); text-decoration: none; } .ds-nav-cta:hover { background: #121517; color: #f5f6f7; } .ds-nav a:focus-visible { outline: 2px solid #a67c52; outline-offset: 3px; }"
+    },
+    {
+      "name": "Capability Panel",
+      "kind": "card",
+      "refersTo": "panel",
+      "description": "Square fog panel; items separated by hairline rules, never nested cards.",
+      "html": "<div class=\"ds-panel\"><h3 class=\"ds-panel-title\">Run the operation</h3><div class=\"ds-panel-item\"><h4>CRM Setup &amp; Lead Management</h4><p>Leads stop living in WhatsApp chats. One pipeline, one owner, automated follow-up.</p></div></div>",
+      "css": ".ds-panel { max-width: 560px; padding: 40px; background: #fbfbfc; border: 1px solid #e0e3e6; border-radius: 0; font-family: 'Space Grotesk', system-ui, sans-serif; color: #121517; } .ds-panel-title { margin: 0 0 8px; font-size: 24px; font-weight: 400; } .ds-panel-item { display: grid; grid-template-columns: 5fr 7fr; gap: 32px; padding-top: 28px; margin-top: 28px; border-top: 1px solid #e0e3e6; } .ds-panel-item h4 { margin: 0; font-size: 18px; font-weight: 500; } .ds-panel-item p { margin: 0; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 15px; line-height: 1.7; color: #586168; }"
+    },
+    {
+      "name": "Basalt Tile",
+      "kind": "card",
+      "refersTo": "panel-basalt",
+      "description": "The one intentional dark block on a fog page; basalt in both themes.",
+      "html": "<div class=\"ds-basalt\"><h3>Premium Web Development</h3><p>Ultra-fast, meticulously designed digital storefronts built to capture demand.</p></div>",
+      "css": ".ds-basalt { max-width: 320px; min-height: 280px; display: flex; flex-direction: column; justify-content: flex-end; padding: 40px; background: #121517; color: #eef0f1; border-radius: 0; font-family: 'Space Grotesk', system-ui, sans-serif; } .ds-basalt h3 { margin: 0 0 16px; font-size: 24px; font-weight: 400; } .ds-basalt p { margin: 0; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 15px; line-height: 1.7; color: #c9ced2; }"
+    },
+    {
+      "name": "Deliverables Table",
+      "kind": "custom",
+      "refersTo": null,
+      "description": "Uppercase column labels over a basalt rule, hairline rows, tabular numerals.",
+      "html": "<table class=\"ds-table\"><thead><tr><th>Module</th><th>Latency</th></tr></thead><tbody><tr><th scope=\"row\">Static Presence</th><td>&lt; 350ms global edge</td></tr><tr><th scope=\"row\">WhatsApp Gateway</th><td>Instant triage</td></tr></tbody></table>",
+      "css": ".ds-table { border-collapse: collapse; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-variant-numeric: tabular-nums; text-align: left; min-width: 420px; } .ds-table thead th { padding: 0 32px 16px 0; border-bottom: 1px solid #121517; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #666f76; } .ds-table tbody th, .ds-table td { padding: 20px 32px 20px 0; vertical-align: top; } .ds-table tbody tr + tr > * { border-top: 1px solid #e0e3e6; } .ds-table tbody th { font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 18px; font-weight: 500; color: #121517; } .ds-table td { font-size: 15px; color: #586168; }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Fog Over Basalt",
+    "overview": "**Creative North Star: \"Fog Over Basalt\"**\n\nThe page is a pale, quiet field of fog laid over dark volcanic rock. Most of the screen is soft off-white with generous empty space; the weight comes from basalt charcoal type, thin charcoal rules and one photograph of a mist-wrapped basalt ridge that anchors the first screen. A single warm stone accent appears rarely, like light catching rock. Nothing shouts. Confidence comes from restraint, precision and room to breathe.\n\nDensity is low: large section spacing, short measures, few elements per view. Components are precise and restrained: square corners, hairline borders, quiet hover states that invert rather than glow. Photography is used sparingly: the single desaturated, misty basalt ridge in the hero, dissolving into the fog rather than sitting in a hard box. Content sections are type and rules, not pictures. Dark mode is the same world at night: basalt surfaces, mist-coloured type, photos dimmed.",
+    "keyCharacteristics": [
+      "Fog-white ground, basalt ink, one rare stone accent.",
+      "Square geometry everywhere (0px radius); hairline rules instead of shadows.",
+      "Wide uppercase display type, light weight, generous tracking.",
+      "Desaturated, misty photography that melts into the page.",
+      "One authored motion moment (the hero settling in); everything else is still."
+    ],
+    "rules": [
+      {
+        "name": "The Rare Stone Rule",
+        "body": "Warm stone never covers more than a sliver of any screen: a focus ring, a selection, a hover. If stone is filling a box, it is wrong.",
+        "section": "colors"
+      },
+      {
+        "name": "The Contrast Floor Rule",
+        "body": "Every text colour is checked against the surface it sits on: 4.5:1 for body and small text, 3:1 for large text and form boundaries. The lighter grey (#8e98a0) failed this and is retired.",
+        "section": "colors"
+      },
+      {
+        "name": "The Basalt Tile Rule",
+        "body": "A panel that is basalt stays basalt in both themes (its own tile tokens); it is the one intentional dark block on a fog page.",
+        "section": "colors"
+      },
+      {
+        "name": "The No-Kicker Rule",
+        "body": "No small uppercase label sits above a heading. The heading carries its own weight.",
+        "section": "typography"
+      },
+      {
+        "name": "The One Uppercase Voice Rule",
+        "body": "Uppercase is reserved for the hero display line, the contact headline and functional labels (buttons, column headings). Body copy is never uppercase.",
+        "section": "typography"
+      },
+      {
+        "name": "The No-Shadow Rule",
+        "body": "Surfaces are flat at rest and on hover. If an element needs separation, use a tone step or a 1px rule, not a shadow.",
+        "section": "elevation"
+      }
+    ],
+    "dos": [
+      "Do keep the fog ground dominant; basalt is for type, rules and the single dark tile.",
+      "Do use warm stone only for focus, selection and small moments (The Rare Stone Rule).",
+      "Do keep every corner square (0px) and every border 1px.",
+      "Do desaturate and mist every photograph so it melts into the page.",
+      "Do make every control at least 44px tall and every text colour pass its contrast floor.",
+      "Do let the hero's settle-in be the only entrance animation, and switch it off under reduced motion."
+    ],
+    "donts": [
+      "Don't add shadows, glows, gradients on text, or glass blur.",
+      "Don't round corners or mix pill buttons into the square system.",
+      "Don't put a small uppercase kicker above a heading.",
+      "Don't use big-number stat blocks unless the number is a real, measured client result.",
+      "Don't add coordinate strips, fake metadata badges or labels overlaid on photographs.",
+      "Don't use the retired light grey (#8e98a0) for text."
+    ]
+  }
+}

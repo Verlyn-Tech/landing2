@@ -22,3 +22,13 @@ Thumbs.db
 .idea/
 .agents/
 skills-lock.json
+# Playwright CLI output (may contain credentials)
+.playwright-cli/
+.playwright/
+
+# Local agent tooling (skill links point at this machine's .agents/ folder)
+.claude/skills/
+
+# Impeccable live-mode runtime state (keep the project config)
+.impeccable/live/*
+!.impeccable/live/config.json

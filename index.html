@@ -3,820 +3,1011 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>VERLYN TECH — Systems for Physical Enterprise</title>
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600&family=Space+Grotesk:wght@300;400;500;600&display=swap" rel="stylesheet">
+  <meta name="color-scheme" content="light dark">
+  <meta name="description" content="Verlyn Tech installs the systems growing UAE businesses are missing: fast websites, WhatsApp Business automation, CRM and automated follow-up. Start with a 14-day pilot.">
+  <title>Verlyn Tech | Operational systems for UAE businesses</title>
+  <link rel="preload" as="image" href="assets/hero/v3/basalt_crest-1408.jpg" imagesrcset="assets/hero/v3/basalt_crest-800.jpg 800w, assets/hero/v3/basalt_crest-1408.jpg 1408w" imagesizes="100vw" fetchpriority="high">
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/space-grotesk-latin.woff2" crossorigin>
+  <link rel="preload" as="font" type="font/woff2" href="assets/fonts/plus-jakarta-sans-latin.woff2" crossorigin>
   <style>
-    :root {
-      --fog-white: #f5f6f7;
-      --fog-muted: #e6e8ea;
-      --ridge-slate: #2c3237;
-      --ridge-dark: #121517;
-      --ridge-deep: #0a0c0d;
-      --text-primary: #121517;
-      --text-secondary: #586168;
-      --text-light: #8e98a0;
-      --accent-warm: #a67c52;
-      --font-sans: 'Space Grotesk', -apple-system, sans-serif;
-      --font-mono: 'Plus Jakarta Sans', -apple-system, sans-serif;
+    /* Self-hosted variable fonts (SIL OFL, licenses in assets/fonts/) */
+    @font-face {
+      font-family: 'Space Grotesk';
+      font-style: normal;
+      font-weight: 300 600;
+      font-display: swap;
+      src: url(assets/fonts/space-grotesk-latin.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Space Grotesk';
+      font-style: normal;
+      font-weight: 300 600;
+      font-display: swap;
+      src: url(assets/fonts/space-grotesk-latin-ext.woff2) format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
+    }
+    @font-face {
+      font-family: 'Plus Jakarta Sans';
+      font-style: normal;
+      font-weight: 400 600;
+      font-display: swap;
+      src: url(assets/fonts/plus-jakarta-sans-latin.woff2) format('woff2');
+      unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+    }
+    @font-face {
+      font-family: 'Plus Jakarta Sans';
+      font-style: normal;
+      font-weight: 400 600;
+      font-display: swap;
+      src: url(assets/fonts/plus-jakarta-sans-latin-ext.woff2) format('woff2');
+      unicode-range: U+0100-02BA, U+02BD-02C5, U+02C7-02CC, U+02CE-02D7, U+02DD-02FF, U+0304, U+0308, U+0329, U+1D00-1DBF, U+1E00-1E9F, U+1EF2-1EFF, U+2020, U+20A0-20AB, U+20AD-20C0, U+2113, U+2C60-2C7F, U+A720-A7FF;
     }
 
-    * {
-      box-sizing: border-box;
-      margin: 0;
-      padding: 0;
+    /*
+      Verlyn Tech landing page for owners of growing UAE businesses.
+      Product truth: PRODUCT.md. Design system: DESIGN.md ("Fog Over Basalt"):
+      fog white, basalt charcoal, rare warm stone accent, mist-ridge hero,
+      square corners and hairlines, no shadows.
+    */
+    :root {
+      --bg: #f5f6f7;           /* fog white */
+      --surface: #fbfbfc;
+      --surface-2: #eceef0;    /* fog muted tint */
+      --line: #e0e3e6;
+      --line-strong: #121517;
+      --field-line: #7c858c;   /* 3:1 non-text contrast for inputs */
+      --ink: #121517;          /* basalt charcoal */
+      --ink-2: #586168;        /* misty slate, 5.8:1 */
+      --ink-3: #666f76;        /* small labels, 4.7:1 */
+      --accent: #a67c52;       /* warm stone (brand) */
+      --accent-ink: #8a6440;   /* stone for small text, 4.9:1 */
+      --btn-bg: #121517;
+      --btn-ink: #f5f6f7;
+      --btn-hover: #7d5a39;
+      --error: #a3362a;
+      --photo-filter: none;
+      /* The web tile stays basalt in both themes */
+      --tile-bg: #121517;
+      --tile-ink: #eef0f1;
+      --tile-ink-2: #c9ced2;
+      --tile-line: rgba(238, 240, 241, 0.18);
+      color-scheme: light;
+
+      --font-display: 'Space Grotesk', system-ui, sans-serif;
+      --font-text: 'Plus Jakarta Sans', system-ui, sans-serif;
+
+      --gutter: 48px;
+      --ease: cubic-bezier(0.16, 1, 0.3, 1);
+
+      /* z-index scale */
+      --z-overlay: 1;
+      --z-content: 2;
+    }
+
+    /* Dark tokens: follow the system unless the visitor picked a theme */
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) {
+        color-scheme: dark;
+        --bg: #0f1214;
+        --surface: #161a1d;
+        --surface-2: #1a1f23;
+        --line: #262c31;
+        --line-strong: #d8dde0;
+        --field-line: #5f696f;
+        --ink: #eef0f1;
+        --ink-2: #a3adb4;
+        --ink-3: #7f8a92;
+        --accent: #c49a6f;
+        --accent-ink: #c49a6f;
+        --btn-bg: #eef0f1;
+        --btn-ink: #0f1214;
+        --btn-hover: #c49a6f;
+        --error: #e08a7e;
+        --photo-filter: brightness(0.72) contrast(1.05);
+      }
+    }
+    :root[data-theme="dark"] {
+      color-scheme: dark;
+      --bg: #0f1214;
+      --surface: #161a1d;
+      --surface-2: #1a1f23;
+      --line: #262c31;
+      --line-strong: #d8dde0;
+      --field-line: #5f696f;
+      --ink: #eef0f1;
+      --ink-2: #a3adb4;
+      --ink-3: #7f8a92;
+      --accent: #c49a6f;
+      --accent-ink: #c49a6f;
+      --btn-bg: #eef0f1;
+      --btn-ink: #0f1214;
+      --btn-hover: #c49a6f;
+      --error: #e08a7e;
+      --photo-filter: brightness(0.72) contrast(1.05);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+
+    @media (prefers-reduced-motion: no-preference) {
+      html { scroll-behavior: smooth; }
     }
 
     body {
-      background-color: var(--fog-white);
-      color: var(--text-primary);
-      font-family: var(--font-sans);
-      font-size: 14px;
-      line-height: 1.8;
+      background: var(--bg);
+      color: var(--ink);
+      font-family: var(--font-display);
+      font-size: 16px;
+      line-height: 1.7;
       -webkit-font-smoothing: antialiased;
       overflow-x: hidden;
     }
 
-    /* FULL BLEED HERO CONTAINER */
-    /* Placement: full-bleed; fog-white upper half is the headline zone with tiny centered type; ridge fills the lower half */
-    .vast-hero-viewport {
-      min-height: 100vh;
-      position: relative;
-      background-color: var(--fog-white);
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      overflow: hidden;
+    img { display: block; max-width: 100%; }
+
+    /* Browser surfaces carry the palette too */
+    ::selection { background: color-mix(in srgb, var(--accent) 35%, transparent); color: var(--ink); }
+    html { scrollbar-color: color-mix(in srgb, var(--ink) 30%, transparent) var(--bg); }
+    input { caret-color: var(--accent); }
+    a { text-underline-offset: 0.2em; }
+
+    .visually-hidden {
+      position: absolute !important;
+      width: 1px; height: 1px;
+      margin: -1px; padding: 0; border: 0;
+      overflow: hidden; clip: rect(0 0 0 0); white-space: nowrap;
     }
 
-    /* Minimal Overhead Nav */
-    .quiet-nav {
-      padding: 32px 48px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      position: relative;
-      z-index: 20;
-    }
-
-    .brand-mark {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--text-primary);
-      font-weight: 500;
-    }
-
-    .nav-coords {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      color: var(--text-light);
-      letter-spacing: 0.2em;
-    }
-
-    .quiet-cta-pill {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-primary);
-      text-decoration: none;
-      padding: 8px 18px;
-      border: 1px solid rgba(18, 21, 23, 0.25);
-      border-radius: 999px;
-      transition: all 0.2s ease;
-      background: rgba(255, 255, 255, 0.4);
-      backdrop-filter: blur(8px);
-    }
-
-    .quiet-cta-pill:hover {
-      background-color: var(--text-primary);
-      color: var(--fog-white);
-    }
-
-    /* UPPER HALF: HEADLINE ZONE (Tiny Centered Sans & Extreme Whitespace) */
-    .headline-zone {
-      position: relative;
-      z-index: 15;
-      text-align: center;
-      max-width: 760px;
-      margin: 0 auto;
-      padding: 60px 24px 0;
-    }
-
-    .quiet-tag {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      letter-spacing: 0.3em;
-      text-transform: uppercase;
-      color: var(--accent-warm);
-      margin-bottom: 28px;
-      display: inline-block;
-    }
-
-    .monumental-quiet-title {
-      font-size: clamp(28px, 4vw, 44px);
-      font-weight: 300;
-      letter-spacing: 0.08em;
-      line-height: 1.25;
-      color: var(--text-primary);
-      text-transform: uppercase;
-      margin-bottom: 24px;
-    }
-
-    .monumental-quiet-title strong {
+    .skip-link {
+      position: absolute;
+      top: 8px; left: 8px;
+      z-index: 10;
+      padding: 12px 18px;
+      background: var(--btn-bg);
+      color: var(--btn-ink);
+      font-family: var(--font-text);
+      font-size: 14px;
       font-weight: 600;
+      text-decoration: none;
+      transform: translateY(-160%);
+    }
+    .skip-link:focus { transform: none; }
+    main:focus { outline: none; }
+
+    picture { display: contents; }
+
+    a { color: inherit; }
+
+    :focus-visible { outline: 2px solid var(--accent); outline-offset: 3px; }
+
+    .wrap { max-width: 1180px; margin: 0 auto; padding: 0 var(--gutter); }
+
+    /* ---------- Shared type ---------- */
+    .section-title {
+      font-size: clamp(26px, 3vw, 34px);
+      font-weight: 300;
+      letter-spacing: -0.01em;
+      line-height: 1.3;
+      max-width: 22ch;
+      text-wrap: balance;
     }
 
-    .quiet-prose {
-      font-size: 15px;
-      line-height: 1.8;
-      color: var(--text-secondary);
-      max-width: 520px;
-      margin: 0 auto 36px;
-      font-weight: 400;
+    .section-lede {
+      margin-top: 20px;
+      color: var(--ink-2);
+      max-width: 60ch;
     }
 
-    .quiet-cta-row {
-      display: flex;
-      justify-content: center;
-      gap: 16px;
+    /* ---------- Buttons (all-sharp) ---------- */
+    .btn {
+      display: inline-flex;
       align-items: center;
-    }
-
-    .primary-quiet-btn {
-      font-family: var(--font-mono);
-      font-size: 11px;
+      justify-content: center;
+      white-space: nowrap;
+      font-family: var(--font-text);
+      font-size: 12px;
+      font-weight: 600;
       letter-spacing: 0.16em;
       text-transform: uppercase;
-      background-color: var(--text-primary);
-      color: var(--fog-white);
-      border: 1px solid var(--text-primary);
-      padding: 12px 28px;
       text-decoration: none;
-      transition: all 0.2s ease;
+      padding: 15px 30px;
+      border: 1px solid var(--btn-bg);
+      background: var(--btn-bg);
+      color: var(--btn-ink);
+      cursor: pointer;
+      transition: background-color 0.3s var(--ease), border-color 0.3s var(--ease), color 0.3s var(--ease), transform 0.15s var(--ease);
     }
+    .btn:hover { background: var(--btn-hover); border-color: var(--btn-hover); }
+    .btn:active { transform: translateY(1px); }
+    .btn:disabled { cursor: progress; opacity: 0.7; }
+    .btn:disabled:hover { background: var(--btn-bg); border-color: var(--btn-bg); }
 
-    .primary-quiet-btn:hover {
-      background-color: var(--accent-warm);
-      border-color: var(--accent-warm);
+    .btn-ghost {
+      min-height: 44px;
+      padding: 10px 18px;
+      font-size: 12px;
+      background: transparent;
+      color: var(--ink);
+      border-color: color-mix(in srgb, var(--ink) 35%, transparent);
     }
+    .btn-ghost:hover { background: var(--btn-bg); color: var(--btn-ink); border-color: var(--btn-bg); }
 
-    /* LOWER HALF: HERO RESERVED STAND-IN (Vast Desaturated Aerial Mountain Ridge in Mist) */
-    .ridge-hero-slot {
-      position: relative;
-      width: 100%;
-      height: 480px;
-      margin-top: -40px;
+    /* ---------- Hero ---------- */
+    .hero {
+      min-height: 100dvh;
       display: flex;
-      align-items: flex-end;
+      flex-direction: column;
+      background: var(--bg);
     }
 
-    .mountain-standin {
-      width: 100%;
-      height: 100%;
-      position: absolute;
-      bottom: 0;
-      left: 0;
+    .nav {
+      height: 80px;
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      padding: 0 var(--gutter);
+      position: relative;
+      z-index: var(--z-content);
+    }
+    .nav-home { display: inline-flex; align-items: center; min-height: 44px; }
+    .nav img { height: 34px; width: auto; }
+    .nav-actions { display: flex; align-items: center; gap: 12px; }
+
+    .theme-toggle {
+      width: 44px;
+      height: 44px;
+      display: inline-grid;
+      place-items: center;
+      background: transparent;
+      color: var(--ink);
+      border: 1px solid color-mix(in srgb, var(--ink) 35%, transparent);
+      cursor: pointer;
+      transition: background-color 0.3s var(--ease), color 0.3s var(--ease), border-color 0.3s var(--ease), transform 0.15s var(--ease);
+    }
+    .theme-toggle:hover { background: var(--btn-bg); color: var(--btn-ink); border-color: var(--btn-bg); }
+    .theme-toggle:active { transform: translateY(1px); }
+    .theme-toggle svg { grid-area: 1 / 1; width: 20px; height: 20px; }
+    /* Show the icon for the mode you would switch TO */
+    .theme-toggle .icon-sun { display: none; }
+    @media (prefers-color-scheme: dark) {
+      :root:not([data-theme="light"]) .theme-toggle .icon-sun { display: block; }
+      :root:not([data-theme="light"]) .theme-toggle .icon-moon { display: none; }
+    }
+    :root[data-theme="dark"] .theme-toggle .icon-sun { display: block; }
+    :root[data-theme="dark"] .theme-toggle .icon-moon { display: none; }
+
+    /* Brief cross-fade while switching themes */
+    @media (prefers-reduced-motion: no-preference) {
+      .theme-switching, .theme-switching * {
+        transition: background-color 0.35s var(--ease), color 0.35s var(--ease), border-color 0.35s var(--ease) !important;
+      }
+    }
+
+    .hero-copy {
+      position: relative;
+      z-index: var(--z-content);
+      text-align: center;          /* brand signature: manifesto-style centered hero */
+      max-width: 760px;
+      margin: 0 auto;
+      padding: 48px 24px 0;
+    }
+
+    .hero-emblem { height: 40px; width: auto; margin: 0 auto 28px; }
+
+    .hero h1 {
+      margin-top: 22px;
+      font-size: clamp(28px, 4vw, 46px);
+      font-weight: 300;
+      letter-spacing: 0.08em;
+      line-height: 1.22;
+      text-transform: uppercase;
+      text-wrap: balance;
+    }
+    .hero h1 strong { font-weight: 600; }
+
+    .hero-sub {
+      margin: 22px auto 34px;
+      max-width: 46ch;
+      color: var(--ink-2);
+    }
+
+    .hero-ridge {
+      position: relative;
+      flex: 1 1 auto;
+      min-height: 260px;
+      margin-top: -24px;
       overflow: hidden;
     }
-
-    .mountain-svg {
+    .hero-ridge img {
+      position: absolute;
+      inset: 0;
       width: 100%;
       height: 100%;
-      display: block;
+      object-fit: cover;
+      object-position: center bottom;
+      filter: var(--photo-filter);
     }
-
-    .ridge-metadata-overlay {
+    .hero-ridge::before {
+      content: "";
       position: absolute;
-      bottom: 32px;
-      left: 48px;
-      font-family: var(--font-mono);
-      font-size: 10px;
-      letter-spacing: 0.15em;
-      color: rgba(255, 255, 255, 0.7);
-      z-index: 10;
+      inset: 0 0 auto;
+      height: 45%;
+      z-index: var(--z-overlay);
+      background: linear-gradient(to bottom, var(--bg), transparent);
+      pointer-events: none;
     }
 
-    .ridge-metadata-overlay-right {
-      position: absolute;
-      bottom: 32px;
-      right: 48px;
-      font-family: var(--font-mono);
-      font-size: 10px;
-      letter-spacing: 0.15em;
-      color: rgba(255, 255, 255, 0.7);
-      z-index: 10;
-      text-align: right;
-    }
+    /* ---------- Capabilities: grouped bento ---------- */
+    .capabilities { padding: 128px 0; }
 
-    /* SECTION 01: CORE CAPABILITIES LEDGER (V3 EDITORIAL DESIGN) */
-    .capabilities-section {
-      background-color: var(--fog-white);
-      padding: 120px 48px;
-      border-bottom: 1px solid var(--fog-muted);
-    }
+    .cap-head { margin-bottom: 64px; }
 
-    .capabilities-editorial-ledger {
+    .cap-grid {
       display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      gap: 56px 40px;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 16px;
     }
 
-    .cap-ledger-item {
-      border-top: 1px solid var(--text-primary);
-      padding-top: 28px;
+    .cap-cell {
+      padding: 40px;
+      background: var(--surface);
+      border: 1px solid var(--line);
+    }
+    .cap-cell--demand { grid-column: span 8; }
+    .cap-cell--ops    { grid-column: span 8; background: var(--surface-2); border-color: transparent; }
+    .cap-cell--web {
+      grid-column: 9 / span 4;
+      grid-row: 1 / span 2;
+      position: relative;
+      overflow: hidden;
       display: flex;
       flex-direction: column;
       justify-content: space-between;
+      gap: 48px;
+      min-height: 420px;
+      border: none;
+      color: var(--tile-ink);
+      background: var(--tile-bg);
     }
+    .cap-cell--web .tile-mark { width: 100%; max-width: 260px; height: auto; opacity: 0.9; }
+    .cap-cell--web .cap-help { color: var(--tile-ink-2); }
+    .cap-cell--web .cap-edge { color: var(--tile-ink); border-color: var(--tile-line); }
 
-    .cap-ledger-header {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      margin-bottom: 14px;
-    }
-
-    .cap-ledger-num {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      letter-spacing: 0.22em;
-      text-transform: uppercase;
-      color: var(--accent-warm);
-      font-weight: 600;
-    }
-
-    .cap-ledger-arrow {
-      color: var(--text-light);
-      font-size: 14px;
-      line-height: 1;
-      transition: transform 0.2s ease, color 0.2s ease;
-    }
-
-    .cap-ledger-item:hover .cap-ledger-arrow {
-      transform: translate(2px, -2px);
-      color: var(--text-primary);
-    }
-
-    .cap-ledger-title {
-      font-family: var(--font-sans);
-      font-size: 20px;
-      font-weight: 500;
+    .cap-group {
+      font-size: 24px;
+      font-weight: 400;
       letter-spacing: -0.01em;
-      line-height: 1.35;
-      color: var(--text-primary);
-      margin-bottom: 20px;
-    }
-
-    .cap-ledger-body {
-      margin-top: auto;
-    }
-
-    .cap-subhead {
-      font-family: var(--font-mono);
-      font-size: 9.5px;
-      letter-spacing: 0.18em;
-      text-transform: uppercase;
-      color: var(--text-light);
-      font-weight: 600;
       margin-bottom: 8px;
     }
 
-    .cap-prose {
-      font-family: var(--font-sans);
-      font-size: 13.5px;
-      line-height: 1.75;
-      color: var(--text-secondary);
-      margin-bottom: 22px;
-    }
-
-    .cap-diff-block {
-      border-top: 1px dashed var(--fog-muted);
-      padding-top: 16px;
-    }
-
-    .cap-diff-text {
-      font-family: var(--font-sans);
-      font-size: 13px;
-      line-height: 1.65;
-      color: var(--text-primary);
-      font-weight: 500;
-    }
-
-    /* SECTION 2: EDITORIAL CONTENT (Cafes & Garages) */
-    .calm-section {
-      background-color: #ffffff;
-      padding: 120px 48px;
-      border-bottom: 1px solid var(--fog-muted);
-    }
-
-    .inner-bound {
-      max-width: 1080px;
-      margin: 0 auto;
-    }
-
-    .section-quiet-header {
+    .cap-item {
       display: grid;
-      grid-template-columns: 200px 1fr;
-      gap: 40px;
-      margin-bottom: 80px;
-      align-items: baseline;
+      grid-template-columns: 5fr 7fr;
+      gap: 32px;
+      padding-top: 28px;
+      margin-top: 28px;
+      border-top: 1px solid var(--line);
     }
+    .cap-cell--ops .cap-item { border-top-color: color-mix(in srgb, var(--ink) 12%, transparent); }
 
-    .editorial-label {
-      font-family: var(--font-mono);
-      font-size: 10px;
-      letter-spacing: 0.25em;
-      text-transform: uppercase;
-      color: var(--accent-warm);
-    }
-
-    .editorial-heading {
-      font-size: 28px;
-      font-weight: 300;
-      letter-spacing: -0.01em;
+    .cap-item h4, .cap-cell--web h3 {
+      font-size: 18px;
+      font-weight: 500;
       line-height: 1.4;
-      color: var(--text-primary);
     }
+    .cap-cell--web h3 { font-size: 24px; font-weight: 400; margin-bottom: 16px; }
 
-    .editorial-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-    }
-
-    .case-block {
-      border-top: 1px solid var(--text-primary);
-      padding-top: 32px;
-    }
-
-    .case-number {
-      font-family: var(--font-mono);
-      font-size: 11px;
-      color: var(--text-light);
-      margin-bottom: 16px;
-      letter-spacing: 0.1em;
-    }
-
-    .case-title {
-      font-size: 20px;
-      font-weight: 500;
-      margin-bottom: 16px;
-      letter-spacing: -0.01em;
-    }
-
-    .case-body {
+    .cap-help { font-family: var(--font-text); font-size: 15px; color: var(--ink-2); }
+    .cap-edge {
+      margin-top: 12px;
+      padding-top: 12px;
+      border-top: 1px dashed var(--line);
+      font-family: var(--font-text);
       font-size: 14px;
-      line-height: 1.8;
-      color: var(--text-secondary);
-      margin-bottom: 24px;
+      font-weight: 500;
+      color: var(--ink);
     }
+    .cap-cell--ops .cap-edge { border-top-color: color-mix(in srgb, var(--ink) 15%, transparent); }
 
-    .case-metric {
-      font-family: var(--font-mono);
-      font-size: 12px;
-      padding-top: 16px;
-      border-top: 1px dashed var(--fog-muted);
-      color: var(--text-primary);
-      display: flex;
-      justify-content: space-between;
+    /* ---------- Field examples ---------- */
+    .field { padding: 128px 0; background: var(--surface); border-block: 1px solid var(--line); }
+    .field .section-title { max-width: 30ch; }
+
+    .cases { display: grid; grid-template-columns: 1fr 1fr; gap: 72px; margin-top: 64px; }
+
+    .case-fix {
+      margin-top: 24px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line);
+      font-family: var(--font-text);
+      font-size: 15px;
+      color: var(--ink);
     }
+    .case-fix strong { font-weight: 600; }
 
-    /* SECTION 3: QUIET PROTOCOL */
-    .spec-table-section {
-      background-color: var(--fog-white);
-      padding: 120px 48px;
-      border-bottom: 1px solid var(--fog-muted);
-    }
+    .case { padding-top: 28px; border-top: 1px solid var(--line-strong); }
 
-    .spec-table {
+    .case h3 { font-size: 20px; font-weight: 500; margin-bottom: 14px; }
+    .case p { color: var(--ink-2); max-width: 52ch; }
+    .case p.case-fix { color: var(--ink); }
+
+    /* ---------- Deliverables: spec rows ---------- */
+    .deliver { padding: 128px 0; }
+    .deliver .section-title { margin-bottom: 56px; }
+
+    .spec {
       width: 100%;
       border-collapse: collapse;
-      font-family: var(--font-mono);
-      font-size: 12px;
-      margin-top: 40px;
-    }
-
-    .spec-table th {
+      font-family: var(--font-text);
+      font-variant-numeric: tabular-nums;
       text-align: left;
-      font-size: 10px;
-      letter-spacing: 0.2em;
-      color: var(--text-light);
-      padding: 16px 0;
-      border-bottom: 1px solid var(--text-primary);
+    }
+    .spec thead th {
+      padding: 0 32px 16px 0;
+      border-bottom: 1px solid var(--line-strong);
+      font-size: 12px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
       text-transform: uppercase;
+      color: var(--ink-3);
     }
+    .spec tbody th, .spec td { padding: 28px 32px 28px 0; vertical-align: top; }
+    .spec tbody tr + tr > * { border-top: 1px solid var(--line); }
+    .spec tbody th { font-family: var(--font-display); font-size: 18px; font-weight: 500; color: var(--ink); width: 22%; }
+    .spec td { font-size: 15px; color: var(--ink-2); }
+    .spec td:nth-of-type(1) { width: 40%; }
 
-    .spec-table td {
-      padding: 24px 0;
-      border-bottom: 1px solid var(--fog-muted);
-      vertical-align: top;
-      color: var(--text-secondary);
+    /* ---------- Contact ---------- */
+    .contact { padding: 128px 0; background: var(--surface); border-top: 1px solid var(--line); }
+
+    .contact-grid { display: grid; grid-template-columns: 5fr 6fr; gap: 96px; align-items: start; }
+
+    .contact h2 {
+      font-size: clamp(28px, 3.4vw, 38px);
+      font-weight: 300;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+      line-height: 1.2;
     }
-
-    .spec-table td.strong {
-      color: var(--text-primary);
+    .contact-copy p { margin-top: 24px; color: var(--ink-2); max-width: 44ch; }
+    .guarantee {
+      margin-top: 36px;
+      padding-top: 20px;
+      border-top: 1px solid var(--line-strong);
+      font-family: var(--font-text);
+      font-size: 14px;
       font-weight: 500;
+      color: var(--ink);
+      max-width: 44ch;
     }
 
-    /* SECTION 4: CONTACT */
-    .contact-quiet {
-      background-color: #ffffff;
-      padding: 120px 48px;
+    .form { display: grid; gap: 28px; }
+    .field-block { display: grid; gap: 8px; }
+    .field-block label {
+      font-family: var(--font-text);
+      font-size: 13px;
+      font-weight: 600;
+      color: var(--ink);
     }
-
-    .quiet-form-grid {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 60px;
-      align-items: start;
-    }
-
-    .quiet-input {
+    .field-block label small { font-weight: 400; color: var(--ink-3); font-size: 13px; }
+    .field-block input {
       width: 100%;
       background: transparent;
       border: none;
-      border-bottom: 1px solid rgba(18, 21, 23, 0.2);
-      padding: 14px 0;
-      font-family: var(--font-mono);
-      font-size: 13px;
-      color: var(--text-primary);
-      outline: none;
-      margin-bottom: 28px;
-      transition: border-color 0.2s ease;
+      border-bottom: 1px solid var(--field-line);
+      border-radius: 0;
+      padding: 12px 0;
+      font-family: var(--font-text);
+      font-size: 16px;
+      color: var(--ink);
+      transition: border-color 0.3s var(--ease);
     }
+    .field-block input::placeholder { color: var(--ink-3); }
+    .field-block input:focus { outline: none; border-bottom: 2px solid var(--ink); padding-bottom: 11px; }
+    .field-hint { font-family: var(--font-text); font-size: 13px; color: var(--ink-3); }
+    .field-block input[aria-invalid="true"] { border-bottom-color: var(--error); }
+    .field-error { font-family: var(--font-text); font-size: 13px; color: var(--error); min-height: 0; }
+    .field-error:empty { display: none; }
 
-    .quiet-input:focus {
-      border-bottom-color: var(--text-primary);
+    .form .btn { width: 100%; margin-top: 8px; }
+    .form-trap { position: absolute; left: -9999px; width: 1px; height: 1px; overflow: hidden; }
+
+    .form-alert {
+      padding: 16px 18px;
+      border: 1px solid var(--error);
+      font-family: var(--font-text);
+      font-size: 14px;
+      color: var(--ink);
     }
+    /* Empty: visually hidden but still rendered, so screen readers announce new messages */
+    .form-alert:empty {
+      position: absolute;
+      width: 1px; height: 1px;
+      padding: 0; border: 0;
+      overflow: hidden; clip: rect(0 0 0 0);
+    }
+    .form-alert a { color: var(--ink); font-weight: 600; }
 
-    /* FOOTER */
-    footer {
-      background-color: var(--ridge-deep);
-      color: rgba(255, 255, 255, 0.6);
-      padding: 60px 48px;
-      font-family: var(--font-mono);
-      font-size: 10px;
-      letter-spacing: 0.15em;
+    .form-success {
+      padding: 32px;
+      border: 1px solid var(--line-strong);
+      font-family: var(--font-text);
+    }
+    .form-success strong { display: block; font-family: var(--font-display); font-size: 20px; font-weight: 500; margin-bottom: 8px; }
+    .form-success p { color: var(--ink-2); }
+
+    /* ---------- Footer ---------- */
+    footer { padding: 48px 0; border-top: 1px solid var(--line); background: var(--bg); }
+    .footer-inner {
       display: flex;
-      justify-content: space-between;
       align-items: center;
+      justify-content: space-between;
+      gap: 24px;
+      font-family: var(--font-text);
+      font-size: 13px;
+      color: var(--ink-3);
+    }
+    .footer-inner img { height: 22px; width: auto; }
+    .footer-links { display: flex; gap: 16px; }
+    .footer-links a { display: inline-flex; align-items: center; min-height: 44px; padding: 0 8px; text-decoration: none; color: var(--ink-2); }
+    .footer-links a:hover { color: var(--ink); }
+
+    /* ---------- Motion (MOTION_INTENSITY 4, reduced-motion safe) ---------- */
+    @media (prefers-reduced-motion: no-preference) {
+      /* Establishing shot: the copy settles in sequence, then the ridge eases into place */
+      .js .hero-copy > * {
+        opacity: 0;
+        transform: translateY(14px);
+        animation: rise 0.9s var(--ease) forwards;
+        animation-delay: calc(var(--i, 0) * 90ms + 100ms);
+      }
+      .js .hero-ridge img { transform: scale(1.04); animation: settle 2.4s var(--ease) forwards; }
+
+      @keyframes rise { to { opacity: 1; transform: none; } }
+      @keyframes settle { to { transform: scale(1); } }
     }
 
-    @media (max-width: 1050px) {
-      .capabilities-editorial-ledger {
-        grid-template-columns: repeat(2, 1fr);
-        gap: 48px 32px;
-      }
+    /* ---------- Responsive ---------- */
+    @media (max-width: 1024px) {
+      .cap-cell--demand, .cap-cell--ops { grid-column: 1 / -1; }
+      .cap-cell--web { grid-column: 1 / -1; grid-row: auto; min-height: 360px; }
+      .contact-grid { gap: 64px; }
     }
 
-    @media (max-width: 840px) {
-      .section-quiet-header, .editorial-grid, .quiet-form-grid {
-        grid-template-columns: 1fr;
+    @media (max-width: 767px) {
+      :root { --gutter: 16px; }
+      .nav { height: 64px; }
+      .nav img { height: 28px; }
+      .hero-copy { padding-top: 32px; }
+      .hero h1 { font-size: clamp(20px, 6.4vw, 26px); letter-spacing: 0.03em; }
+      .hero-ridge { min-height: 220px; }
+
+      .capabilities, .field, .deliver, .contact { padding: 80px 0; }
+      .cap-head { margin-bottom: 40px; }
+      .cap-cell { padding: 28px 20px; }
+      .cap-item { grid-template-columns: 1fr; gap: 10px; }
+
+      .cases, .contact-grid { grid-template-columns: 1fr; gap: 56px; }
+      .field .section-title { margin-bottom: 48px; }
+
+      .spec thead { position: absolute; width: 1px; height: 1px; overflow: hidden; clip: rect(0 0 0 0); }
+      .spec, .spec tbody, .spec tr, .spec tbody th, .spec td { display: block; width: auto !important; }
+      .spec tbody tr { padding: 24px 0; }
+      .spec tbody tr + tr { border-top: 1px solid var(--line); }
+      .spec tbody tr + tr > * { border-top: none; }
+      .spec tbody th, .spec td { padding: 0; }
+      .spec td { margin-top: 12px; }
+      .spec td::before {
+        display: block;
+        content: attr(data-label);
+        font-size: 12px;
+        font-weight: 600;
+        letter-spacing: 0.12em;
+        text-transform: uppercase;
+        color: var(--ink-3);
+        margin-bottom: 2px;
       }
-      .quiet-nav, footer {
-        padding: 24px;
-      }
-      .headline-zone {
-        padding-top: 40px;
-      }
-      .ridge-hero-slot {
-        height: 320px;
-      }
-      .capabilities-section {
-        padding: 80px 24px 100px;
-      }
+
+      .footer-inner { flex-direction: column; align-items: flex-start; }
+      .footer-links { margin-left: -8px; }
     }
 
-    @media (max-width: 640px) {
-      .capabilities-editorial-ledger {
-        grid-template-columns: 1fr;
-        gap: 40px;
-      }
+    @media (max-width: 479px) {
+      /* The hero CTA sits directly below; keep the nav to logo + theme switch */
+      .nav-actions .btn { display: none; }
     }
   </style>
+  <script>
+    document.documentElement.classList.add('js');
+    // Restore a saved theme before first paint so there is no flash
+    try {
+      var saved = localStorage.getItem('vt-theme');
+      if (saved === 'light' || saved === 'dark') document.documentElement.setAttribute('data-theme', saved);
+    } catch (e) {}
+
+    // Theme artwork uses <picture>: the browser downloads only the active variant.
+    // A manual theme choice overrides the system query on each dark <source>.
+    function vtArt() {
+      var theme = document.documentElement.getAttribute('data-theme');
+      var media = theme === 'dark' ? 'all' : theme === 'light' ? 'not all' : '(prefers-color-scheme: dark)';
+      var sources = document.querySelectorAll('source[data-theme-art]');
+      for (var i = 0; i < sources.length; i++) sources[i].media = media;
+    }
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#main">Skip to content</a>
 
-  <!-- FULL BLEED VAST VIEWPORT -->
-  <div class="vast-hero-viewport">
-    
-    <!-- Quiet Header -->
-    <header class="quiet-nav">
-      <div class="brand-mark">
-        <a href="index.html" style="display: inline-flex; align-items: center; text-decoration: none;">
-          <img src="assets/logos/v3_user_logo_horizontal.svg" alt="Verlyn Tech" style="height: 36px; width: auto; display: block;" />
-        </a>
+  <!-- HERO -->
+  <header class="hero">
+    <nav class="nav" aria-label="Primary">
+      <a class="nav-home" href="index.html" aria-label="Verlyn Tech home">
+        <picture>
+          <source data-theme-art media="(prefers-color-scheme: dark)" srcset="assets/logos/v3_user_logo_horizontal_light.svg">
+          <img src="assets/logos/v3_user_logo_horizontal.svg" alt="Verlyn Tech" width="187" height="36">
+        </picture>
+      </a>
+      <div class="nav-actions">
+        <button type="button" class="theme-toggle" id="theme-toggle" aria-label="Switch to dark mode">
+          <!-- Phosphor Icons (regular): moon, sun -->
+          <svg class="icon-moon" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true" focusable="false"><path d="M233.54,142.23a8,8,0,0,0-8-2,88.08,88.08,0,0,1-109.8-109.8,8,8,0,0,0-10-10,104.84,104.84,0,0,0-52.91,37A104,104,0,0,0,136,224a103.09,103.09,0,0,0,62.52-20.88,104.84,104.84,0,0,0,37-52.91A8,8,0,0,0,233.54,142.23ZM188.9,190.34A88,88,0,0,1,65.66,67.11a89,89,0,0,1,31.4-26A106,106,0,0,0,96,56,104.11,104.11,0,0,0,200,160a106,106,0,0,0,14.92-1.06A89,89,0,0,1,188.9,190.34Z"/></svg>
+          <svg class="icon-sun" viewBox="0 0 256 256" fill="currentColor" aria-hidden="true" focusable="false"><path d="M120,40V16a8,8,0,0,1,16,0V40a8,8,0,0,1-16,0Zm72,88a64,64,0,1,1-64-64A64.07,64.07,0,0,1,192,128Zm-16,0a48,48,0,1,0-48,48A48.05,48.05,0,0,0,176,128ZM58.34,69.66A8,8,0,0,0,69.66,58.34l-16-16A8,8,0,0,0,42.34,53.66Zm0,116.68-16,16a8,8,0,0,0,11.32,11.32l16-16a8,8,0,0,0-11.32-11.32ZM192,72a8,8,0,0,0,5.66-2.34l16-16a8,8,0,0,0-11.32-11.32l-16,16A8,8,0,0,0,192,72Zm5.66,114.34a8,8,0,0,0-11.32,11.32l16,16a8,8,0,0,0,11.32-11.32ZM48,128a8,8,0,0,0-8-8H16a8,8,0,0,0,0,16H40A8,8,0,0,0,48,128Zm80,80a8,8,0,0,0-8,8v24a8,8,0,0,0,16,0V216A8,8,0,0,0,128,208Zm112-88H216a8,8,0,0,0,0,16h24a8,8,0,0,0,0-16Z"/></svg>
+        </button>
+        <a href="#dialogue" class="btn btn-ghost">Start 14-day pilot</a>
       </div>
-      <div class="nav-coords">ALT: 1,840m · LAT: 25.2048° N</div>
-      <a href="#dialogue" class="quiet-cta-pill">ENGAGE TEAM</a>
-    </header>
+    </nav>
 
-    <!-- UPPER HALF: HEADLINE ZONE (Tiny Centered Sans & Whitespace) -->
-    <div class="headline-zone">
-      <div style="margin-bottom: 24px; display: flex; justify-content: center;">
-        <img src="assets/logos/v3_user_emblem.png" alt="Verlyn Tech" style="height: 44px; width: auto; opacity: 0.95; display: block;" />
+    <div class="hero-copy">
+      <div style="--i:0">
+        <picture>
+          <source data-theme-art media="(prefers-color-scheme: dark)" srcset="assets/logos/v3_user_emblem_light.png">
+          <img class="hero-emblem" src="assets/logos/v3_user_emblem.png" alt="" width="70" height="40">
+        </picture>
       </div>
-      <span class="quiet-tag">SYSTEMS FOR PHYSICAL ENTERPRISE</span>
-      
-      <h1 class="monumental-quiet-title">
-        QUIET DISPATCH. <br>
-        <strong>ABSOLUTE LOCAL PROOF.</strong>
-      </h1>
-
-      <p class="quiet-prose">
-        We build permanent, sub-second web infrastructure and automated WhatsApp dispatch for independent cafes and automotive workshops. Calm intelligence that handles customer flow while you focus on the craft.
-      </p>
-
-      <div class="quiet-cta-row">
-        <a href="#dialogue" class="primary-quiet-btn">INITIATE 14-DAY COHORT</a>
-      </div>
-    </div>
-
-    <!-- LOWER HALF: HERO RESERVED SLOT (Vast Desaturated Aerial Mountain Ridge in Mist) -->
-    <div class="ridge-hero-slot" style="position: relative; width: 100%; height: 500px; margin-top: -40px; display: flex; align-items: flex-end; overflow: hidden;">
-      <div class="mountain-standin" style="position: absolute; inset: 0; width: 100%; height: 100%;">
-        <!-- Nano Banana Pro Generated Aerial Ridge Image (03 Basalt Crest) -->
-        <img id="v3-hero-img" src="assets/hero/v3/sample_3.jpg" alt="Vast desaturated aerial basalt crest in morning mist" style="width: 100%; height: 100%; object-fit: cover; object-position: center bottom; display: block;" />
-        
-        <!-- Soft top fog gradient overlay to melt into fog-white background -->
-        <div style="position: absolute; top: 0; left: 0; right: 0; height: 140px; background: linear-gradient(to bottom, var(--fog-white) 0%, rgba(245, 246, 247, 0) 100%); pointer-events: none;"></div>
-
-        <!-- Quiet Metadata Badges -->
-        <div class="ridge-metadata-overlay" style="position: absolute; bottom: 32px; left: 48px; z-index: 10; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.15em; color: rgba(255, 255, 255, 0.9); display: flex; align-items: center; gap: 8px; background: rgba(18, 21, 23, 0.75); padding: 6px 14px; backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.15);">
-          <span>BASALT CREST · ELEVATION: 1,840m · UAE DISPATCH</span>
-        </div>
-
-        <div class="ridge-metadata-overlay-right" style="position: absolute; bottom: 32px; right: 48px; z-index: 10; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.15em; color: rgba(255, 255, 255, 0.85); background: rgba(18, 21, 23, 0.75); padding: 6px 14px; backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.15);">
-          <div>SCALE: 1:25,000 · ZERO MARKETING HYPE</div>
-        </div>
+      <h1 style="--i:1">Quiet dispatch.<br><strong>Absolute local proof.</strong></h1>
+      <p class="hero-sub" style="--i:2">Fast websites, automated WhatsApp replies and connected CRMs for growing UAE businesses. Every lead answered while you run the business.</p>
+      <div style="--i:3">
+        <a href="#dialogue" class="btn">Start 14-day pilot</a>
       </div>
     </div>
-  </div>
 
-  <!-- SECTION 01: CORE CAPABILITIES (V3 EDITORIAL ARCHITECTURE) -->
-  <section id="capabilities" class="capabilities-section">
-    <div class="inner-bound" style="max-width: 1180px;">
-      <div class="section-quiet-header">
-        <div class="editorial-label">01 CORE CAPABILITIES</div>
-        <div class="editorial-heading" style="display: flex; justify-content: space-between; align-items: flex-start; gap: 32px; flex-wrap: wrap;">
-          <span>Engineered infrastructure systems built for physical enterprise.</span>
-          <a href="#dialogue" class="quiet-cta-pill">REQUEST PRIVATE AUDIT</a>
-        </div>
-      </div>
-
-      <div class="capabilities-editorial-ledger">
-        <!-- 01 CRM Setup & Lead Management -->
-        <div class="cap-ledger-item">
-          <div>
-            <div class="cap-ledger-header">
-              <span class="cap-ledger-num">MODULE 01 · PIPELINE</span>
-              <span class="cap-ledger-arrow">&#8599;</span>
-            </div>
-            <h3 class="cap-ledger-title">CRM Setup &amp; Lead Management</h3>
-          </div>
-          <div class="cap-ledger-body">
-            <div>
-              <div class="cap-subhead">HOW IT HELPS</div>
-              <p class="cap-prose">Leads stop living in WhatsApp chats — one pipeline, one owner, automated follow-up.</p>
-            </div>
-            <div class="cap-diff-block">
-              <div class="cap-subhead">WHY WE'RE BETTER</div>
-              <p class="cap-diff-text">Built around your actual sales process in days, not an off-the-shelf template.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 02 Landing Pages & SEO -->
-        <div class="cap-ledger-item">
-          <div>
-            <div class="cap-ledger-header">
-              <span class="cap-ledger-num">MODULE 02 · DEMAND CAPTURE</span>
-              <span class="cap-ledger-arrow">&#8599;</span>
-            </div>
-            <h3 class="cap-ledger-title">Landing Pages &amp; SEO</h3>
-          </div>
-          <div class="cap-ledger-body">
-            <div>
-              <div class="cap-subhead">HOW IT HELPS</div>
-              <p class="cap-prose">High-converting assets that capture demand and funnel it directly into your sales machine.</p>
-            </div>
-            <div class="cap-diff-block">
-              <div class="cap-subhead">WHY WE'RE BETTER</div>
-              <p class="cap-diff-text">We optimize for booked meetings and revenue, not just vanity traffic.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 03 Marketing & Paid Ads -->
-        <div class="cap-ledger-item">
-          <div>
-            <div class="cap-ledger-header">
-              <span class="cap-ledger-num">MODULE 03 · CONVERSION ACQUISITION</span>
-              <span class="cap-ledger-arrow">&#8599;</span>
-            </div>
-            <h3 class="cap-ledger-title">Marketing &amp; Paid Ads</h3>
-          </div>
-          <div class="cap-ledger-body">
-            <div>
-              <div class="cap-subhead">HOW IT HELPS</div>
-              <p class="cap-prose">Targeted campaigns optimized for ROAS, filling your pipeline predictably.</p>
-            </div>
-            <div class="cap-diff-block">
-              <div class="cap-subhead">WHY WE'RE BETTER</div>
-              <p class="cap-diff-text">Constant split-testing and strict tracking. You know exactly what a lead costs.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 04 Lead Generation -->
-        <div class="cap-ledger-item">
-          <div>
-            <div class="cap-ledger-header">
-              <span class="cap-ledger-num">MODULE 04 · TARGETED OUTREACH</span>
-              <span class="cap-ledger-arrow">&#8599;</span>
-            </div>
-            <h3 class="cap-ledger-title">Lead Generation</h3>
-          </div>
-          <div class="cap-ledger-body">
-            <div>
-              <div class="cap-subhead">HOW IT HELPS</div>
-              <p class="cap-prose">Predictable, scalable outreach systems to keep your pipeline full of qualified prospects.</p>
-            </div>
-            <div class="cap-diff-block">
-              <div class="cap-subhead">WHY WE'RE BETTER</div>
-              <p class="cap-diff-text">Multi-channel targeting that feels personal, bypassing generic spam filters.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 05 ERP Setup -->
-        <div class="cap-ledger-item">
-          <div>
-            <div class="cap-ledger-header">
-              <span class="cap-ledger-num">MODULE 05 · UNIFIED OPERATIONS</span>
-              <span class="cap-ledger-arrow">&#8599;</span>
-            </div>
-            <h3 class="cap-ledger-title">ERP Setup</h3>
-          </div>
-          <div class="cap-ledger-body">
-            <div>
-              <div class="cap-subhead">HOW IT HELPS</div>
-              <p class="cap-prose">Centralize your entire business operations—from inventory to finance—into one unified system.</p>
-            </div>
-            <div class="cap-diff-block">
-              <div class="cap-subhead">WHY WE'RE BETTER</div>
-              <p class="cap-diff-text">We tailor the ERP precisely to your unique workflows, avoiding the bloat of standard implementations.</p>
-            </div>
-          </div>
-        </div>
-
-        <!-- 06 Premium Web Development -->
-        <div class="cap-ledger-item">
-          <div>
-            <div class="cap-ledger-header">
-              <span class="cap-ledger-num">MODULE 06 · DIGITAL CRAFTSMANSHIP</span>
-              <span class="cap-ledger-arrow">&#8599;</span>
-            </div>
-            <h3 class="cap-ledger-title">Premium Web Development</h3>
-          </div>
-          <div class="cap-ledger-body">
-            <div>
-              <div class="cap-subhead">HOW IT HELPS</div>
-              <p class="cap-prose">Ultra-fast, meticulously designed digital storefronts built to capture demand.</p>
-            </div>
-            <div class="cap-diff-block">
-              <div class="cap-subhead">WHY WE'RE BETTER</div>
-              <p class="cap-diff-text">We build bespoke, high-performance web applications with striking aesthetics—no cookie-cutter themes.</p>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div class="hero-ridge">
+      <!-- 03 Basalt Crest (locked hero photography) -->
+      <img src="assets/hero/v3/basalt_crest-1408.jpg" srcset="assets/hero/v3/basalt_crest-800.jpg 800w, assets/hero/v3/basalt_crest-1408.jpg 1408w" sizes="100vw" alt="Desaturated aerial basalt ridge in morning mist" width="1408" height="768" fetchpriority="high">
     </div>
-  </section>
+  </header>
+  <script>vtArt();</script>
 
-  <!-- SECTION 2: EDITORIAL CONTENT (Cafes & Garages) -->
-  <section class="calm-section">
-    <div class="inner-bound">
-      <div class="section-quiet-header">
-        <div class="editorial-label">02 THE FIELD OBSERVATION</div>
-        <div class="editorial-heading">
-          High-reputation physical businesses suffer from communication friction, not a lack of craftsmanship.
+  <main id="main" tabindex="-1">
+    <!-- CAPABILITIES -->
+    <section id="capabilities" class="capabilities">
+      <div class="wrap">
+        <div class="cap-head">
+          <h2 class="section-title">One connected system, from the first ad to the last follow-up.</h2>
+        </div>
+
+        <div class="cap-grid">
+          <div class="cap-cell cap-cell--demand">
+            <h3 class="cap-group">Bring in demand</h3>
+
+            <div class="cap-item">
+              <h4>Landing Pages &amp; SEO</h4>
+              <div>
+                <p class="cap-help">High-converting assets that capture demand and funnel it directly into your sales machine.</p>
+                <p class="cap-edge">We optimize for booked meetings and revenue, not just vanity traffic.</p>
+              </div>
+            </div>
+
+            <div class="cap-item">
+              <h4>Marketing &amp; Paid Ads</h4>
+              <div>
+                <p class="cap-help">Targeted campaigns optimized for ROAS, filling your pipeline predictably.</p>
+                <p class="cap-edge">Constant split-testing and strict tracking. You know exactly what a lead costs.</p>
+              </div>
+            </div>
+
+            <div class="cap-item">
+              <h4>Lead Generation</h4>
+              <div>
+                <p class="cap-help">Predictable, scalable outreach systems to keep your pipeline full of qualified prospects.</p>
+                <p class="cap-edge">Multi-channel targeting that feels personal, bypassing generic spam filters.</p>
+              </div>
+            </div>
+          </div>
+
+          <div class="cap-cell cap-cell--web">
+            <img class="tile-mark" src="assets/logos/v3_user_logo_horizontal_light.svg" alt="" width="260" height="50" loading="lazy">
+            <div>
+              <h3>Premium Web Development</h3>
+              <p class="cap-help">Ultra-fast, meticulously designed digital storefronts built to capture demand.</p>
+              <p class="cap-edge">Bespoke, high-performance web applications with striking aesthetics. No cookie-cutter themes.</p>
+            </div>
+          </div>
+
+          <div class="cap-cell cap-cell--ops">
+            <h3 class="cap-group">Run the operation</h3>
+
+            <div class="cap-item">
+              <h4>CRM Setup &amp; Lead Management</h4>
+              <div>
+                <p class="cap-help">Leads stop living in WhatsApp chats. One pipeline, one owner, automated follow-up.</p>
+                <p class="cap-edge">Built around your actual sales process in days, not an off-the-shelf template.</p>
+              </div>
+            </div>
+
+            <div class="cap-item">
+              <h4>ERP Setup</h4>
+              <div>
+                <p class="cap-help">Centralize your entire business operations, from inventory to finance, into one unified system.</p>
+                <p class="cap-edge">We tailor the ERP precisely to your unique workflows, avoiding the bloat of standard implementations.</p>
+              </div>
+            </div>
+          </div>
         </div>
       </div>
+    </section>
 
-      <div class="editorial-grid">
-        <!-- Cafe -->
-        <div class="case-block">
-          <div class="case-number">CASE 01 · SPECIALTY CAFE</div>
-          <h3 class="case-title">The Specialty Cafe &amp; Micro-Roastery</h3>
-          <p class="case-body">
-            A customer attempts to order 5kg of whole beans or inquire about catering. The barista is pulling shots. The message sits unanswered for 3 hours. The customer orders elsewhere. We resolve this by placing a lightning-fast catalog with instant WhatsApp confirmation.
-          </p>
-          <div class="case-metric">
-            <span>UNANSWERED INQUIRIES</span>
-            <span>REDUCED TO ZERO</span>
-          </div>
-        </div>
+    <!-- FIELD CASES -->
+    <section class="field" aria-labelledby="field-title">
+      <div class="wrap">
+        <h2 id="field-title" class="section-title">Growing businesses rarely lose customers to bad work. They lose them to slow replies.</h2>
+        <p class="section-lede">Two examples of where that happens, and what we install to stop it.</p>
 
-        <!-- Garage -->
-        <div class="case-block">
-          <div class="case-number">CASE 02 · INDEPENDENT GARAGE</div>
-          <h3 class="case-title">The Independent Garage &amp; Diagnostic Bay</h3>
-          <p class="case-body">
-            A vehicle owner is anxious about repair progress. Technicians waste 15 minutes of billable labor wiping grease to answer the workshop telephone. We install an automated status relay: one click sends photo proof and estimated collection time directly to the customer's WhatsApp.
-          </p>
-          <div class="case-metric">
-            <span>WEEKLY PHONE INTERRUPTION</span>
-            <span>- 14.5 BILLABLE HOURS</span>
-          </div>
+        <div class="cases">
+          <article class="case">
+            <h3>A specialty cafe</h3>
+            <p>A customer asks to order 5kg of beans or book catering. The barista is pulling shots, the message waits for hours, and the customer orders elsewhere.</p>
+            <p class="case-fix"><strong>What we install:</strong> a fast online catalog with instant WhatsApp confirmation.</p>
+          </article>
+
+          <article class="case">
+            <h3>An independent garage</h3>
+            <p>A car owner wants to know how the repair is going. A technician stops work, wipes off the grease and answers the phone, again and again through the day.</p>
+            <p class="case-fix"><strong>What we install:</strong> a status relay that sends photo proof and collection time to the customer's WhatsApp in one click.</p>
+          </article>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
 
-  <!-- SECTION 3: SPECIFICATION TABLE -->
-  <section class="spec-table-section">
-    <div class="inner-bound">
-      <div class="editorial-label">03 DELIVERABLE ARCHITECTURE</div>
-      
-      <table class="spec-table">
-        <thead>
-          <tr>
-            <th>Module</th>
-            <th>Mechanism</th>
-            <th>Latency</th>
-            <th>Client Ownership</th>
-          </tr>
-        </thead>
-        <tbody>
-          <tr>
-            <td class="strong">Static Presence</td>
-            <td>Handcrafted, unbloated HTML/CSS with local SEO structured markup</td>
-            <td>&lt; 350ms global edge</td>
-            <td>100% repository transfer</td>
-          </tr>
-          <tr>
-            <td class="strong">WhatsApp Gateway</td>
-            <td>Official Meta Business API integration with automated conversational routing</td>
-            <td>Instant triage</td>
-            <td>Client phone credentials</td>
-          </tr>
-          <tr>
-            <td class="strong">Reputation Harvester</td>
-            <td>Post-service review trigger sending direct 5-star Google Review links</td>
-            <td>20m post completion</td>
-            <td>Client Google profile</td>
-          </tr>
-        </tbody>
-      </table>
-    </div>
-  </section>
+    <!-- DELIVERABLES -->
+    <section class="deliver" aria-labelledby="deliver-title">
+      <div class="wrap">
+        <h2 id="deliver-title" class="section-title">Deliverable architecture</h2>
 
-  <!-- SECTION 4: CONTACT DIALOGUE -->
-  <section id="dialogue" class="contact-quiet">
-    <div class="inner-bound">
-      <div class="quiet-form-grid">
-        <div>
-          <div class="editorial-label">04 COMMENCE INSTALLATION</div>
-          <h2 style="font-size: 32px; font-weight: 300; margin: 16px 0 24px; text-transform: uppercase;">
-            BEGIN 14-DAY PILOT
-          </h2>
-          <p style="color: var(--text-secondary); line-height: 1.8; max-width: 420px;">
-            We onboard a maximum of three workshops or cafes per cycle. We personally map your customer flow, configure your systems, and ensure your staff never deals with messy software.
-          </p>
-          <div style="font-family: var(--font-mono); font-size: 11px; color: var(--accent-warm); margin-top: 32px;">
-            GUARANTEE: 100% REFUND IF LEAD RESPONSE VELOCITY DOES NOT DOUBLE.
-          </div>
+        <table class="spec">
+          <caption class="visually-hidden">What each module does, how fast it responds, and what you keep</caption>
+          <thead>
+            <tr><th scope="col">Module</th><th scope="col">Mechanism</th><th scope="col">Latency</th><th scope="col">You own</th></tr>
+          </thead>
+          <tbody>
+            <tr>
+              <th scope="row">Static Presence</th>
+              <td data-label="Mechanism">Handcrafted, unbloated HTML/CSS with local SEO structured markup</td>
+              <td data-label="Latency">&lt; 350ms global edge</td>
+              <td data-label="You own">100% repository transfer</td>
+            </tr>
+            <tr>
+              <th scope="row">WhatsApp Gateway</th>
+              <td data-label="Mechanism">Official Meta Business API integration with automated conversational routing</td>
+              <td data-label="Latency">Instant triage</td>
+              <td data-label="You own">Your phone credentials</td>
+            </tr>
+            <tr>
+              <th scope="row">Reputation Harvester</th>
+              <td data-label="Mechanism">Post-service trigger sending a direct Google Review link</td>
+              <td data-label="Latency">20 min after completion</td>
+              <td data-label="You own">Your Google profile</td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </section>
+
+    <!-- CONTACT -->
+    <section id="dialogue" class="contact" aria-labelledby="contact-title">
+      <div class="wrap contact-grid">
+        <div class="contact-copy">
+          <h2 id="contact-title">Begin 14-day pilot</h2>
+          <p>We onboard a maximum of three businesses per cycle. We personally map your customer flow, configure your systems, and make sure your staff never deals with messy software.</p>
+          <p class="guarantee">Full refund if your lead response speed does not double.</p>
         </div>
 
         <div>
-          <form onsubmit="event.preventDefault(); alert('Request received. Verlyn team will initiate quiet review within 4 hours.');">
-            <input type="text" placeholder="NAME OF OPERATOR / OWNER" class="quiet-input" required>
-            <input type="text" placeholder="BUSINESS NAME & LOCATION" class="quiet-input" required>
-            <input type="tel" placeholder="WHATSAPP NUMBER" class="quiet-input" required>
-            <input type="text" placeholder="CURRENT BIGGEST REVENUE LEAK (OPTIONAL)" class="quiet-input">
-            
-            <button type="submit" class="primary-quiet-btn" style="width: 100%; padding: 16px; margin-top: 12px; cursor: pointer;">
-              SUBMIT DISPATCH BRIEF →
-            </button>
+          <!--
+            Set action to your form endpoint (e.g. https://formspree.io/f/XXXX or a Make/n8n webhook).
+            Optional: data-whatsapp="9715XXXXXXXX" offers a WhatsApp fallback when sending fails.
+          -->
+          <form class="form" id="pilot-form" action="" method="post" data-whatsapp="" novalidate>
+            <p class="form-alert" id="pilot-alert" role="alert"></p>
+            <div class="field-block">
+              <label for="f-name">Your name</label>
+              <input id="f-name" name="name" type="text" autocomplete="name" maxlength="120" required aria-describedby="f-name-err">
+              <p class="field-error" id="f-name-err" aria-live="polite"></p>
+            </div>
+            <div class="field-block">
+              <label for="f-biz">Business name and location</label>
+              <input id="f-biz" name="business" type="text" autocomplete="organization" maxlength="160" placeholder="e.g. Harbour Roasters, Dubai Marina" required aria-describedby="f-biz-err">
+              <p class="field-error" id="f-biz-err" aria-live="polite"></p>
+            </div>
+            <div class="field-block">
+              <label for="f-phone">WhatsApp number</label>
+              <p class="field-hint" id="f-phone-hint">Include the country code. We reply here.</p>
+              <input id="f-phone" name="whatsapp" type="tel" inputmode="tel" autocomplete="tel" maxlength="24" placeholder="+971 50 000 0000" required aria-describedby="f-phone-hint f-phone-err">
+              <p class="field-error" id="f-phone-err" aria-live="polite"></p>
+            </div>
+            <div class="field-block">
+              <label for="f-leak">Biggest revenue leak right now <small>(optional)</small></label>
+              <input id="f-leak" name="leak" type="text" maxlength="500">
+            </div>
+            <div class="form-trap" aria-hidden="true">
+              <label for="f-trap">Leave this empty</label>
+              <input id="f-trap" name="_gotcha" type="text" tabindex="-1" autocomplete="off">
+            </div>
+            <button type="submit" class="btn" id="pilot-submit">Send request</button>
           </form>
+
+          <div class="form-success" id="pilot-success" role="status" hidden>
+            <strong>Request sent.</strong>
+            <p>We'll reply on WhatsApp within 4 hours.</p>
+          </div>
         </div>
       </div>
-    </div>
-  </section>
+    </section>
+  </main>
 
-  <!-- FOOTER -->
   <footer>
-    <div style="display: flex; align-items: center; gap: 14px;">
-      <img src="assets/logos/v3_user_logo_horizontal_light.svg" alt="Verlyn Tech" style="height: 22px; width: auto; display: block; opacity: 0.85;" />
-      <span>· OPERATIONAL SYSTEMS INFRASTRUCTURE</span>
+    <div class="wrap footer-inner">
+      <div>
+        <picture>
+          <source data-theme-art media="(prefers-color-scheme: dark)" srcset="assets/logos/v3_user_logo_horizontal_light.svg">
+          <img src="assets/logos/v3_user_logo_horizontal.svg" alt="Verlyn Tech" width="114" height="22">
+        </picture>
+      </div>
+      <div class="footer-links">
+        <a href="#capabilities">Capabilities</a>
+        <a href="#dialogue">Pilot</a>
+      </div>
+      <span>&copy; 2026 Verlyn Tech</span>
     </div>
-    <div>DESIGNED WITH RESTRAINT · SERIOUS INTELLIGENCE</div>
-    <div>© 2026 VERLYN</div>
   </footer>
+  <script>vtArt();</script>
+
+  <script>
+    // Theme toggle: system preference by default, manual choice saved per visitor
+    (function () {
+      var root = document.documentElement;
+      var btn = document.getElementById('theme-toggle');
+      var mq = window.matchMedia('(prefers-color-scheme: dark)');
+
+      function current() {
+        return root.getAttribute('data-theme') || (mq.matches ? 'dark' : 'light');
+      }
+      function syncLabel() {
+        btn.setAttribute('aria-label', current() === 'dark' ? 'Switch to light mode' : 'Switch to dark mode');
+      }
+
+      btn.addEventListener('click', function () {
+        var next = current() === 'dark' ? 'light' : 'dark';
+        root.classList.add('theme-switching');
+        root.setAttribute('data-theme', next);
+        vtArt();
+        try { localStorage.setItem('vt-theme', next); } catch (e) {}
+        syncLabel();
+        setTimeout(function () { root.classList.remove('theme-switching'); }, 400);
+      });
+
+      if (mq.addEventListener) mq.addEventListener('change', syncLabel);
+      syncLabel();
+    })();
+
+    // Pilot form: inline validation, real submission, honest loading / error / success states
+    (function () {
+      var form = document.getElementById('pilot-form');
+      var success = document.getElementById('pilot-success');
+      var alertBox = document.getElementById('pilot-alert');
+      var submit = document.getElementById('pilot-submit');
+      var submitLabel = submit.textContent;
+      var sending = false;
+      var rules = [
+        { id: 'f-name', msg: 'Please enter your name.' },
+        { id: 'f-biz', msg: 'Please enter your business name and location.' },
+        { id: 'f-phone', msg: 'Please enter a WhatsApp number with country code.', test: function (v) { return v.replace(/\D/g, '').length >= 8; } }
+      ];
+
+      function check(rule) {
+        var input = document.getElementById(rule.id);
+        var err = document.getElementById(rule.id + '-err');
+        var v = input.value.trim();
+        var ok = v !== '' && (!rule.test || rule.test(v));
+        input.setAttribute('aria-invalid', ok ? 'false' : 'true');
+        err.textContent = ok ? '' : rule.msg;
+        return ok;
+      }
+
+      rules.forEach(function (rule) {
+        document.getElementById(rule.id).addEventListener('blur', function () {
+          if (this.value.trim() !== '') check(rule);
+        });
+      });
+
+      function setSending(on) {
+        sending = on;
+        submit.disabled = on;
+        form.setAttribute('aria-busy', on ? 'true' : 'false');
+        submit.textContent = on ? 'Sending\u2026' : submitLabel;
+      }
+
+      function showError(message) {
+        alertBox.textContent = message;
+        var wa = (form.getAttribute('data-whatsapp') || '').replace(/\D/g, '');
+        if (wa) {
+          alertBox.appendChild(document.createTextNode(' '));
+          var link = document.createElement('a');
+          link.href = 'https://wa.me/' + wa;
+          link.rel = 'noopener';
+          link.target = '_blank';
+          link.textContent = 'Message us on WhatsApp instead.';
+          alertBox.appendChild(link);
+        }
+      }
+
+      function showSuccess() {
+        form.hidden = true;
+        success.hidden = false;
+        success.setAttribute('tabindex', '-1');
+        success.focus();
+      }
+
+      form.addEventListener('submit', function (e) {
+        e.preventDefault();
+        if (sending) return;
+        alertBox.textContent = '';
+
+        var firstBad = null;
+        rules.forEach(function (rule) {
+          if (!check(rule) && !firstBad) firstBad = document.getElementById(rule.id);
+        });
+        if (firstBad) { firstBad.focus(); return; }
+
+        // Bots fill the hidden field; pretend success and send nothing
+        if (document.getElementById('f-trap').value) { showSuccess(); return; }
+
+        var endpoint = form.getAttribute('action');
+        if (!endpoint) {
+          console.warn('Pilot form: no endpoint set. Add your form URL to the action attribute of #pilot-form.');
+          showError('We couldn\u2019t send your request right now. Please try again later.');
+          return;
+        }
+
+        setSending(true);
+        var controller = 'AbortController' in window ? new AbortController() : null;
+        var timer = setTimeout(function () { if (controller) controller.abort(); }, 15000);
+
+        fetch(endpoint, {
+          method: 'POST',
+          body: new FormData(form),
+          headers: { Accept: 'application/json' },
+          signal: controller ? controller.signal : undefined
+        }).then(function (res) {
+          clearTimeout(timer);
+          setSending(false);
+          if (res.ok) { showSuccess(); return; }
+          if (res.status === 429) {
+            showError('Too many requests in a short time. Please wait a minute, then try again.');
+          } else if (res.status >= 400 && res.status < 500) {
+            showError('Something in the form wasn\u2019t accepted. Check your details and try again.');
+          } else {
+            showError('Our form service is having trouble. Your details are still here, so please try again in a moment.');
+          }
+        }).catch(function (err) {
+          clearTimeout(timer);
+          setSending(false);
+          showError(err && err.name === 'AbortError'
+            ? 'This is taking too long. Check your connection and try again.'
+            : 'We couldn\u2019t reach our server. Check your connection and try again.');
+        });
+      });
+    })();
+  </script>
 </body>
 </html>
