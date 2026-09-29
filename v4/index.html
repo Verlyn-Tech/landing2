@@ -6,7 +6,7 @@
   <title>VERLYN TECH — Direction 04 / Dither Mono</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=JetBrains+Mono:wght@400;500;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Archivo+Black&family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Space+Grotesk:wght@400;500;700&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-black: #050505;
@@ -18,7 +18,7 @@
       --accent-phosphor: #ff5500;
       --accent-amber: #ffaa00;
       --font-display: 'Archivo Black', sans-serif;
-      --font-mono: 'JetBrains Mono', monospace;
+      --font-mono: 'Plus Jakarta Sans', -apple-system, sans-serif;
       --font-body: 'Space Grotesk', sans-serif;
     }
 
@@ -409,12 +409,12 @@
     <!-- Raw Brutalist Topbar -->
     <header class="dither-topbar">
       <div class="brand-block">
-        <span class="hazard-tag">DITHER // MONO</span>
+        <span class="hazard-tag">DITHER · MONO</span>
         <span>VERLYN TECH</span>
       </div>
 
       <div class="telemetry-coords">
-        SYS_ADDR: 0x7FFF // 25°12'19.4"N // LATENCY: 0.08ms
+        STATION: 07-A · 25°12'19.4"N · LATENCY: 0.08ms
       </div>
 
       <a href="#deploy" class="mono-cta">ENGAGE CREW →</a>
@@ -424,7 +424,7 @@
     <section class="dither-hero-section">
       <div class="left-headline-column">
         <div class="spec-badge">
-          UNFAIR ADVANTAGE // LOW-OVERHEAD STACK
+          UNFAIR ADVANTAGE — LOW-OVERHEAD STACK
         </div>
 
         <h1 class="monumental-brutalist-title">
@@ -457,44 +457,27 @@
         </div>
       </div>
 
-      <!-- RIGHT HALF: HERO RESERVED STAND-IN -->
+      <!-- RIGHT HALF: HERO RESERVED SLOT -->
       <!-- Monumental dithered B&W subject emerging from darkness, right side lit, left dissolving to black -->
-      <div class="right-dither-slot">
-        <div class="dither-standin">
-          <svg class="dither-svg" viewBox="0 0 600 600" preserveAspectRatio="none" fill="none" xmlns="http://www.w3.org/2000/svg">
-            <!-- Pure Black Ground -->
-            <rect width="600" height="600" fill="#050505"/>
+      <div class="right-dither-slot" style="position: relative; width: 100%; height: 100%; min-height: 580px; background-color: var(--bg-black); overflow: hidden; display: flex; align-items: center; justify-content: center; border-left: 1px solid var(--bg-dark-border);">
+        <div class="dither-standin" style="position: absolute; inset: 0; width: 100%; height: 100%;">
+          <!-- Nano Banana Pro Generated 1-Bit Dither Image -->
+          <img id="v4-hero-img" src="../assets/hero/v4/sample_1.jpg" alt="1-bit Bayer dithered precision subject" style="width: 100%; height: 100%; object-fit: cover; object-position: right center; opacity: 0.95; transition: opacity 0.2s ease;" />
+          
+          <!-- Soft left gradient overlay to melt into pitch black left column -->
+          <div style="position: absolute; top: 0; bottom: 0; left: 0; width: 120px; background: linear-gradient(to right, var(--bg-black) 0%, rgba(5, 5, 5, 0) 100%); pointer-events: none;"></div>
 
-            <!-- Bayer Dither / Dot Matrix Field representing mechanical architectural subject emerging from right -->
-            <pattern id="bayerDither" width="12" height="12" patternUnits="userSpaceOnUse">
-              <rect x="0" y="0" width="2" height="2" fill="#333333"/>
-              <rect x="6" y="6" width="2" height="2" fill="#444444"/>
-            </pattern>
-            
-            <pattern id="bayerDitherDense" width="8" height="8" patternUnits="userSpaceOnUse">
-              <rect x="0" y="0" width="3" height="3" fill="#888888"/>
-              <rect x="4" y="4" width="3" height="3" fill="#aaaaaa"/>
-            </pattern>
+          <!-- Interactive Sample Switcher -->
+          <div class="sample-selector-bar" style="position: absolute; bottom: 24px; left: 24px; z-index: 10; display: flex; gap: 6px; background: rgba(5, 5, 5, 0.9); border: 1px solid var(--bg-dark-border); padding: 5px 10px; backdrop-filter: blur(8px);">
+            <span style="font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-dim); align-self: center; margin-right: 4px;">SAMPLES:</span>
+            <button type="button" class="v4-sample-btn" onclick="switchV4Sample(1, this)" style="font-family: var(--font-mono); font-size: 9px; padding: 4px 8px; background: var(--accent-phosphor); color: #fff; border: 1px solid var(--accent-phosphor); cursor: pointer; font-weight: 700;">01 GEARS</button>
+            <button type="button" class="v4-sample-btn" onclick="switchV4Sample(2, this)" style="font-family: var(--font-mono); font-size: 9px; padding: 4px 8px; background: transparent; color: #fff; border: 1px solid var(--bg-dark-border); cursor: pointer;">02 WORKSHOP</button>
+            <button type="button" class="v4-sample-btn" onclick="switchV4Sample(3, this)" style="font-family: var(--font-mono); font-size: 9px; padding: 4px 8px; background: transparent; color: #fff; border: 1px solid var(--bg-dark-border); cursor: pointer;">03 ESPRESSO</button>
+          </div>
 
-            <pattern id="bayerDitherCore" width="4" height="4" patternUnits="userSpaceOnUse">
-              <rect x="0" y="0" width="2" height="2" fill="#ffffff"/>
-              <rect x="2" y="2" width="2" height="2" fill="#dddddd"/>
-            </pattern>
-
-            <!-- Gradient mask from right (illuminated) to left (dissolving into black) -->
-            <path d="M220,50 L580,20 L580,580 L200,550 Z" fill="url(#bayerDither)"/>
-            <path d="M320,100 L580,60 L580,540 L300,500 Z" fill="url(#bayerDitherDense)"/>
-            <path d="M420,160 L580,120 L580,480 L400,440 Z" fill="url(#bayerDitherCore)"/>
-
-            <!-- Technical Crosshairs & Matrix Ruler -->
-            <path d="M500,20 L500,580 M100,300 L580,300" stroke="#ff5500" stroke-width="0.8" stroke-dasharray="4 6" opacity="0.4"/>
-            <circle cx="500" cy="300" r="3" fill="#ff5500"/>
-          </svg>
-
-          <div class="dither-tag-overlay">
-            <div>[RESERVED HERO: DITHERED B&amp;W SUBJECT]</div>
-            <div style="font-size: 9px; margin-top: 3px;">RIGHT SIDE ILLUMINATED // LEFT DISSOLVING TO BLACK</div>
-            <div style="font-size: 9px; margin-top: 2px;">ALGORITHM: 1-BIT BAYER MATRIX</div>
+          <div class="dither-tag-overlay" style="position: absolute; top: 24px; right: 24px; background: rgba(13, 13, 13, 0.9); border: 1px solid var(--bg-dark-border); padding: 10px 14px; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.12em; color: var(--text-dim); backdrop-filter: blur(6px); z-index: 5;">
+            <div>1-BIT BAYER MATRIX DITHER</div>
+            <div style="font-size: 9px; margin-top: 3px; color: var(--accent-phosphor); font-weight: 600;">HIGH-CONTRAST MONO</div>
           </div>
         </div>
       </div>
@@ -507,16 +490,16 @@
 
     <!-- SECTION 2: FIELD CASES (Cafes & Garages) -->
     <section class="field-data-section">
-      <div class="raw-eyebrow">// 01 CRITICAL REVENUE LEAKS</div>
+      <div class="raw-eyebrow">01 CRITICAL REVENUE LEAKS</div>
       <h2 class="raw-headline">OPERATIONAL TRUTH IN PHYSICAL SHOPS</h2>
 
       <div class="brutalist-grid">
         <!-- Garage -->
         <div class="brutalist-card">
-          <div class="card-class">SYS_UNIT: WORKSHOP // 3-BAY</div>
+          <div class="card-class">SYS_UNIT: WORKSHOP · 3-BAY</div>
           <h3 class="card-title">Automotive Mechanics &amp; Detailing</h3>
           <p class="card-text">
-            While hands are deep in an engine bay, customer phone calls go to dead voicemail. Quotes are delivered by scribble on loose slips. We install an automated WhatsApp terminal: customer inputs registration, gets live status, approves quote on glass.
+            While hands are deep in an engine bay, customer phone calls go to dead voicemail. Quotes are delivered by scribble on loose slips. We install an automated WhatsApp desk: customer inputs registration, gets live status, approves quote on glass.
           </p>
           <div class="ascii-stat-box">
             + REVENUE RECOVERED: $2,400/mo IN LOST SERVICE APPOINTMENTS<br>
@@ -563,7 +546,7 @@
     <!-- SECTION 3: TERMINAL DEPLOYMENT -->
     <section id="deploy" class="terminal-section">
       <div>
-        <div class="raw-eyebrow">// 02 DEPLOYMENT DIRECTIVE</div>
+        <div class="raw-eyebrow">02 DEPLOYMENT DIRECTIVE</div>
         <h2 style="font-family: var(--font-display); font-size: 36px; text-transform: uppercase; margin-bottom: 24px;">
           DISPATCH VERLYN TO YOUR FLOOR
         </h2>
@@ -595,11 +578,38 @@
 
     <!-- FOOTER -->
     <footer>
-      <div>VERLYN TECH // DITHER MONO (DIR-04)</div>
+      <div>VERLYN TECH · DITHER MONO (DIR-04)</div>
       <div>BRUTALIST OPERATIONAL INTELLIGENCE</div>
-      <div>TERMINAL READY</div>
+      <div>SYSTEM ONLINE</div>
     </footer>
   </div>
 
+  <script>
+    function switchV4Sample(idx, btn) {
+      const img = document.getElementById('v4-hero-img');
+      const sources = {
+        1: '../assets/hero/v4/sample_1.jpg',
+        2: '../assets/hero/v4/sample_2.jpg',
+        3: '../assets/hero/v4/sample_3.jpg'
+      };
+      if (sources[idx] && img) {
+        img.style.opacity = '0';
+        setTimeout(() => {
+          img.src = sources[idx];
+          img.style.opacity = '0.95';
+        }, 150);
+        document.querySelectorAll('.v4-sample-btn').forEach(b => {
+          b.style.background = 'transparent';
+          b.style.color = '#fff';
+          b.style.borderColor = 'var(--bg-dark-border)';
+          b.style.fontWeight = 'normal';
+        });
+        btn.style.background = 'var(--accent-phosphor)';
+        btn.style.color = '#fff';
+        btn.style.borderColor = 'var(--accent-phosphor)';
+        btn.style.fontWeight = '700';
+      }
+    }
+  </script>
 </body>
 </html>

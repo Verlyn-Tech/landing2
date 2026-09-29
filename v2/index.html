@@ -6,7 +6,7 @@
   <title>VERLYN TECH — Direction 02 / Data-as-Texture</title>
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=JetBrains+Mono:ital,wght@0,300;0,400;0,500;0,700;1,400&family=Syne:wght@500;700;800&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700&family=Syne:wght@500;700;800&family=Space+Grotesk:wght@400;600&display=swap" rel="stylesheet">
   <style>
     :root {
       --bg-teal-abyss: #030e11;
@@ -21,7 +21,7 @@
       --text-main: #e2f1f3;
       --text-muted: #7fa4ab;
       --font-display: 'Syne', sans-serif;
-      --font-mono: 'JetBrains Mono', monospace;
+      --font-mono: 'Plus Jakarta Sans', -apple-system, sans-serif;
       --font-body: 'Space Grotesk', sans-serif;
     }
 
@@ -521,7 +521,7 @@
     <section class="hero-grid">
       <div class="hero-dark-column">
         <div class="stream-tag">
-          <span>// STREAM-ID: LOCAL_SME_SURFACE</span>
+          <span>STREAM-ID: LOCAL_SME_SURFACE</span>
         </div>
 
         <h1 class="monumental-headline">
@@ -540,26 +540,23 @@
         </div>
       </div>
 
-      <!-- HERO RESERVED STAND-IN: Golden-hour clouds built from amber binary digits on a dark teal sky -->
+      <!-- HERO RESERVED SLOT: Golden-hour clouds built from amber binary digits on a dark teal sky -->
       <div class="hero-data-cloud-slot">
-        <div class="data-cloud-standin">
-          
-          <!-- Procedural Amber Binary Cloud Matrix Stand-in -->
-          <div class="binary-cloud-matrix">
-            <div class="binary-row">01001011 01100101 01110011 01110100 01110010 01100101 01101100</div>
-            <div class="binary-row">01010110 01000101 01010010 01001100 01011001 01001110 00100000 01010100 01000101 01000011 01001000</div>
-            <div class="binary-row dense">01000011 01000001 01000110 01000101 00100000 01001111 01010000 01010011 00100000 01000111 01000001 01010010 01000001 01000111 01000101</div>
-            <div class="binary-row dense">10110101 11010110 00101101 11101001 01001101 10110011 01001011 01110011 11010011 01010110 11010101 11001010 01010101</div>
-            <div class="binary-row core">11100101 11110011 11010111 11111001 11110000 11110101 11111100 11100101 11110011 11010111 11111001 11110000 11110101</div>
-            <div class="binary-row core">01010110 01000101 01010010 01001100 01011001 01001110 00100000 01010100 01000101 01000011 01001000 01001011 01100101 01110011</div>
-            <div class="binary-row dense">00110001 00110100 00100000 01000100 01000001 01011001 01010011 00100000 01010100 01001111 00100000 01001100 01001001 01010110 01000101</div>
-            <div class="binary-row">01010111 01001000 01000001 01010100 01010011 01000001 01010000 01010000 00100000 01000001 01010000 01001001 00100000 01001111 01001011</div>
+        <div class="data-cloud-standin" style="position: relative; overflow: hidden; border: 1px solid var(--cyan-dim); border-radius: 2px;">
+          <!-- Nano Banana Pro Generated Cloud Image -->
+          <img id="v2-hero-img" src="../assets/hero/v2/sample_1.jpg" alt="Golden-hour clouds with amber data stream" style="width: 100%; height: 100%; object-fit: cover; opacity: 0.92; transition: opacity 0.25s ease;" />
+
+          <!-- Interactive Sample Switcher -->
+          <div class="sample-selector-bar" style="position: absolute; bottom: 16px; right: 16px; z-index: 10; display: flex; gap: 6px; background: rgba(3, 14, 17, 0.9); border: 1px solid var(--cyan-dim); padding: 5px 10px; backdrop-filter: blur(8px);">
+            <span style="font-family: var(--font-mono); font-size: 9px; letter-spacing: 0.12em; text-transform: uppercase; color: var(--text-muted); align-self: center; margin-right: 4px;">SAMPLES:</span>
+            <button type="button" class="v2-sample-btn" onclick="switchV2Sample(1, this)" style="font-family: var(--font-mono); font-size: 9px; padding: 4px 8px; background: var(--amber-gold); color: var(--bg-teal-abyss); border: 1px solid var(--amber-gold); cursor: pointer; font-weight: 700;">01 CLOUD STREAM</button>
+            <button type="button" class="v2-sample-btn" onclick="switchV2Sample(2, this)" style="font-family: var(--font-mono); font-size: 9px; padding: 4px 8px; background: transparent; color: var(--amber-gold); border: 1px solid var(--cyan-dim); cursor: pointer;">02 STORM MATRIX</button>
+            <button type="button" class="v2-sample-btn" onclick="switchV2Sample(3, this)" style="font-family: var(--font-mono); font-size: 9px; padding: 4px 8px; background: transparent; color: var(--amber-gold); border: 1px solid var(--cyan-dim); cursor: pointer;">03 ETHEREAL VAPOR</button>
           </div>
 
-          <div class="cloud-telemetry-badge">
-            <span class="sub">// STAND-IN HERO: DATA-TEXTURE CLOUD</span>
-            <div>AMBER DENSITY: 94.2% // CORE FLUX</div>
-            <div style="color: var(--text-muted); font-size: 9px; margin-top: 4px;">TARGET: GOLDEN-HOUR CUMULUS OVER DARK TEAL SKY</div>
+          <div class="cloud-telemetry-badge" style="position: absolute; top: 16px; right: 16px; z-index: 10; background: rgba(3, 14, 17, 0.85); border: 1px solid var(--cyan-dim); padding: 8px 12px; backdrop-filter: blur(6px);">
+            <span class="sub" style="color: var(--amber-gold); font-size: 9px; letter-spacing: 0.15em; text-transform: uppercase;">DATA-TEXTURE ATMOSPHERE</span>
+            <div style="font-family: var(--font-mono); font-size: 11px; color: #fff;">AMBER DENSITY: 94.2% · CORE FLUX</div>
           </div>
         </div>
       </div>
@@ -567,7 +564,7 @@
 
     <!-- Bottom edge ticker bar -->
     <div style="padding: 12px 40px; background: rgba(3, 14, 17, 0.8); border-top: 1px solid var(--cyan-dim); display: flex; justify-content: space-between; font-family: var(--font-mono); font-size: 10px; color: var(--text-muted);">
-      <div>+ 0x7F001 // LOCAL WORKSHOPS & ROASTERIES</div>
+      <div>LOCAL WORKSHOPS & ROASTERIES</div>
       <div>PILOT RESPONSE GUARANTEE: &lt; 90 SECONDS</div>
       <div>DEPLOYMENT TIME: 14 BUSINESS DAYS</div>
     </div>
@@ -575,13 +572,13 @@
 
   <!-- SECTION 2: VERTICAL APPLICATION (Cafes & Garages) -->
   <section id="verticals" class="verticals-section">
-    <div class="section-label">// SECTOR APPLICATIONS</div>
+    <div class="section-label">SECTOR APPLICATIONS</div>
     <h2 class="section-headline">BUILT FOR PLACES WHERE PEOPLE SWEAT AND PRODUCE</h2>
 
     <div class="grid-2col">
       <!-- Garage Card -->
       <div class="material-card">
-        <div class="card-matrix-tag">[TARGET: 01 // INDEPENDENT AUTO WORKSHOP]</div>
+        <div class="card-matrix-tag">TARGET: 01 — INDEPENDENT AUTO WORKSHOP</div>
         <h3 class="card-title">The Independent Garage & Tuning Shop</h3>
         <p class="card-desc">
           Mechanics shouldn't stop turning wrenches to answer repetitive status questions. We wire vehicle inspection updates, parts approval prompts, and bay booking straight into a managed WhatsApp router.
@@ -594,7 +591,7 @@
 
       <!-- Cafe Card -->
       <div class="material-card">
-        <div class="card-matrix-tag">[TARGET: 02 // ARTISAN CAFE & ROASTERY]</div>
+        <div class="card-matrix-tag">TARGET: 02 — ARTISAN CAFE & ROASTERY</div>
         <h3 class="card-title">The High-Volume Specialty Coffee Bar</h3>
         <p class="card-desc">
           When the morning rush hits, staff cannot monitor Instagram messages or third-party delivery tablets taking 30% cuts. We install a direct QR ordering site that routes catering and whole-bean sales straight to your till.
@@ -609,7 +606,7 @@
 
   <!-- SECTION 3: SYSTEM PROTOCOL -->
   <section class="protocol-section">
-    <div class="section-label">// SYSTEM BLUEPRINT</div>
+    <div class="section-label">SYSTEM BLUEPRINT</div>
     <h2 class="section-headline">THE HARDENED STACK WE INSTALL</h2>
 
     <div class="protocol-grid">
@@ -642,7 +639,7 @@
   <!-- SECTION 4: INTAKE ACTION -->
   <section id="intake" class="intake-section">
     <div>
-      <div class="section-label">// INTAKE SEQUENCE</div>
+      <div class="section-label">INTAKE SEQUENCE</div>
       <h2 class="section-headline">INITIATE DEPLOYMENT FOR YOUR SHOP</h2>
       <p style="color: var(--text-muted); font-size: 15px; line-height: 1.6; max-width: 500px; margin-bottom: 24px;">
         Tell us about your physical space and where you're leaking customer inquiries. We conduct a free 15-minute diagnostic and return with a fixed-fee plan.
@@ -686,10 +683,37 @@
 
   <!-- FOOTER -->
   <footer>
-    <div>VERLYN TECH // DIRECTION 02 (DATA-AS-TEXTURE)</div>
+    <div>VERLYN TECH · DIRECTION 02 (DATA-AS-TEXTURE)</div>
     <div>COORDINATES: 25.2048° N, 55.2708° E</div>
     <div>ALL SYSTEMS OPERATIONAL</div>
   </footer>
 
+  <script>
+    function switchV2Sample(idx, btn) {
+      const img = document.getElementById('v2-hero-img');
+      const sources = {
+        1: '../assets/hero/v2/sample_1.jpg',
+        2: '../assets/hero/v2/sample_2.jpg',
+        3: '../assets/hero/v2/sample_3.jpg'
+      };
+      if (sources[idx] && img) {
+        img.style.opacity = '0';
+        setTimeout(() => {
+          img.src = sources[idx];
+          img.style.opacity = '0.92';
+        }, 150);
+        document.querySelectorAll('.v2-sample-btn').forEach(b => {
+          b.style.background = 'transparent';
+          b.style.color = 'var(--amber-gold)';
+          b.style.borderColor = 'var(--cyan-dim)';
+          b.style.fontWeight = 'normal';
+        });
+        btn.style.background = 'var(--amber-gold)';
+        btn.style.color = 'var(--bg-teal-abyss)';
+        btn.style.borderColor = 'var(--amber-gold)';
+        btn.style.fontWeight = '700';
+      }
+    }
+  </script>
 </body>
 </html>
