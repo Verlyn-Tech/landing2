@@ -539,21 +539,18 @@
     <!-- LOWER HALF: HERO RESERVED SLOT (Vast Desaturated Aerial Mountain Ridge in Mist) -->
     <div class="ridge-hero-slot" style="position: relative; width: 100%; height: 500px; margin-top: -40px; display: flex; align-items: flex-end; overflow: hidden;">
       <div class="mountain-standin" style="position: absolute; inset: 0; width: 100%; height: 100%;">
-        <!-- Nano Banana Pro Generated Aerial Ridge Image -->
-        <img id="v3-hero-img" src="assets/hero/v3/sample_1.jpg" alt="Vast desaturated aerial mountain ridge in morning mist" style="width: 100%; height: 100%; object-fit: cover; object-position: center bottom; transition: opacity 0.25s ease;" />
+        <!-- Nano Banana Pro Generated Aerial Ridge Image (03 Basalt Crest) -->
+        <img id="v3-hero-img" src="assets/hero/v3/sample_3.jpg" alt="Vast desaturated aerial basalt crest in morning mist" style="width: 100%; height: 100%; object-fit: cover; object-position: center bottom; display: block;" />
         
         <!-- Soft top fog gradient overlay to melt into fog-white background -->
         <div style="position: absolute; top: 0; left: 0; right: 0; height: 140px; background: linear-gradient(to bottom, var(--fog-white) 0%, rgba(245, 246, 247, 0) 100%); pointer-events: none;"></div>
 
-        <!-- Sample Switcher & Metadata -->
-        <div class="ridge-metadata-overlay" style="position: absolute; bottom: 32px; left: 48px; z-index: 10; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.15em; color: rgba(255, 255, 255, 0.9); display: flex; align-items: center; gap: 10px; background: rgba(18, 21, 23, 0.75); padding: 6px 12px; backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.15);">
-          <span style="opacity: 0.7; font-size: 9px; text-transform: uppercase;">SAMPLES:</span>
-          <button type="button" class="v3-sample-btn" onclick="switchV3Sample(1, this)" style="font-family: var(--font-mono); font-size: 9px; padding: 4px 8px; background: #fff; color: #121517; border: 1px solid #fff; cursor: pointer; font-weight: 600;">01 JAGGED PEAK</button>
-          <button type="button" class="v3-sample-btn" onclick="switchV3Sample(2, this)" style="font-family: var(--font-mono); font-size: 9px; padding: 4px 8px; background: transparent; color: #fff; border: 1px solid rgba(255, 255, 255, 0.3); cursor: pointer;">02 ALPINE MIST</button>
-          <button type="button" class="v3-sample-btn" onclick="switchV3Sample(3, this)" style="font-family: var(--font-mono); font-size: 9px; padding: 4px 8px; background: transparent; color: #fff; border: 1px solid rgba(255, 255, 255, 0.3); cursor: pointer;">03 BASALT CREST</button>
+        <!-- Quiet Metadata Badges -->
+        <div class="ridge-metadata-overlay" style="position: absolute; bottom: 32px; left: 48px; z-index: 10; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.15em; color: rgba(255, 255, 255, 0.9); display: flex; align-items: center; gap: 8px; background: rgba(18, 21, 23, 0.75); padding: 6px 14px; backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.15);">
+          <span>BASALT CREST · ELEVATION: 1,840m · UAE DISPATCH</span>
         </div>
 
-        <div class="ridge-metadata-overlay-right" style="position: absolute; bottom: 32px; right: 48px; z-index: 10; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.15em; color: rgba(255, 255, 255, 0.85); background: rgba(18, 21, 23, 0.75); padding: 6px 12px; backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.15);">
+        <div class="ridge-metadata-overlay-right" style="position: absolute; bottom: 32px; right: 48px; z-index: 10; font-family: var(--font-mono); font-size: 10px; letter-spacing: 0.15em; color: rgba(255, 255, 255, 0.85); background: rgba(18, 21, 23, 0.75); padding: 6px 14px; backdrop-filter: blur(8px); border: 1px solid rgba(255, 255, 255, 0.15);">
           <div>SCALE: 1:25,000 · ZERO MARKETING HYPE</div>
         </div>
       </div>
@@ -821,33 +818,5 @@
     <div>DESIGNED WITH RESTRAINT · SERIOUS INTELLIGENCE</div>
     <div>© 2026 VERLYN</div>
   </footer>
-
-  <script>
-    function switchV3Sample(idx, btn) {
-      const img = document.getElementById('v3-hero-img');
-      const sources = {
-        1: 'assets/hero/v3/sample_1.jpg',
-        2: 'assets/hero/v3/sample_2.jpg',
-        3: 'assets/hero/v3/sample_3.jpg'
-      };
-      if (sources[idx] && img) {
-        img.style.opacity = '0';
-        setTimeout(() => {
-          img.src = sources[idx];
-          img.style.opacity = '1';
-        }, 150);
-        document.querySelectorAll('.v3-sample-btn').forEach(b => {
-          b.style.background = 'transparent';
-          b.style.color = '#fff';
-          b.style.borderColor = 'rgba(255, 255, 255, 0.3)';
-          b.style.fontWeight = 'normal';
-        });
-        btn.style.background = '#fff';
-        btn.style.color = '#121517';
-        btn.style.borderColor = '#fff';
-        btn.style.fontWeight = '600';
-      }
-    }
-  </script>
 </body>
 </html>

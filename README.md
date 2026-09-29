@@ -33,7 +33,7 @@ The production landing page is built on the **Vast Quiet Cinematic** architectur
 
 - ✅ **No Double-Slash Separators**: Clean text formatting throughout all markup and styles.
 - ✅ **No Terminal / Monospace Fonts**: Modern geometric sans typography (`Space Grotesk` & `Plus Jakarta Sans`).
-- ✅ **Processed Imagery Only**: Desaturated aerial mountain ridge in morning mist with interactive multi-sample switcher.
+- ✅ **Processed Imagery Only**: Desaturated aerial basalt crest in morning mist (03 Basalt Crest).
 - ✅ **Technical Marginalia**: Real coordinates (`ALT: 1,840m · LAT: 25.2048° N`), catalog IDs, and sub-second latency timers.
 - ✅ **Extreme Typography**: Monumental display headlines paired with quiet 10px–11px notation.
 - 🚫 **Never Used**: No purple gradients, no glossy 3D SaaS blobs, no untextured stock photography, and no generic icon grids.
@@ -75,7 +75,7 @@ Double-click [`index.html`](index.html) to open the landing page directly in any
 │   └── index.html
 └── assets/
     ├── hero/
-    │   └── v3/             # Aerial mountain ridge photography (3 samples)
+    │   └── v3/             # Aerial basalt crest photography (03 Basalt Crest)
     └── logos/              # Bespoke vector and transparent PNG brand marks
 ```
 
