@@ -363,15 +363,100 @@
       display: flex;
       flex-direction: column;
       justify-content: space-between;
-      gap: 48px;
+      gap: 40px;
       min-height: 420px;
       border: none;
       color: var(--tile-ink);
       background: var(--tile-bg);
     }
-    .cap-cell--web .tile-mark { width: 100%; max-width: 260px; height: auto; opacity: 0.9; }
-    .cap-cell--web .cap-help { color: var(--tile-ink-2); }
-    .cap-cell--web .cap-edge { color: var(--tile-ink); border-color: var(--tile-line); }
+    .cap-cell--web .tile-top {
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+    }
+    .cap-cell--web .tile-mark {
+      width: 100%;
+      max-width: 240px;
+      height: auto;
+      opacity: 0.95;
+    }
+    .cap-cell--web .tile-hero-text h3 {
+      font-size: 24px;
+      font-weight: 400;
+      letter-spacing: -0.01em;
+      margin: 0 0 12px 0;
+      color: var(--tile-ink);
+    }
+    .cap-cell--web .cap-help { color: var(--tile-ink-2); line-height: 1.6; }
+    .cap-cell--web .cap-edge {
+      color: var(--tile-ink);
+      border-color: var(--tile-line);
+      margin-top: 14px;
+      padding-top: 14px;
+      border-top: 1px dashed var(--tile-line);
+      font-size: 14px;
+      line-height: 1.6;
+    }
+    .cap-cell--web .tile-specs {
+      display: flex;
+      flex-direction: column;
+      border-top: 1px solid var(--tile-line);
+    }
+    .cap-cell--web .tile-spec-item {
+      display: grid;
+      grid-template-columns: 24px 1fr;
+      gap: 14px;
+      padding: 16px 0;
+      border-bottom: 1px solid var(--tile-line);
+    }
+    .cap-cell--web .tile-spec-num {
+      font-family: var(--font-text);
+      font-size: 11px;
+      font-weight: 600;
+      letter-spacing: 0.12em;
+      color: var(--accent);
+      padding-top: 3px;
+    }
+    .cap-cell--web .tile-spec-body h4 {
+      margin: 0 0 4px 0;
+      font-family: var(--font-display);
+      font-size: 15px;
+      font-weight: 500;
+      color: var(--tile-ink);
+      line-height: 1.35;
+    }
+    .cap-cell--web .tile-spec-body p {
+      margin: 0;
+      font-family: var(--font-text);
+      font-size: 13px;
+      line-height: 1.6;
+      color: var(--tile-ink-2);
+    }
+    .cap-cell--web .tile-footer {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 12px 28px;
+      padding-top: 4px;
+    }
+    .cap-cell--web .tile-pill {
+      display: flex;
+      flex-direction: column;
+      gap: 2px;
+    }
+    .cap-cell--web .tile-pill-label {
+      font-family: var(--font-text);
+      font-size: 10px;
+      font-weight: 600;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+      color: var(--tile-ink-2);
+    }
+    .cap-cell--web .tile-pill-val {
+      font-family: var(--font-text);
+      font-size: 13px;
+      font-weight: 500;
+      color: var(--tile-ink);
+    }
 
     .cap-group {
       font-size: 24px;
@@ -570,7 +655,7 @@
     /* ---------- Responsive ---------- */
     @media (max-width: 1024px) {
       .cap-cell--demand, .cap-cell--ops { grid-column: 1 / -1; }
-      .cap-cell--web { grid-column: 1 / -1; grid-row: auto; min-height: 360px; }
+      .cap-cell--web { grid-column: 1 / -1; grid-row: auto; min-height: auto; }
       .contact-grid { gap: 64px; }
     }
 
@@ -716,11 +801,48 @@
           </div>
 
           <div class="cap-cell cap-cell--web">
-            <img class="tile-mark" src="assets/logos/v3_user_logo_horizontal_light.svg" alt="" width="260" height="50" loading="lazy">
-            <div>
-              <h3>Premium Web Development</h3>
-              <p class="cap-help">Ultra-fast, meticulously designed digital storefronts built to capture demand.</p>
-              <p class="cap-edge">Bespoke, high-performance web applications with striking aesthetics. No cookie-cutter themes.</p>
+            <div class="tile-top">
+              <img class="tile-mark" src="assets/logos/v3_user_logo_horizontal_light.svg" alt="Verlyn Tech" width="260" height="50" loading="lazy">
+              <div class="tile-hero-text">
+                <h3>Premium Web Development</h3>
+                <p class="cap-help">Ultra-fast, meticulously designed digital storefronts built to capture demand.</p>
+                <p class="cap-edge">Bespoke, high-performance web applications with striking aesthetics. No cookie-cutter themes.</p>
+              </div>
+            </div>
+
+            <div class="tile-specs">
+              <div class="tile-spec-item">
+                <span class="tile-spec-num">01</span>
+                <div class="tile-spec-body">
+                  <h4>Edge-First Speed</h4>
+                  <p>&lt; 350ms global latency, 95+ PageSpeed baseline, zero template bloat.</p>
+                </div>
+              </div>
+              <div class="tile-spec-item">
+                <span class="tile-spec-num">02</span>
+                <div class="tile-spec-body">
+                  <h4>WhatsApp &amp; CRM Gateway</h4>
+                  <p>Direct conversational routing and webhook triggers straight to your pipeline.</p>
+                </div>
+              </div>
+              <div class="tile-spec-item">
+                <span class="tile-spec-num">03</span>
+                <div class="tile-spec-body">
+                  <h4>Bilingual UAE SEO</h4>
+                  <p>English and Arabic architecture, localized schema, and technical indexing.</p>
+                </div>
+              </div>
+            </div>
+
+            <div class="tile-footer">
+              <div class="tile-pill">
+                <span class="tile-pill-label">Deployment</span>
+                <span class="tile-pill-val">14-day turnaround</span>
+              </div>
+              <div class="tile-pill">
+                <span class="tile-pill-label">Ownership</span>
+                <span class="tile-pill-val">100% client-owned</span>
+              </div>
             </div>
           </div>
 
