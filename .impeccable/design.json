@@ -1,6 +1,6 @@
 {
   "schemaVersion": 2,
-  "generatedAt": "2026-09-29T19:05:11Z",
+  "generatedAt": "2026-10-06T15:08:30Z",
   "title": "Design System: Verlyn Tech",
   "extensions": {
     "colorMeta": {
@@ -363,17 +363,25 @@
         "displayName": "Headline",
         "purpose": "Section headings, balanced wrapping."
       },
+      "group-title": {
+        "displayName": "Group Title",
+        "purpose": "Capability group headings; bold."
+      },
       "subhead": {
         "displayName": "Subhead",
-        "purpose": "Panel group headings and the basalt tile heading."
+        "purpose": "The basalt tile heading."
       },
       "title": {
         "displayName": "Title",
         "purpose": "Example headings."
       },
+      "item-title": {
+        "displayName": "Item Title",
+        "purpose": "Service names inside the capability panels."
+      },
       "title-sm": {
         "displayName": "Title Small",
-        "purpose": "Item and table-row headings."
+        "purpose": "Table-row headings."
       },
       "body": {
         "displayName": "Body",
@@ -477,7 +485,7 @@
       "refersTo": null,
       "description": "Logo left, theme switch and ghost CTA right; no background.",
       "html": "<nav class=\"ds-nav\"><a class=\"ds-nav-home\" href=\"#\">VERLYN TECH</a><div class=\"ds-nav-actions\"><a class=\"ds-nav-cta\" href=\"#\">Start 14-day pilot</a></div></nav>",
-      "css": ".ds-nav { height: 80px; display: flex; align-items: center; justify-content: space-between; padding: 0 48px; background: #f5f6f7; } .ds-nav-home { min-height: 44px; display: inline-flex; align-items: center; font-family: 'Space Grotesk', system-ui, sans-serif; font-weight: 600; letter-spacing: 0.2em; color: #121517; text-decoration: none; } .ds-nav-cta { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; min-height: 44px; display: inline-flex; align-items: center; padding: 0 18px; color: #121517; border: 1px solid rgba(18,21,23,0.35); text-decoration: none; } .ds-nav-cta:hover { background: #121517; color: #f5f6f7; } .ds-nav a:focus-visible { outline: 2px solid #a67c52; outline-offset: 3px; }"
+      "css": ".ds-nav { height: 80px; display: flex; align-items: center; justify-content: space-between; padding: 0 48px; background: #f5f6f7; } .ds-nav-home { min-height: 44px; display: inline-flex; align-items: center; font-family: 'Archivo', system-ui, sans-serif; font-stretch: 112.5%; font-weight: 600; letter-spacing: 0.2em; color: #121517; text-decoration: none; } .ds-nav-cta { font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; min-height: 44px; display: inline-flex; align-items: center; padding: 0 18px; color: #121517; border: 1px solid rgba(18,21,23,0.35); text-decoration: none; } .ds-nav-cta:hover { background: #121517; color: #f5f6f7; } .ds-nav a:focus-visible { outline: 2px solid #a67c52; outline-offset: 3px; }"
     },
     {
       "name": "Capability Panel",
@@ -485,7 +493,7 @@
       "refersTo": "panel",
       "description": "Square fog panel; items separated by hairline rules, never nested cards.",
       "html": "<div class=\"ds-panel\"><h3 class=\"ds-panel-title\">Run the operation</h3><div class=\"ds-panel-item\"><h4>CRM Setup &amp; Lead Management</h4><p>Leads stop living in WhatsApp chats. One pipeline, one owner, automated follow-up.</p></div></div>",
-      "css": ".ds-panel { max-width: 560px; padding: 40px; background: #fbfbfc; border: 1px solid #e0e3e6; border-radius: 0; font-family: 'Space Grotesk', system-ui, sans-serif; color: #121517; } .ds-panel-title { margin: 0 0 8px; font-size: 24px; font-weight: 400; } .ds-panel-item { display: grid; grid-template-columns: 5fr 7fr; gap: 32px; padding-top: 28px; margin-top: 28px; border-top: 1px solid #e0e3e6; } .ds-panel-item h4 { margin: 0; font-size: 18px; font-weight: 500; } .ds-panel-item p { margin: 0; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 15px; line-height: 1.7; color: #586168; }"
+      "css": ".ds-panel { max-width: 560px; padding: 40px; background: #fbfbfc; border: 1px solid #e0e3e6; border-radius: 0; font-family: 'Archivo', system-ui, sans-serif; font-stretch: 112.5%; color: #121517; } .ds-panel-title { margin: 0 0 8px; font-size: 37px; font-weight: 600; letter-spacing: -0.02em; line-height: 1.2; } .ds-panel-item { display: grid; grid-template-columns: 5fr 7fr; gap: 32px; padding-top: 28px; margin-top: 28px; border-top: 1px solid #e0e3e6; } .ds-panel-item h4 { margin: 0; font-size: 27px; font-weight: 500; line-height: 1.2; letter-spacing: -0.015em; } .ds-panel-item p { margin: 0; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 15px; line-height: 1.7; color: #586168; }"
     },
     {
       "name": "Basalt Tile",
@@ -493,7 +501,7 @@
       "refersTo": "panel-basalt",
       "description": "The one intentional dark block on a fog page; basalt in both themes.",
       "html": "<div class=\"ds-basalt\"><h3>Premium Web Development</h3><p>Ultra-fast, meticulously designed digital storefronts built to capture demand.</p></div>",
-      "css": ".ds-basalt { max-width: 320px; min-height: 280px; display: flex; flex-direction: column; justify-content: flex-end; padding: 40px; background: #121517; color: #eef0f1; border-radius: 0; font-family: 'Space Grotesk', system-ui, sans-serif; } .ds-basalt h3 { margin: 0 0 16px; font-size: 24px; font-weight: 400; } .ds-basalt p { margin: 0; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 15px; line-height: 1.7; color: #c9ced2; }"
+      "css": ".ds-basalt { max-width: 320px; min-height: 280px; display: flex; flex-direction: column; justify-content: flex-end; padding: 40px; background: #121517; color: #eef0f1; border-radius: 0; font-family: 'Archivo', system-ui, sans-serif; font-stretch: 112.5%; } .ds-basalt h3 { margin: 0 0 16px; font-size: 24px; font-weight: 400; } .ds-basalt p { margin: 0; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-size: 15px; line-height: 1.7; color: #c9ced2; }"
     },
     {
       "name": "Deliverables Table",
@@ -501,7 +509,7 @@
       "refersTo": null,
       "description": "Uppercase column labels over a basalt rule, hairline rows, tabular numerals.",
       "html": "<table class=\"ds-table\"><thead><tr><th>Module</th><th>Latency</th></tr></thead><tbody><tr><th scope=\"row\">Static Presence</th><td>&lt; 350ms global edge</td></tr><tr><th scope=\"row\">WhatsApp Gateway</th><td>Instant triage</td></tr></tbody></table>",
-      "css": ".ds-table { border-collapse: collapse; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-variant-numeric: tabular-nums; text-align: left; min-width: 420px; } .ds-table thead th { padding: 0 32px 16px 0; border-bottom: 1px solid #121517; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #666f76; } .ds-table tbody th, .ds-table td { padding: 20px 32px 20px 0; vertical-align: top; } .ds-table tbody tr + tr > * { border-top: 1px solid #e0e3e6; } .ds-table tbody th { font-family: 'Space Grotesk', system-ui, sans-serif; font-size: 18px; font-weight: 500; color: #121517; } .ds-table td { font-size: 15px; color: #586168; }"
+      "css": ".ds-table { border-collapse: collapse; font-family: 'Plus Jakarta Sans', system-ui, sans-serif; font-variant-numeric: tabular-nums; text-align: left; min-width: 420px; } .ds-table thead th { padding: 0 32px 16px 0; border-bottom: 1px solid #121517; font-size: 12px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; color: #666f76; } .ds-table tbody th, .ds-table td { padding: 20px 32px 20px 0; vertical-align: top; } .ds-table tbody tr + tr > * { border-top: 1px solid #e0e3e6; } .ds-table tbody th { font-family: 'Archivo', system-ui, sans-serif; font-stretch: 112.5%; font-size: 18px; font-weight: 500; color: #121517; } .ds-table td { font-size: 15px; color: #586168; }"
     }
   ],
   "narrative": {

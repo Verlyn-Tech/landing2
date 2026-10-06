@@ -13,7 +13,7 @@ The landing page follows the **Fog Over Basalt** design system, documented in [`
 * **Palette**: fog white ground, basalt charcoal ink, one rare warm stone accent; a full dark theme (system default plus a manual switch).
 * **Hero**: centred uppercase display headline over the desaturated basalt ridge photograph fading up into the fog.
 * **Sections**: grouped capabilities (bento with one basalt tile), two illustrative business examples, a deliverables table, and the 14-day pilot form.
-* **Typography**: Space Grotesk display and body with Plus Jakarta Sans for supporting text, both self-hosted.
+* **Typography**: Archivo (semi-expanded) for headings, Space Grotesk for body copy and Plus Jakarta Sans for supporting text, all self-hosted.
 * **Main Entry**: [`index.html`](index.html)
 
 ---
@@ -83,7 +83,7 @@ Double-click [`index.html`](index.html) to open the landing page directly in any
 ├── v3/                     # Historical snapshot of the pre-redesign page (not maintained)
 │   └── index.html
 └── assets/
-    ├── fonts/              # Self-hosted Space Grotesk + Plus Jakarta Sans (SIL OFL)
+    ├── fonts/              # Self-hosted Archivo, Space Grotesk, Plus Jakarta Sans (SIL OFL)
     ├── hero/
     │   └── v3/             # Basalt crest photography (sized -800 / -1408 versions used)
     ├── img/                # Cafe and garage photography (not used on the page)

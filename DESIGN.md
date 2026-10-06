@@ -27,36 +27,48 @@ colors:
   ember-night: "#e08a7e"
 typography:
   display:
-    fontFamily: "Space Grotesk, system-ui, sans-serif"
+    fontFamily: "Archivo, system-ui, sans-serif"
     fontSize: "clamp(28px, 4vw, 46px)"
     fontWeight: 300
     lineHeight: 1.22
-    letterSpacing: "0.08em"
+    letterSpacing: "0.03em"
   display-sm:
-    fontFamily: "Space Grotesk, system-ui, sans-serif"
+    fontFamily: "Archivo, system-ui, sans-serif"
     fontSize: "clamp(28px, 3.4vw, 38px)"
     fontWeight: 300
     lineHeight: 1.2
-    letterSpacing: "0.06em"
+    letterSpacing: "0.02em"
   headline:
-    fontFamily: "Space Grotesk, system-ui, sans-serif"
+    fontFamily: "Archivo, system-ui, sans-serif"
     fontSize: "clamp(26px, 3vw, 34px)"
     fontWeight: 300
     lineHeight: 1.3
     letterSpacing: "-0.01em"
+  group-title:
+    fontFamily: "Archivo, system-ui, sans-serif"
+    fontSize: "37px"
+    fontWeight: 600
+    lineHeight: 1.2
+    letterSpacing: "-0.02em"
   subhead:
-    fontFamily: "Space Grotesk, system-ui, sans-serif"
+    fontFamily: "Archivo, system-ui, sans-serif"
     fontSize: "24px"
     fontWeight: 400
     lineHeight: 1.4
     letterSpacing: "-0.01em"
   title:
-    fontFamily: "Space Grotesk, system-ui, sans-serif"
+    fontFamily: "Archivo, system-ui, sans-serif"
     fontSize: "20px"
     fontWeight: 500
     lineHeight: 1.4
+  item-title:
+    fontFamily: "Archivo, system-ui, sans-serif"
+    fontSize: "27px"
+    fontWeight: 500
+    lineHeight: 1.2
+    letterSpacing: "-0.015em"
   title-sm:
-    fontFamily: "Space Grotesk, system-ui, sans-serif"
+    fontFamily: "Archivo, system-ui, sans-serif"
     fontSize: "18px"
     fontWeight: 500
     lineHeight: 1.4
@@ -197,17 +209,19 @@ A near-monochrome fog-and-basalt palette with a single warm stone accent.
 
 ## Typography
 
-**Display Font:** Space Grotesk (with system-ui fallback), self-hosted variable, weights 300 to 600
-**Body Font:** Space Grotesk for reading copy; Plus Jakarta Sans (self-hosted variable, 400 to 600) for supporting text, labels, forms and tables
+**Heading Font:** Archivo (with system-ui fallback), self-hosted variable, set semi-expanded (112.5% width) for every heading; normal width (100%) for the hero headline on phones
+**Body Font:** Space Grotesk (self-hosted variable, 300 to 600) for reading copy; Plus Jakarta Sans (self-hosted variable, 400 to 600) for supporting text, labels, forms and tables
 
-**Character:** Space Grotesk's slightly technical geometry carries the voice: light, wide and calm at display sizes. Plus Jakarta Sans is the quieter, rounder workhorse for everything small and functional.
+**Character:** Archivo's sturdy, slightly wide grotesk carries the headings: it holds its weight at bold sizes and reads like engineering signage, calm but solid. Space Grotesk keeps body copy light and technical; Plus Jakarta Sans is the quieter workhorse for everything small and functional.
 
 ### Hierarchy
-- **Display** (300, uppercase, wide tracking): the hero headline only. A single strong word run may step to 600.
+- **Display** (300, uppercase, light tracking because the letters are already wide): the hero headline only. A single strong word run may step to 600.
 - **Display Small** (300, uppercase): the contact headline, the one other uppercase heading.
 - **Headline** (300, balanced wrapping): section headings, max about 22 to 30ch.
-- **Subhead** (400): group headings inside a panel and the basalt tile heading.
-- **Title / Title Small** (500): example headings (Title) and item and table-row headings (Title Small).
+- **Group Title** (600): the capability group headings ("Bring in demand", "Run the operation"), the boldest heading inside a panel.
+- **Subhead** (400): the basalt tile heading.
+- **Item Title** (500): the service names inside the capability panels ("Landing Pages & SEO", "ERP Setup"); 22px on phones.
+- **Title / Title Small** (500): example headings (Title) and table-row headings (Title Small).
 - **Body** (400): reading copy, max about 52 to 60ch.
 - **Body Text** (Plus Jakarta Sans): capability descriptions, table cells, the "What we install" lines.
 - **Body Small** (Plus Jakarta Sans, 500): the guarantee line, form alerts, the skip link.
